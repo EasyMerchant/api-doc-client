@@ -1,0 +1,25 @@
+{
+  "presets": ["next/babel", "SWC"],
+  "plugins": [
+    [
+      "prismjs",
+      {
+        "languages": [
+          "json",
+          "clike",
+          "markup",
+          "bash",
+          "javascript",
+          "go",
+          "python",
+          "java",
+          "ruby",
+          "php"
+        ],
+        "plugins": [],
+        "theme": "tomorrow",
+        "css": false
+      }
+    ]
+  ]
+}
