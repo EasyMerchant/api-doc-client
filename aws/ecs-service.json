@@ -1,0 +1,39 @@
+{
+    "containerDefinitions": [
+        {
+            "name": "api-doc-client",
+            "image": "774521824394.dkr.ecr.us-east-1.amazonaws.com/api-doc-client",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "strapi-admin-3000-tcp",
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/api-doc-server",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ],
+    "family": "api-doc-client",
+    "taskRoleArn": "arn:aws:iam::774521824394:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::774521824394:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "volumes": [],
+    "placementConstraints": [],
+    "cpu": "256",
+    "memory": "512",
+    "runtimePlatform": {
+        "cpuArchitecture": "ARM64",
+        "operatingSystemFamily": "LINUX"
+    }
+}
