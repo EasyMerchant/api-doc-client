@@ -1,4 +1,4 @@
-# Dockerfile development
+# Dockerfile prod
 
 FROM node:16-alpine
 
