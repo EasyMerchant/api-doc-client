@@ -4,7 +4,6 @@ phases:
   build:
     commands:
     - ls -la
-    - rm env.example
     - rm buildspec.yaml
     - rm .gitignore
     - aws s3 cp s3://easymerchant-docker-key/.docker.key .docker.key
