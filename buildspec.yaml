@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+    - ls -la
+    - rm env.example
+    - rm buildspec.yaml
+    - rm .gitignore
+    - aws s3 cp s3://easymerchant-docker-key/.docker.key .docker.key
+    - docker login -u ezdockerservice --password-stdin < .docker.key
+    - rm .docker.key
+    - echo Build started on `date`
+    - echo Building the Docker image...
+    - docker build . -t 774521824394.dkr.ecr.us-east-1.amazonaws.com/api-doc-client  
+    - aws --version
+    # login to Elastic container registry
+    - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 774521824394.dkr.ecr.us-east-1.amazonaws.com
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push 774521824394.dkr.ecr.us-east-1.amazonaws.com/api-doc-client 
+      - aws ecs register-task-definition --family api-doc-client --cli-input-json file://aws/ecs-service.json 
+      - aws ecs update-service --cluster Api-Doc-Client --service api-doc-client --task-definition api-doc-client
+      - echo "=======================End-of-Build============================="
