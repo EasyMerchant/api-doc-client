@@ -1,8 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { parse as domainParse } from 'tldts';
-
-// docs.easymerchant.io
-// developers.lyfepay.io
 
 // inlcude any additional brand name in the array and the matcher regexp
 const BRANDS_NAMES = ['lyfepay', 'easymerchant'];
@@ -21,18 +17,30 @@ export default async function middleware(req: NextRequest) {
 
   switch (process.env.NODE_ENV) {
     case 'production':
-      const { domainWithoutSuffix } = domainParse(req.url);
-      if (domainWithoutSuffix) {
-        currentHost = domainWithoutSuffix;
+      // use your domain suffix to replace here
+      const prodHost = req.headers.get('host');
+      if (prodHost) {
+        const arr = prodHost.split('.');
+
+        BRANDS_NAMES.every((brand) => {
+          const hostIndex = arr.indexOf(brand);
+          if (hostIndex >= 0) {
+            currentHost = arr[hostIndex];
+
+            return false;
+          }
+
+          return true;
+        });
       }
 
       break;
 
     case 'development':
       // Get hostname of request (e.g. demo.example.pub, demo.localhost:3000)
-      const hostname = req.headers.get('host');
-      if (hostname) {
-        currentHost = hostname.replace(`.localhost:3000`, '');
+      const localHost = req.headers.get('host');
+      if (localHost) {
+        currentHost = localHost.replace('.localhost:3000', '');
       }
       break;
   }
@@ -42,10 +50,13 @@ export default async function middleware(req: NextRequest) {
 
   let rewritePath = new URL('/', req.url);
 
-  BRANDS_NAMES.forEach((brand) => {
+  BRANDS_NAMES.every((brand) => {
     if (currentHost === brand) {
       rewritePath = new URL(`/${brand}${path}`, req.url);
+      return false;
     }
+
+    return true;
   });
 
   return NextResponse.rewrite(rewritePath);
