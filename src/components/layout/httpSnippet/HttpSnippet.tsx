@@ -1,4 +1,5 @@
 import HTTPSnippet from 'httpsnippet';
+import { IAppContext } from '~/context/AppProvider';
 import { useAppContext } from '~/hooks';
 import { Endpoint, Param } from '~/interfaces';
 /*
@@ -24,12 +25,12 @@ export const PARAM_TYPES = {
 export const snippet = ({
   endpoint,
   params,
+  ctx,
 }: {
   endpoint: Endpoint;
   params: Param[];
+  ctx: IAppContext | undefined;
 }) => {
-  const ctx = useAppContext();
-
   let request: HTTPSnippet.Data = {
     method: endpoint.attributes.method,
     url: `${ctx?.baseUrl}${endpoint.attributes.url}`.replace(/[{}]/g, ''),

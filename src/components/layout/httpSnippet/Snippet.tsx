@@ -34,7 +34,7 @@ export default function Snippet({
   const [client, setClient] = useState(options[1]);
   const [isShowing, setIsShowing] = useState(false);
 
-  const _snippet = snippet({ endpoint, params });
+  const _snippet = snippet({ endpoint, params, ctx });
 
   const code = useMemo(() => {
     if (!client.target) return '';
