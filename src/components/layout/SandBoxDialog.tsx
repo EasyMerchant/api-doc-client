@@ -1,4 +1,4 @@
-import { Dialog, Transition } from '@headlessui/react';
+import { Dialog, Switch, Transition } from '@headlessui/react';
 import axios from 'axios';
 import {
   ChangeEvent,
@@ -13,6 +13,7 @@ import { useAppContext, useHighlighter } from '~/hooks';
 import { classJoiner, injectVariables } from '~/lib';
 import { PARAM_TYPES } from './httpSnippet/HttpSnippet';
 import { Param } from '~/interfaces';
+
 const tabs = ['Headers', 'Parameters'];
 
 const SandBoxDialog = () => {
@@ -364,17 +365,63 @@ const SandBoxDialog = () => {
                                       </span>
                                     </td>
 
-                                    <td className='px-4 py-2 bg-zinc-50 dark:bg-black'>
-                                      <input
-                                        id={param.attributes.name}
-                                        name={param.attributes.name}
-                                        type='text'
-                                        className='border-none focus:outline-none bg-transparent dark:text-white w-full placeholder:text-slate-500 dark:placeholder:text-slate-500'
-                                        autoFocus={index === 0}
-                                        placeholder={param.attributes.data_type}
-                                        required={param.attributes.required}
-                                        onChange={onParamChange}
-                                      />
+                                    <td className='px-4 py-0 bg-zinc-50 dark:bg-black'>
+                                      {param.attributes.data_type ===
+                                      'boolean' ? (
+                                        <Switch
+                                          checked={
+                                            payload[param.attributes.name]
+                                          }
+                                          onChange={(value) => {
+                                            console.log(value);
+
+                                            setState((prev) => ({
+                                              ...prev,
+                                              payload: {
+                                                ...prev.payload,
+                                                [param.attributes.name]: value,
+                                              },
+                                            }));
+                                          }}
+                                          className={`${
+                                            payload[param.attributes.name]
+                                              ? 'bg-blue-500'
+                                              : 'bg-gray-300'
+                                          }
+                                                 relative inline-flex h-6 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+                                        >
+                                          <span className='sr-only'>
+                                            Use setting
+                                          </span>
+                                          <span
+                                            aria-hidden='true'
+                                            className={`${
+                                              payload[param.attributes.name]
+                                                ? 'translate-x-6'
+                                                : 'translate-x-0'
+                                            }
+                                              pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+                                          />
+                                        </Switch>
+                                      ) : (
+                                        <input
+                                          id={param.attributes.name}
+                                          name={param.attributes.name}
+                                          type={
+                                            param.attributes.data_type ===
+                                            'number'
+                                              ? 'number'
+                                              : 'text'
+                                          }
+                                          className='border-none h-10 focus:outline-none bg-transparent dark:text-white w-full placeholder:text-slate-500 dark:placeholder:text-slate-500'
+                                          autoFocus={index === 0}
+                                          placeholder={
+                                            param.attributes.data_type
+                                          }
+                                          required={param.attributes.required}
+                                          onChange={onParamChange}
+                                        />
+                                      )}
                                     </td>
                                   </tr>
                                 );

@@ -37,7 +37,7 @@ export default function Snippet({
   const _snippet = snippet({ endpoint, params, ctx });
 
   const code = useMemo(() => {
-    if (!client.target) return '';
+    if (!client.target || !_snippet) return '';
     return _snippet.convert(client.target, client.type, {}) || '';
   }, [client]);
 

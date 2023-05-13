@@ -91,6 +91,11 @@ export const snippet = ({
       };
     }
   }
-
-  return new HTTPSnippet(request);
+  try {
+    return new HTTPSnippet(request);
+  } catch (e) {
+    // console.log(params[0]);
+    console.log(endpoint);
+    return null;
+  }
 };
