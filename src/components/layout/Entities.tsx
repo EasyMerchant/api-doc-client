@@ -34,7 +34,7 @@ export default function Entities({ data }: { data: IApiData[] }) {
                     key={i}
                     className='mt-6 text-gray-700 dark:text-slate-300 max-w-lg 2xl:max-w-xl'
                   >
-                    {injectVariables(p, { identifier: ctx?.identifier })}
+                    {injectVariables(p, { ...ctx })}
                   </p>
                 ))}
               </div>

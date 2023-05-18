@@ -15,7 +15,7 @@ export default function Services({ service }: { service: IService }) {
         className='mt-6 text-gray-700 dark:text-slate-300'
         dangerouslySetInnerHTML={{
           __html: injectVariables(service?.attributes?.description || '', {
-            identifier: ctx?.identifier,
+            ...ctx,
           }),
         }}
       />
