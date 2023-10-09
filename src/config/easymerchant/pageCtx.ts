@@ -2,6 +2,7 @@ import { IPageContext } from '../interface';
 
 const productionBaseUrl = 'https://api.easymerchant.io/api';
 const sandBoxApiUrl = 'https://sandbox-api.sandbox-covenantpay.io/api';
+const cdnUrl = 'https://cdn.easymerchant.io';
 
 export const easyMerchantPageCtx: IPageContext = {
   root: '/easymerchant',
@@ -19,6 +20,7 @@ export const easyMerchantPageCtx: IPageContext = {
     brand_state: 'Tennessee',
     brand_postalcode: '37027',
     brand_phone: '+1 (615) 933-0910',
+    cdnUrl: cdnUrl,
     api_url: {
       production: productionBaseUrl,
       sandbox: sandBoxApiUrl,
