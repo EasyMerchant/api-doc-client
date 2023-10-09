@@ -1,18 +1,8 @@
-import { Endpoint, Param } from './types';
+import { Endpoint } from './types/Endpoint';
 
 export interface IService {
-  id: number;
-  attributes: {
-    name: string;
-    description?: string;
-    endpoint: {
-      data: Endpoint;
-    };
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    parameters: {
-      data: Param[];
-    };
-  };
+  id: number | string;
+  name: string;
+  description?: string[];
+  endpoint: Endpoint;
 }

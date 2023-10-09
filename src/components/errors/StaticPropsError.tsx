@@ -1,4 +1,4 @@
-const StaticPropsError = ({ error, root }: { error: any; root: string }) => {
+const StaticPropsError = ({ error, root }: { error: any; root?: string }) => {
   const e = JSON.parse(error);
 
   return (

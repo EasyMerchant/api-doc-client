@@ -20,7 +20,8 @@ export default async function middleware(req: NextRequest) {
       // use your domain suffix to replace here
       const prodHost = req.headers.get('host');
       if (prodHost) {
-        const arr = prodHost.split('.');
+        const arr = prodHost.replace('.vercel.app', '').split('.'); //  only for vercel deployment
+        // const arr = prodHost.split('.');
 
         BRANDS_NAMES.every((brand) => {
           const hostIndex = arr.indexOf(brand);

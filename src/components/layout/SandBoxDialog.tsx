@@ -9,12 +9,18 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { useAppContext, useHighlighter } from '~/hooks';
-import { classJoiner, injectVariables } from '~/lib';
-import { PARAM_TYPES } from './httpSnippet/HttpSnippet';
+import { useHighlighter } from '~/hooks';
+import { classJoiner, injectVariables, useFindAttribute } from '~/lib';
 import { Param } from '~/interfaces';
+import { useAppContext } from '~/context/AppProvider';
 
 const tabs = ['Headers', 'Parameters'];
+
+export const PARAM_TYPES = {
+  QUERY: 'QUERY_PARAM',
+  BODY: 'BODY_PARAM',
+  URL: 'BODY_PARAM',
+};
 
 const SandBoxDialog = () => {
   const [
@@ -46,10 +52,24 @@ const SandBoxDialog = () => {
     queryParams: [],
   });
 
-  const ctx = useAppContext();
+  const {
+    setContext,
+    testingData,
+    sandBox,
+    sandBoxApiUrl,
+    showSandBox,
+    injectables,
+    methods,
+    codeBox,
+    scrollbar,
+  } = useAppContext();
+  const { findAttribute } = useFindAttribute({
+    attributes: testingData?.attributes,
+  });
 
   const onClose = () => {
-    ctx?.setContext && ctx?.setContext({ showSandBox: false });
+    setContext({ showSandBox: false });
+
     setState((prev) => ({
       ...prev,
       response: '',
@@ -64,17 +84,19 @@ const SandBoxDialog = () => {
   const response_html = useHighlighter(response_json, 'json');
 
   const sandBoxUrl = useMemo(() => {
-    if (!ctx?.testingData?.url) return '';
-    if (Object.keys(payload).length < 1) return ctx.testingData.url;
+    if (!testingData?.url) return '';
+    if (Object.keys(payload).length < 1) return testingData.url;
 
-    let url = ctx.testingData.url;
+    let url = testingData.url;
 
     if (queryParams.length > 0) {
       url = `${url}?`;
 
       let lastIndex = queryParams.length - 1;
       queryParams.forEach((param, index) => {
-        url = url + param.attributes.name + '=' + `{${param.attributes.name}}`;
+        const attr = findAttribute(testingData.attributes, param);
+
+        url = url + attr?.name + '=' + `{${attr?.name}}`;
 
         if (index !== lastIndex && index > 0) {
           url = url + '&';
@@ -83,7 +105,7 @@ const SandBoxDialog = () => {
     }
 
     return injectVariables(url, payload);
-  }, [payload, ctx?.testingData?.url, queryParams]);
+  }, [payload, testingData?.url, queryParams]);
 
   const onParamChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -100,8 +122,8 @@ const SandBoxDialog = () => {
   const onHeaderChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    if (!ctx || !ctx?.sandBox) return;
-    ctx.setContext({ sandBox: { ...ctx.sandBox, [name]: value } });
+    if (!sandBox) return;
+    setContext({ sandBox: { ...sandBox, [name]: value } });
   };
 
   const showHideSecret = () =>
@@ -113,11 +135,11 @@ const SandBoxDialog = () => {
     setState((prev) => ({ ...prev, isFetching: true }));
 
     const config = {
-      url: `${ctx?.sandBoxApiUrl}${sandBoxUrl}`,
-      method: ctx?.testingData?.method.toLowerCase(),
+      url: `${sandBoxApiUrl}${sandBoxUrl}`,
+      method: testingData?.method.toLowerCase(),
       headers: {
-        'X-Api-Key': ctx?.sandBox?.apiKey,
-        'X-Api-Secret': ctx?.sandBox?.apiSecret,
+        'X-Api-Key': sandBox?.apiKey,
+        'X-Api-Secret': sandBox?.apiSecret,
       },
       data: { ...payload },
     };
@@ -149,16 +171,16 @@ const SandBoxDialog = () => {
   };
 
   useEffect(() => {
-    if (!ctx || !ctx?.testingData?.params?.length) {
+    if (!testingData?.params?.length) {
       return;
     }
 
-    let params = ctx.testingData.params;
+    let params = testingData.params;
 
     let _qp: Param[] = [];
 
     params.forEach((param) => {
-      if (param.attributes.param_type === PARAM_TYPES.QUERY) {
+      if (param.isQueryParam) {
         _qp.push(param);
       }
     });
@@ -166,10 +188,10 @@ const SandBoxDialog = () => {
     if (_qp.length) {
       setState((prev) => ({ ...prev, queryParams: _qp }));
     }
-  }, [ctx?.testingData?.params?.length]);
+  }, [testingData?.params?.length]);
 
   return (
-    <Transition appear show={ctx?.showSandBox} as={Fragment}>
+    <Transition appear show={showSandBox} as={Fragment}>
       <Dialog as='div' className='relative z-50' onClose={onClose}>
         <Transition.Child
           as={Fragment}
@@ -197,21 +219,23 @@ const SandBoxDialog = () => {
               <Dialog.Panel className='w-full min-w-[360px] max-w-2xl transform overflow-clip rounded-xl text-left align-middle shadow-xl transition-all bg-white dark:bg-gray-900'>
                 <div className='w-full flex flex-col'>
                   <div
-                    className={`text-sm flex justify-between items-center px-4 py-2 md:py-3 ${ctx?.dark?.codeBox?.headPrimaryBackground} ${ctx?.light?.codeBox?.headPrimaryBackground}`}
+                    className={classJoiner(
+                      'text-sm flex justify-between items-center px-4 py-2 md:py-3',
+                      codeBox?.headPrimaryBackground,
+                    )}
                   >
                     <div className='flex flex-col md:flex-row md:items-center md:space-x-2'>
                       <span className='text-white'>
-                        {ctx?.identifier} SANDBOX
+                        {injectables?.brand_name} SANDBOX
                       </span>
 
                       <h4
-                        className={`${
-                          ctx?.dark?.methods[ctx?.testingData?.method || '']
-                        } ${
-                          ctx?.light?.methods[ctx?.testingData?.method || '']
-                        } uppercase font-bold`}
+                        className={classJoiner(
+                          methods && methods[testingData?.method ?? ''],
+                          'uppercase font-bold',
+                        )}
                       >
-                        {ctx?.testingData?.method}
+                        {testingData?.method}
                       </h4>
 
                       <code className='truncate text-white dark:text-slate-200 max-w-sm md:max-w-lg'>
@@ -233,10 +257,9 @@ const SandBoxDialog = () => {
                         <button
                           key={idx}
                           className={classJoiner(
-                            'font-bold',
+                            'font-bold text-white px-2 h-8 rounded-md transition-all',
                             currentTab === tab &&
-                              `${ctx?.dark?.codeBox?.headPrimaryBackground} ${ctx?.light?.codeBox?.headPrimaryBackground} 
-                              text-white px-2 h-8 rounded-md transition-all`,
+                              codeBox?.headPrimaryBackground,
                           )}
                           onClick={() =>
                             currentTab !== tab &&
@@ -285,7 +308,7 @@ const SandBoxDialog = () => {
                                 className='border-none focus:outline-none bg-transparent dark:text-white w-full'
                                 autoFocus
                                 onChange={onHeaderChange}
-                                value={ctx?.sandBox?.apiKey || ''}
+                                value={sandBox?.apiKey || ''}
                               />
                             </td>
                           </tr>
@@ -302,7 +325,7 @@ const SandBoxDialog = () => {
                                 type={showSecret ? 'text' : 'password'}
                                 className='border-none focus:outline-none bg-transparent dark:text-white w-full'
                                 onChange={onHeaderChange}
-                                value={ctx?.sandBox?.apiSecret || ''}
+                                value={sandBox?.apiSecret || ''}
                               />
 
                               <span
@@ -323,8 +346,8 @@ const SandBoxDialog = () => {
 
                     {currentTab === tabs[1] && (
                       <form onSubmit={getTestData} className='max-h-[200px]'>
-                        {ctx?.testingData?.params &&
-                        ctx?.testingData?.params.length > 0 ? (
+                        {testingData?.params &&
+                        testingData?.params.length > 0 ? (
                           <table className='table-auto w-full'>
                             <thead>
                               <tr
@@ -343,20 +366,24 @@ const SandBoxDialog = () => {
                             <tbody
                               className={`divide divide-y border-b dark:divide-slate-600 border-slate-200 dark:border-slate-700 `}
                             >
-                              {ctx?.testingData?.params?.map((param, index) => {
+                              {testingData?.params?.map((param, index) => {
+                                const attribute = findAttribute(
+                                  testingData.attributes,
+                                  param,
+                                );
                                 return (
                                   <tr
                                     key={index}
                                     className={`divide divide-x dark:text-gray-300 dark:divide-slate-700 `}
                                   >
                                     <td className='px-4 py-2 space-x-2 whitespace-nowrap'>
-                                      <code>{param.attributes.name}</code>
+                                      <code>{attribute?.name}</code>
                                       <span className='md:hidden text-red-500'>
-                                        {param.attributes.required && '*'}
+                                        {param.required && '*'}
                                       </span>
                                       <span className='text-slate-400 dark:text-slate-500 hidden md:inline-block'>
                                         &#40;
-                                        {param.attributes.required ? (
+                                        {param.required ? (
                                           <code>required</code>
                                         ) : (
                                           <code>optional</code>
@@ -366,12 +393,9 @@ const SandBoxDialog = () => {
                                     </td>
 
                                     <td className='px-4 py-0 bg-zinc-50 dark:bg-black'>
-                                      {param.attributes.data_type ===
-                                      'boolean' ? (
+                                      {attribute?.data_type === 'boolean' ? (
                                         <Switch
-                                          checked={
-                                            payload[param.attributes.name]
-                                          }
+                                          checked={payload[attribute?.name]}
                                           onChange={(value) => {
                                             console.log(value);
 
@@ -379,12 +403,12 @@ const SandBoxDialog = () => {
                                               ...prev,
                                               payload: {
                                                 ...prev.payload,
-                                                [param.attributes.name]: value,
+                                                [attribute?.name]: value,
                                               },
                                             }));
                                           }}
                                           className={`${
-                                            payload[param.attributes.name]
+                                            payload[attribute?.name]
                                               ? 'bg-blue-500'
                                               : 'bg-gray-300'
                                           }
@@ -396,7 +420,7 @@ const SandBoxDialog = () => {
                                           <span
                                             aria-hidden='true'
                                             className={`${
-                                              payload[param.attributes.name]
+                                              payload[attribute?.name]
                                                 ? 'translate-x-6'
                                                 : 'translate-x-0'
                                             }
@@ -405,20 +429,17 @@ const SandBoxDialog = () => {
                                         </Switch>
                                       ) : (
                                         <input
-                                          id={param.attributes.name}
-                                          name={param.attributes.name}
+                                          id={attribute?.name}
+                                          name={attribute?.name}
                                           type={
-                                            param.attributes.data_type ===
-                                            'number'
+                                            attribute?.data_type === 'number'
                                               ? 'number'
                                               : 'text'
                                           }
                                           className='border-none h-10 focus:outline-none bg-transparent dark:text-white w-full placeholder:text-slate-500 dark:placeholder:text-slate-500'
                                           autoFocus={index === 0}
-                                          placeholder={
-                                            param.attributes.data_type
-                                          }
-                                          required={param.attributes.required}
+                                          placeholder={attribute?.data_type}
+                                          required={param.required}
                                           onChange={onParamChange}
                                         />
                                       )}
@@ -437,9 +458,10 @@ const SandBoxDialog = () => {
                         <button
                           disabled={isFetching}
                           type='submit'
-                          className={`text-white w-28 rounded-md transition-all absolute top-[86px] md:top-[54px] right-2 md:right-4 h-9 hover:bg-opacity-75
-                          ${ctx?.dark?.codeBox?.headSecondaryBackground} 
-                          ${ctx?.light?.codeBox?.headSecondaryBackground}`}
+                          className={classJoiner(
+                            'text-white w-28 rounded-md transition-all absolute top-[86px] md:top-[54px] right-2 md:right-4 h-9 hover:bg-opacity-75',
+                            codeBox?.headSecondaryBackground,
+                          )}
                         >
                           {isFetching ? (
                             <span className='animate-pulse'>Sending...</span>
@@ -462,8 +484,11 @@ const SandBoxDialog = () => {
                     <div className={`text-sm bg-gray-800`}>
                       {response ? (
                         <pre
-                          className={`language-json max-h-[400px] overflow-auto text-[12px] text-gray-400 dark:text-slate-400 w-full h-full border-transparent border-none focus:outline-none 
-                          scrollbar scrollbar-w-[10px] scrollbar-h-[10px] ${ctx?.dark?.scrollbar?.thumb} ${ctx?.light?.scrollbar?.thumb} ${ctx?.dark?.scrollbar?.track} ${ctx?.light?.scrollbar?.track}`}
+                          className={classJoiner(
+                            'language-json max-h-[400px] overflow-auto text-[12px] text-gray-400 dark:text-slate-400 w-full h-full border-transparent border-none focus:outline-none scrollbar scrollbar-w-[10px] scrollbar-h-[10px]',
+                            scrollbar?.thumb,
+                            scrollbar?.track,
+                          )}
                         >
                           <code
                             className='w-full h-full'

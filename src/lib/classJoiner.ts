@@ -1,3 +1,3 @@
-export const classJoiner = (...classes: Array<string | boolean>) => {
+export const classJoiner = (...classes: any) => {
   return classes.filter(Boolean).join(' ');
 };
