@@ -1,12 +1,6 @@
 import { IClasses } from '~/context/AppProvider';
 
-export interface IPageContext {
-  root: string;
-  pageTitle: string;
-  baseUrl: string;
-  sandBoxApiUrl: string;
-  dark?: IClasses;
-  light?: IClasses;
+export type Injectables = {
   brand_name?: string;
   app_name?: string;
   brand_support_email?: string;
@@ -16,4 +10,16 @@ export interface IPageContext {
   brand_state?: string;
   brand_postalcode?: string;
   brand_phone?: string;
+  api_url?: {
+    production: string;
+    sandbox: string;
+  };
+};
+
+export interface IPageContext extends IClasses {
+  root: string;
+  pageTitle: string;
+  baseUrl: string;
+  sandBoxApiUrl: string;
+  injectables?: Injectables;
 }

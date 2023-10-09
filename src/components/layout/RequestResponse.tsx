@@ -1,11 +1,13 @@
-import { useAppContext, useHighlighter } from '~/hooks';
+import { useAppContext } from '~/context/AppProvider';
+import { useHighlighter } from '~/hooks';
 import { IService } from '~/interfaces';
+import { classJoiner } from '~/lib';
 
 export default function RequestResponse({ service }: { service: IService }) {
-  const ctx = useAppContext();
+  const { codeBox, methods, scrollbar } = useAppContext();
 
   const response_json = JSON.stringify(
-    service?.attributes.endpoint?.data?.attributes?.response,
+    service?.endpoint?.response?.data,
     undefined,
     2,
   );
@@ -16,48 +18,44 @@ export default function RequestResponse({ service }: { service: IService }) {
     <div className='sticky top-20 space-y-4 w-full'>
       <div className='rounded-[10px] w-full flex flex-col sticky top-20 overflow-clip'>
         <div
-          className={`text-sm flex space-x-2 px-4 py-2 
-          ${ctx?.dark?.codeBox?.headPrimaryBackground} ${ctx?.light?.codeBox?.headPrimaryBackground}`}
+          className={classJoiner(
+            'text-sm flex space-x-2 px-4 py-2',
+            codeBox?.headPrimaryBackground,
+          )}
         >
           <h4
-            className={`${
-              ctx?.dark?.methods[
-                service?.attributes.endpoint?.data.attributes.method
-              ]
-            } 
-            ${
-              ctx?.light?.methods[
-                service?.attributes.endpoint?.data.attributes.method
-              ]
-            }
-            uppercase font-bold`}
+            className={classJoiner(
+              methods && methods[service?.endpoint?.method],
+              'uppercase font-bold',
+            )}
           >
-            {service.attributes.endpoint.data.attributes.method}
+            {service.endpoint.method}
           </h4>
           <span className='text-white dark:text-slate-200'>
-            <code>{service?.attributes?.endpoint?.data?.attributes?.url}</code>
+            <code>{service?.endpoint?.url}</code>
           </span>
         </div>
         <div
-          className={`text-sm flex justify-between space-x-2 px-4 py-2 font-medium text-white dark:text-slate-300 
-          ${ctx?.dark?.codeBox?.headSecondaryBackground} ${ctx?.light?.codeBox?.headSecondaryBackground}`}
+          className={classJoiner(
+            'text-sm flex justify-between space-x-2 px-4 py-2 font-medium text-white dark:text-slate-300',
+            codeBox?.headSecondaryBackground,
+          )}
         >
           <span className='uppercase'>Response</span>
-          <span>
-            {service.attributes.endpoint.data.attributes.response_type}
-          </span>
+          <span>{service.endpoint.response?.type}</span>
         </div>
         <div
-          className={`text-sm rounded-b-md overflow-clip 
-          ${ctx?.light?.codeBox?.contentBackground} ${ctx?.dark?.codeBox?.contentBackground}`}
+          className={classJoiner(
+            'text-sm rounded-b-md overflow-clip',
+            codeBox?.contentBackground,
+          )}
         >
           <pre
-            className={`language-json max-h-[400px] overflow-auto text-[12px] text-gray-400 dark:text-slate-400 
-            w-full h-full border-transparent border-none focus:outline-none
-            scrollbar scrollbar-w-[10px] scrollbar-h-[10px] 
-            ${ctx?.dark?.scrollbar?.thumb} ${ctx?.light?.scrollbar?.thumb} 
-            ${ctx?.dark?.scrollbar?.track} ${ctx?.light?.scrollbar?.track}
-            `}
+            className={classJoiner(
+              'language-json max-h-[400px] overflow-auto text-[12px] text-gray-400 dark:text-slate-400 w-full h-full border-transparent border-none focus:outline-none scrollbar scrollbar-w-[10px] scrollbar-h-[10px]',
+              scrollbar?.thumb,
+              scrollbar?.track,
+            )}
           >
             <code
               className='w-full h-full'

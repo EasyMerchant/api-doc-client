@@ -2,12 +2,14 @@ import Head from 'next/head';
 
 const PageHeader = ({
   pageTitle,
+  route,
   root,
 }: {
-  pageTitle: string;
+  pageTitle?: string;
+  route: string;
   root: string;
 }) => {
-  let title = `API Reference | ${pageTitle}`;
+  let title = pageTitle ? `${pageTitle} | ${route}` : 'Loading...';
 
   return (
     <Head>

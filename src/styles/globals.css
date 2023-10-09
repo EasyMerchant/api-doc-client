@@ -19,3 +19,8 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.dark a,
+.dark strong {
+  color: lightgray;
+}

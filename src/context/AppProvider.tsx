@@ -1,7 +1,8 @@
-import { useState, createContext } from 'react';
-import { Param } from '~/interfaces';
+import { useState, createContext, useContext } from 'react';
+import { Injectables } from '~/config/interface';
+import { Attribute, Param } from '~/interfaces';
 
-const initialState = {
+const initialState: IAuthState = {
   isLoggedIn: false,
   baseUrl: '',
   root: '',
@@ -16,6 +17,7 @@ const initialState = {
     url: '',
     params: [],
     method: '',
+    attributes: [],
   },
 };
 
@@ -24,49 +26,50 @@ interface IMethods {
 }
 
 export interface IClasses {
-  heading: string;
-  codeBox: {
+  heading?: string;
+  paragraphs?: string;
+  codeBox?: {
     headPrimaryBackground?: string;
     headSecondaryBackground?: string;
     contentBackground?: string;
   };
-  divider: {
+  divider?: {
     primary: string;
     secondary: string;
   };
-  pageBackground: string;
-  toolTip: {
+  pageBackground?: string;
+  toolTip?: {
     background: string;
     pointer: string;
   };
-  border: {
+  border?: {
     bottom: string;
   };
-  sidePanel: {
+  sidePanel?: {
     background: string;
     entity: {
       color: string;
       border: string;
     };
-    service: {
+    service?: {
       background: string;
     };
   };
-  darkModeSwitch: {
+  darkModeSwitch?: {
     background: string;
     foreground: string;
   };
-  scrollbar: {
+  scrollbar?: {
     thumb: string;
     track: string;
   };
-  libraryDropDown: {
+  libraryDropDown?: {
     active: {
       background: string;
       color: string;
     };
   };
-  methods: IMethods;
+  methods?: IMethods;
 }
 
 export type SandBoxData = {
@@ -76,32 +79,32 @@ export type SandBoxData = {
 
 export type TestingData = {
   url: string;
-  params: Param[];
+  params: Param[] | undefined;
   method: string;
+  attributes: Attribute[];
 };
 
-export interface IAuthState {
+export interface IAuthState extends IClasses {
   isLoggedIn?: boolean;
   baseUrl?: string;
   root?: string;
-  identifier?: string;
   showSandBox?: boolean;
   sandBoxApiUrl?: string;
   sandBox?: SandBoxData;
   testingData?: TestingData;
-
-  // dark classes
-  dark?: IClasses;
-
-  // light classes
-  light?: IClasses;
+  identifier?: string;
+  injectables?: Injectables;
+  pageTitle?: string;
 }
 
 export interface IAppContext extends IAuthState {
   setContext: (values: IAuthState) => void;
 }
 
-export const AppContext = createContext<IAppContext | undefined>(undefined);
+export const AppContext = createContext<IAppContext>({
+  ...initialState,
+  setContext: () => {},
+});
 
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, setAppContext] = useState<IAuthState>(initialState);
@@ -117,6 +120,10 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
       {children}
     </AppContext.Provider>
   );
+};
+
+export const useAppContext = () => {
+  return useContext(AppContext);
 };
 
 export default AppProvider;

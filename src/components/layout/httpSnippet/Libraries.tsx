@@ -1,6 +1,7 @@
 import { Listbox, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
-import { useAppContext } from '~/hooks';
+import { useAppContext } from '~/context/AppProvider';
+import { classJoiner } from '~/lib';
 
 type Client = {
   name: string;
@@ -20,7 +21,7 @@ export default function LibrarySelect({
   defaultOption?: string;
   selected: Client;
 }) {
-  const ctx = useAppContext();
+  const { libraryDropDown } = useAppContext();
 
   return (
     <Listbox value={selected} onChange={onChange}>
@@ -46,12 +47,10 @@ export default function LibrarySelect({
                 className={({ active }) =>
                   `relative cursor-pointer select-none py-2 px-4 ${
                     active
-                      ? `${ctx?.light?.libraryDropDown?.active?.background} 
-                          ${ctx?.dark?.libraryDropDown?.active?.background}
-                        
-                          ${ctx?.light?.libraryDropDown?.active?.color}
-                          ${ctx?.dark?.libraryDropDown?.active?.color}
-                          `
+                      ? classJoiner(
+                          libraryDropDown?.active?.background,
+                          libraryDropDown?.active?.color,
+                        )
                       : 'text-gray-900 dark:text-gray-300'
                   }
                   ${index === 0 && 'pointer-events-none'}

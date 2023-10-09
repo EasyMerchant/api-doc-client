@@ -29,7 +29,7 @@ export const MainTheme = ({
     if (theme === '') {
       const currentTheme = localStorage.getItem('theme');
 
-      let initialTheme = 'dark';
+      let initialTheme = 'light';
 
       switch (currentTheme) {
         case 'dark':

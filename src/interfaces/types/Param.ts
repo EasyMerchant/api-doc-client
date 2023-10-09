@@ -1,14 +1,15 @@
+import { ChildAttributeItem } from './Attribute';
+
 export type Param = {
-  id: number;
-  attributes: {
-    required: boolean;
+  required: boolean;
+  attributeId?: number | string;
+  isQueryParam?: boolean;
+  isUrlParam?: boolean;
+  custom?: {
     name: string;
-    expanded_description: string;
-    description: string;
     data_type: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    param_type: string;
+    description?: string;
+    child_attributes?: ChildAttributeItem[];
   };
+  all_child_attributes_required?: boolean;
 };
