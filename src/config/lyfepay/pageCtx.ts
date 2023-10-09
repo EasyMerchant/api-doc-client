@@ -2,12 +2,14 @@ import { IPageContext } from '../interface';
 
 const productionBaseUrl = 'https://api.lyfepay.io/api';
 const sandBoxApiUrl = 'https://sandbox-api.sandbox-covenantpay.io/api';
+const cdnUrl = 'https://cdn.lyfepay.io
 
 export const lyfePayPageCtx: IPageContext = {
   root: '/lyfepay',
   pageTitle: 'Lyfecycle Payments',
   baseUrl: productionBaseUrl,
   sandBoxApiUrl: sandBoxApiUrl,
+
   // variables
   injectables: {
     brand_name: 'Lyfecycle PAYMENTS LLC',
@@ -19,6 +21,7 @@ export const lyfePayPageCtx: IPageContext = {
     brand_state: 'Tennessee',
     brand_postalcode: '37027',
     brand_phone: '+1 (615) 933-0910',
+    cdnUrl: cdnUrl,
     api_url: {
       production: productionBaseUrl,
       sandbox: sandBoxApiUrl,
