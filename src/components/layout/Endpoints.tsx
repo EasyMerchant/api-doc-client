@@ -39,7 +39,7 @@ export default function Endpoints({ entity }: { entity: IApiData }) {
                       {ept.method}
                     </span>
                   </td>
-                  <td className='text-black dark:text-white'>
+                  <td className='text-white'>
                     <code>{ept.url}</code>
                   </td>
                 </tr>
