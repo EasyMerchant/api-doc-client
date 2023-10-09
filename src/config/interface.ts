@@ -10,6 +10,7 @@ export type Injectables = {
   brand_state?: string;
   brand_postalcode?: string;
   brand_phone?: string;
+  cdnUrl?: string;
   api_url?: {
     production: string;
     sandbox: string;
