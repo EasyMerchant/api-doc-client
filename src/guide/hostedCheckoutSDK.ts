@@ -43,7 +43,7 @@ export const hostedCheckoutSDK: Guide = {
         {
           paragraph: `This will place customizable 'Pay Now' button on your website or application`,
           image: {
-            src: '{cdnUrl}/paynow.jpg',
+            src: '{cdnUrl}/assets/paynow.jpg',
             alt: 'Hosted Checkout Pay Now Button',
             objectFit: 'cover',
             width: 1214,
