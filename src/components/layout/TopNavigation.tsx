@@ -5,7 +5,7 @@ import { useAppContext } from '~/context/AppProvider';
 const navigation = [
   // { label: 'Home', id: 'home', href: '/' },
   { label: 'API Reference', id: 'api-reference', href: '/' },
-  { label: 'SDK', id: 'sdk', href: '/sdk' },
+  { label: 'User Guide', id: 'user-guide', href: '/user-guide' },
 ];
 export const TopNavigation = () => {
   const router = useRouter();

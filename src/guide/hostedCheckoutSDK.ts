@@ -1,4 +1,4 @@
-import { Guide } from './types';
+import { Guide } from './_types';
 
 export const hostedCheckoutSDK: Guide = {
   id: 'hosted-checkout-sdk',

@@ -1,5 +1,5 @@
 import { useAppContext } from '~/context/AppProvider';
-import { Guide } from '~/guide/types';
+import { Guide } from '~/guide/_types';
 import { classJoiner } from '~/lib';
 import { Paragraph } from './Pargraph';
 import Image from 'next/image';
