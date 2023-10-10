@@ -1,6 +1,6 @@
 import { useAppContext } from '~/context/AppProvider';
 import { Guide } from '~/guide/_types';
-import { classJoiner } from '~/lib';
+import { classJoiner, injectVariables } from '~/lib';
 import { Paragraph } from './Pargraph';
 import Image from 'next/image';
 import { useScrollPosition } from '~/hooks/useScrollPositions';
@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 export const Article = ({ id, title, description, content }: Guide) => {
   useScrollPosition();
-  const { heading, root, border, divider } = useAppContext();
+  const { heading, root, border, divider, injectables } = useAppContext();
   // const [imageHasError, setImageHasError] = useState(false);
   return (
     <div id={id} className='space-y-4'>
@@ -41,7 +41,10 @@ export const Article = ({ id, title, description, content }: Guide) => {
                             style={{
                               objectFit: image.objectFit,
                             }}
-                            src={`${root}${image?.src}`}
+                            src={injectVariables(image.src, {
+                              root,
+                              cdnUrl: injectables?.cdnUrl,
+                            })}
                             alt={image?.alt}
                             className='rounded-lg'
                             width={image.width}

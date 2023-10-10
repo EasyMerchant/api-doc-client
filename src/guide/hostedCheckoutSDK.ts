@@ -18,7 +18,7 @@ export const hostedCheckoutSDK: Guide = {
         {
           paragraph: `To generate your publishable key, click the refresh icon and then copy/paste this key into your hosted checkout integration.`,
           image: {
-            src: '/hosted_checkout.png',
+            src: '{root}/hosted_checkout.png',
             alt: 'Hosted Checkout Dashboard',
             objectFit: 'cover',
             width: 1000,
