@@ -11,7 +11,7 @@ import { useState } from 'react';
 export const Article = ({ id, title, description, content }: Guide) => {
   useScrollPosition();
   const { heading, root, border, divider } = useAppContext();
-  const [imageHasError, setImageHasError] = useState(false);
+  // const [imageHasError, setImageHasError] = useState(false);
   return (
     <div id={id} className='space-y-4'>
       <h1 className={classJoiner(heading, 'text-2xl font-bold')}>{title}</h1>
@@ -36,7 +36,7 @@ export const Article = ({ id, title, description, content }: Guide) => {
                     return (
                       <div key={i} className='space-y-5'>
                         <Paragraph>{paragraph}</Paragraph>
-                        {image && !imageHasError && (
+                        {image && (
                           <Image
                             style={{
                               objectFit: image.objectFit,
@@ -48,7 +48,7 @@ export const Article = ({ id, title, description, content }: Guide) => {
                             height={image.height}
                             onError={(e) => {
                               console.error(e);
-                              setImageHasError(true);
+                              // setImageHasError(true);
                             }}
                           />
                         )}
