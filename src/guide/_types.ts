@@ -13,13 +13,16 @@ type Content = {
 };
 
 type ContentDescription = {
-  paragraph: string;
-  image?: {
-    src: string;
-    alt: string;
-    objectFit: 'contain' | 'cover' | 'fill';
-    width: number;
-    height: number;
-  };
+  paragraph?: string;
+  image?: ImageType;
   list?: { ordered?: string[]; unOrdered?: string[] };
+  snippet?: string;
+};
+
+export type ImageType = {
+  src: string;
+  alt: string;
+  objectFit: 'contain' | 'cover' | 'fill';
+  width: number;
+  height: number;
 };

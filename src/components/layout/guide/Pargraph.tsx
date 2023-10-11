@@ -2,7 +2,7 @@ import { useAppContext } from '~/context/AppProvider';
 import { classJoiner, injectVariables } from '~/lib';
 
 export const Paragraph = ({ children }: { children: string }) => {
-  const { paragraphs, injectables } = useAppContext();
+  const { paragraphs, injectables, root } = useAppContext();
 
   return (
     <p
@@ -11,7 +11,10 @@ export const Paragraph = ({ children }: { children: string }) => {
         paragraphs,
       )}
       dangerouslySetInnerHTML={{
-        __html: injectVariables(children, { ...injectables }),
+        __html: injectVariables(children, {
+          root: `${window.location.origin}/${root}`,
+          ...injectables,
+        }),
       }}
     />
   );

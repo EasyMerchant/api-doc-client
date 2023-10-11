@@ -1,16 +1,16 @@
 import { useAppContext } from '~/context/AppProvider';
 import { Guide } from '~/guide/_types';
-import { classJoiner, injectVariables } from '~/lib';
+import { classJoiner } from '~/lib';
 import { Paragraph } from './Pargraph';
-import Image from 'next/image';
 import { useScrollPosition } from '~/hooks/useScrollPositions';
 import { OrderedList } from './OrderedList';
 import { UnorderedList } from './UnorderedList';
-import { useState } from 'react';
+import { ArticleImage } from './ArticleImage';
+import { ArticleSnippet } from './ArticleSnippet';
 
 export const Article = ({ id, title, description, content }: Guide) => {
   useScrollPosition();
-  const { heading, root, border, divider, injectables } = useAppContext();
+  const { heading, border, divider } = useAppContext();
   // const [imageHasError, setImageHasError] = useState(false);
   return (
     <div id={id} className='space-y-4'>
@@ -32,43 +32,28 @@ export const Article = ({ id, title, description, content }: Guide) => {
                     {title}
                   </h2>
 
-                  {description?.map(({ paragraph, image, list }, i) => {
-                    return (
-                      <div key={i} className='space-y-5'>
-                        <Paragraph>{paragraph}</Paragraph>
-                        {image && (
-                          <Image
-                            style={{
-                              objectFit: image.objectFit,
-                            }}
-                            src={injectVariables(image.src, {
-                              root,
-                              cdnUrl: injectables?.cdnUrl,
-                            })}
-                            alt={image?.alt}
-                            className='rounded-lg'
-                            width={image.width}
-                            height={image.height}
-                            onError={(e) => {
-                              console.error(e);
-                              // setImageHasError(true);
-                            }}
-                          />
-                        )}
-                        {list && (
-                          <div>
-                            {list.ordered && (
-                              <OrderedList list={list.ordered} />
-                            )}
+                  {description?.map(
+                    ({ paragraph, image, list, snippet }, i) => {
+                      return (
+                        <div key={i} className='space-y-5'>
+                          {paragraph && <Paragraph>{paragraph}</Paragraph>}
+                          {image && <ArticleImage {...image} />}
+                          {snippet && <ArticleSnippet snippet={snippet} />}
+                          {list && (
+                            <div>
+                              {list.ordered && (
+                                <OrderedList list={list.ordered} />
+                              )}
 
-                            {list.unOrdered && (
-                              <UnorderedList list={list.unOrdered} />
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
+                              {list.unOrdered && (
+                                <UnorderedList list={list.unOrdered} />
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    },
+                  )}
                 </div>
               );
             })}
