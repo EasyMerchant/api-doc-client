@@ -12,9 +12,9 @@ export const officialPlugins: Guide = {
         {
           paragraph: `Download and install the {app_name} addon for GiveWP from <a href=“{cdnUrl}/downloads/givewp-em-plugin.zip”>{cdnUrl}/downloads/givewp-em-plugin.zip.</a> `,
         },
-	 {
-	    paragraph: ‘Once the {app_name} for GiveWP is activated, go to Donations -> Settings -> Payment Gateways.’,
-	},
+   {
+      paragraph: ‘Once the {app_name} for GiveWP is activated, go to Donations -> Settings -> Payment Gateways.’,
+  },
         {
           paragraph: `Click on {app_name}, Enter your Publishable Key, found in your {app_name} Dashboard and Add checkout heading text. here`,
           image: {
@@ -25,9 +25,9 @@ export const officialPlugins: Guide = {
             height: 600,
           },
         },
-	  {
-		paragraph: '{app_name} will be displayed on the donation form as a payment option.',
-		image: {
+    {
+    paragraph: '{app_name} will be displayed on the donation form as a payment option.',
+    image: {
             src: '{cdnUrl}/assets/Donate-Now-givewp.png’,
             alt: ‘Donate Now GiveWP’,
             objectFit: 'cover',
@@ -35,12 +35,13 @@ export const officialPlugins: Guide = {
             height: 600,
           },
           },  
-      ],	    
-    },
+      ],      
+
 
     {
       id: ‘woocommerce’,
       title: ‘Woocommerce’,
     },
+  },
   ],
 };
