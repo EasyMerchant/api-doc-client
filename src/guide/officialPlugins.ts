@@ -7,7 +7,7 @@ export const officialPlugins: Guide = {
   content: [
     {
       id: ‘give-wp’,
-      title: ‘GiveWP,
+      title: ‘GiveWP',
       description: [
         {
           paragraph: `Download and install the {app_name} addon for GiveWP from <a href=“{cdnUrl}/downloads/givewp-em-plugin.zip”>{cdnUrl}/downloads/givewp-em-plugin.zip.</a> `,
