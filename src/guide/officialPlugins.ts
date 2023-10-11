@@ -26,6 +26,15 @@ description: [
             height: 600,
           },
         },
+	  {
+		paragraph: '{app_name} will be displayed on the donation form as a payment option.',
+		image: {
+            src: '{cdnUrl}/assets/Donate-Now-givewp.png’,
+            alt: ‘Donate Now GiveWP’,
+            objectFit: 'cover',
+            width: 1000,
+            height: 600,
+          },  
       ],
     {
       id: ‘woocommerce’,
