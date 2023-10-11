@@ -10,7 +10,7 @@ export const officialPlugins: Guide = {
       title: 'GiveWP',
       description: [
         {
-          paragraph: 'Download and install the {app_name} addon for GiveWP from <a href=“{cdnUrl}/downloads/givewp-em-plugin.zip”>{cdnUrl}/downloads/givewp-em-plugin.zip.</a>"',
+          paragraph: 'Download and install the {app_name} addon for GiveWP from <a href="{cdnUrl}/downloads/givewp-em-plugin.zip">{cdnUrl}/downloads/givewp-em-plugin.zip.</a>',
         },
    {
       paragraph: 'Once the {app_name} for GiveWP is activated, go to Donations -> Settings -> Payment Gateways.',
