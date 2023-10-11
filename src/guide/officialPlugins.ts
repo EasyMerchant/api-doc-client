@@ -16,7 +16,7 @@ export const officialPlugins: Guide = {
       paragraph: 'Once the {app_name} for GiveWP is activated, go to Donations -> Settings -> Payment Gateways.',
   },
         {
-          paragraph: 'Click on {app_name}, Enter your Publishable Key, found in your {app_name} Dashboard and Add checkout heading text. here',
+          paragraph: 'Click on {app_name}, Enter your Publishable Key, found in your {app_name} Dashboard and Add checkout heading text.',
           image: {
             src: '{cdnUrl}/assets/givewp-settings.png',
             alt: 'GiveWP Settings',
@@ -36,12 +36,11 @@ export const officialPlugins: Guide = {
           },
           },  
       ],      
-
+    },
 
     {
       id: 'woocommerce',
       title: 'Woocommerce',
     },
-  },
   ],
 };
