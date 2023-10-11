@@ -14,7 +14,7 @@ description: [
           paragraph: `Download and install the {app_name} addon for GiveWP from <a href=“{cdnUrl}/downloads/givewp-em-plugin.zip”>{cdnUrl}/downloads/givewp-em-plugin.zip.</a> `,
         },
 	 {
-	    paragraph: ‘Once the {app_name} anon for GiveWP is activated, go to Donations -> Settings -> Payment Gateways.’,
+	    paragraph: ‘Once the {app_name} for GiveWP is activated, go to Donations -> Settings -> Payment Gateways.’,
 	},
         {
           paragraph: `Click on {app_name}, Enter your Publishable Key, found in your {app_name} Dashboard and Add checkout heading text. here`,
