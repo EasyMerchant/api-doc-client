@@ -8,8 +8,7 @@ export const officialPlugins: Guide = {
     {
       id: ‘give-wp’,
       title: ‘GiveWP,
-    },
-description: [
+      description: [
         {
           paragraph: `Download and install the {app_name} addon for GiveWP from <a href=“{cdnUrl}/downloads/givewp-em-plugin.zip”>{cdnUrl}/downloads/givewp-em-plugin.zip.</a> `,
         },
@@ -35,7 +34,9 @@ description: [
             width: 1000,
             height: 600,
           },  
-      ],
+      ],	    
+    },
+
     {
       id: ‘woocommerce’,
       title: ‘Woocommerce’,
