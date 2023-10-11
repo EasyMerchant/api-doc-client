@@ -33,6 +33,7 @@ export const officialPlugins: Guide = {
             objectFit: 'cover',
             width: 1000,
             height: 600,
+          },
           },  
       ],	    
     },
