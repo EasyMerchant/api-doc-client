@@ -1,7 +1,7 @@
 import { IPageContext } from '../interface';
 
 const productionBaseUrl = 'https://api.lyfepay.io/api';
-const sandBoxApiUrl = 'https://sandbox-api.sandbox-covenantpay.io/api';
+const sandBoxApiUrl = 'https://sandbox-api.sandbox-lyfepay.io/api';
 const cdnUrl = 'https://cdn.lyfepay.io';
 
 export const lyfePayPageCtx: IPageContext = {
