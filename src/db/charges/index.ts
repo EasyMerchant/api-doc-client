@@ -7,7 +7,7 @@ export const charges: IApiData = {
   controller: 'charges',
   defaultOpen: true,
   description: [
-    `The Charge object represents a single attempt to move money into your account. Some legacy payment flows create Charges directly, which is not recommended for new integrations.`,
+    `The Charge object represents a single attempt to move money into your account.`,
   ],
   attributes,
   services,
