@@ -6,16 +6,12 @@ export const testInfo: Guide = {
   defaultOpen: true,
   content: [
     {
-      id: 'payments',
-      title: 'Payments',
+      id: 'testcards',
+      title: 'Test Cards',
     },
     {
-      id: 'onramp-offramp',
-      title: 'Onramp / Offramp',
-    },
-    {
-      id: 'wallets',
-      title: 'Wallets',
+      id: 'testach',
+      title: 'Test ACH Accounts',
     },
   ],
 };
