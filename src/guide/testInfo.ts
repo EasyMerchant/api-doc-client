@@ -53,7 +53,7 @@ export const testInfo: Guide = {
             description: [
         {
           paragraph: `As a default, any 7 digit account and routing number except an explicit decline simulation as below will successfully submit as an ACH transaction. ACH transactions are not immediately declined and need to proceed through clearing before they are.`
-        }    
+        },    
         {
           paragraph: `Simulated Decline: DDA 123456789 and routing number 987654321`,
         },
