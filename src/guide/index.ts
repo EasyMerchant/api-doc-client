@@ -4,6 +4,7 @@ import { webhooks } from './webhooks';
 import { officialPlugins } from './officialPlugins';
 import { crypto } from './crypto';
 import { kyc } from './kyc';
+import { testInfo } from './testInfo';
 
 export const guide: Guide[] = [
   hostedCheckoutSDK, // first item in navigation
@@ -11,6 +12,7 @@ export const guide: Guide[] = [
   officialPlugins,
   crypto,
   kyc,
+  testInfo,
 ];
 
 // SDKs
