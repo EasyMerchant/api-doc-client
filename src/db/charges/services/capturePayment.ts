@@ -18,8 +18,9 @@ export const capturePayment: IService = {
     response: {
       type: 'application/json',
       data: {
-        status: true,
-        message: 'Payment captured',
+        "status": true,
+        "message": "payment captured successfully!",
+        "charge_id": "cha_6553b533cff4d5114"
       },
     },
   },

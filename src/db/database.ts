@@ -7,8 +7,9 @@ import { customer } from './customer';
 import { charges } from './charges';
 import { invoices } from './invoices';
 import { refunds } from './refunds';
-import { terminal } from './terminal';
 import { vendors } from './vendors';
+import { subscription } from './subscription';
+import { accounts } from './accounts';
 
 export const data: IApiData[] = [
   introduction,
@@ -16,9 +17,10 @@ export const data: IApiData[] = [
   error_codes,
   customer,
   cards,
+  accounts,
   charges,
+  subscription,
   invoices,
   refunds,
-  terminal,
   vendors,
 ];

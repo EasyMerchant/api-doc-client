@@ -11,6 +11,14 @@ export const createAchCharge: IService = {
     url: '/v1/ach/charges',
     params: [
       {
+        required: false,
+        attributeId: 'start_date',
+      },
+      {
+        required: false,
+        attributeId: 'invoice_num',
+      },
+      {
         required: true,
         attributeId: 'charge_amount',
       },
@@ -21,6 +29,18 @@ export const createAchCharge: IService = {
       {
         required: true,
         attributeId: 'charge_description',
+      },
+      {
+        required: true,
+        attributeId: 'payment_type',
+      },
+      {
+        required: true,
+        attributeId: 'interval',
+      },
+      {
+        required: true,
+        attributeId: 'allowed_cycles',
       },
       {
         required: true,
@@ -38,6 +58,38 @@ export const createAchCharge: IService = {
         required: true,
         attributeId: 'entry_class_code',
       },
+      {
+        required: false,
+        attributeId: 'metadata',
+      },
+      {
+        required: true,
+        attributeId: 'customer_id',
+      },
+      {
+        required: true,
+        attributeId: 'charge_name',
+      },
+      {
+        required: true,
+        attributeId: 'charge_currency',
+      },
+      {
+        required: false,
+        attributeId: 'charge_email',
+      },
+      {
+        required: false,
+        attributeId: 'charge_save_account',
+      },
+      {
+        required: false,
+        attributeId: 'charge_is_default',
+      },
+      {
+        required: false,
+        attributeId: 'charge_payment_mode',
+      }
     ],
     response: {
       type: 'application/json',

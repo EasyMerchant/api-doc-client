@@ -32,7 +32,7 @@ export const saveCard: IService = {
       },
       {
         required: true,
-        attributeId: 'customer',
+        attributeId: 'customer_id',
       },
     ],
     response: {
