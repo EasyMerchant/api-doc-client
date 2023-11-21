@@ -13,19 +13,29 @@ export const listAllCustomers: IService = {
     response: {
       type: 'application/json',
       data: {
-        Cards: [
+        "status": true,
+        "message": "Customer data is retrieved successfully. ",
+        "customer": [
           {
-            card_id: 'card_6419b2334a7d2',
-            card_type: 'live_card',
-            cc_last_4: '4242',
-            is_default: '1',
-            customer_id: 'cus_631394fb135745160',
-            cc_valid_thru: '04/2030',
+            "id": "5577",
+            "user_id": "cus_654f1f4d1ad655114",
+            "client_id": "5114",
+            "username": "BalajiQA830",
+            "name": "BalajiQA",
+            "email": "qa.balaji.s@gmail.com",
+            "active": "1"
           },
+          {
+            "id": "5554",
+            "user_id": "cus_652ab7c755ff15114",
+            "client_id": "5114",
+            "username": "jimrising123612",
+            "name": "Jim",
+            "email": "jimrising14@easymerchant.io",
+            "active": "1"
+          }
         ],
-        status: true,
-        message: 'Credit card details retrieved successfully. ',
-        total_rows: 1,
+        "total": 2,
       },
     },
   },

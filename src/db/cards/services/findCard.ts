@@ -12,24 +12,25 @@ export const findCard: IService = {
     params: [
       {
         required: true,
-        attributeId: 'card_id',
+        attributeId: 'customer_id',
         isQueryParam: true,
       },
     ],
     response: {
       type: 'application/json',
       data: {
-        Card: {
-          card_id: 'card_6419b2334a7d2',
-          card_type: 'live_card',
-          cc_last_4: '4242',
-          is_default: '1',
-          customer_id: 'cus_631394fb135745160',
-          cc_valid_thru: '04/2030',
+        "status": true,
+        "message": "Credit card details retrieved successfully. ",
+        "Card": {
+          "customer_id": "cus_6545295127abe5114",
+          "card_id": "card_654f142e6be56",
+          "cc_last_4": "1112",
+          "cc_valid_thru": "07/2029",
+          "is_default": "1",
+          "card_type": "live_card",
+          "card_brand_name": "Visa"
         },
-        status: true,
-        message: 'Credit card details retrieved successfully. ',
-        total_row: 1,
+        "total_row": 1
       },
     },
   },

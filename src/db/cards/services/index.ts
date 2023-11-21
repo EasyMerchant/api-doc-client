@@ -7,5 +7,5 @@ export const services: IService[] = [
   // list array items serial wise
   listCards,
   findCard,
-  saveCard,
+  saveCard
 ];

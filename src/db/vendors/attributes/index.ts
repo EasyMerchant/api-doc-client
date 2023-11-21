@@ -22,7 +22,7 @@ export const attributes: Attribute[] = [
   },
   {
     id: 'vendor_lastName',
-    name: 'lasstName',
+    name: 'lastName',
     data_type: 'string',
     description: 'The given last name of the vendor',
   },

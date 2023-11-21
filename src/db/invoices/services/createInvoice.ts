@@ -11,8 +11,36 @@ export const createInvoice: IService = {
     url: '/v1/invoices',
     params: [
       {
-        required: true,
-        attributeId: 'invoice_customer',
+        required: false,
+        attributeId: 'name',
+      },
+      {
+        required: false,
+        attributeId: 'email',
+      },
+      {
+        required: false,
+        attributeId: 'username',
+      },
+      {
+        required: false,
+        attributeId: 'address',
+      },
+      {
+        required: false,
+        attributeId: 'city',
+      },
+      {
+        required: false,
+        attributeId: 'state',
+      },
+      {
+        required: false,
+        attributeId: 'zip',
+      },
+      {
+        required: false,
+        attributeId: 'country',
       },
       {
         required: true,
@@ -23,16 +51,24 @@ export const createInvoice: IService = {
         attributeId: 'invoice_date_due',
       },
       {
+        required: false,
+        attributeId: 'invoice_send_now',
+      },
+      {
         required: true,
         attributeId: 'invoice_payment_mode',
       },
       {
         required: true,
-        attributeId: 'invoice_payment_type',
+        attributeId: 'invoice_currency',
+      },
+      {
+        required: false,
+        attributeId: 'invoice_items',
       },
       {
         required: true,
-        attributeId: 'invoice_currency',
+        attributeId: 'invoice_payment_type',
       },
       {
         required: true,
@@ -52,17 +88,33 @@ export const createInvoice: IService = {
       },
       {
         required: true,
+        attributeId: 'routing_number',
+      },
+      {
+        required: true,
+        attributeId: 'account_number',
+      },
+      {
+        required: true,
+        attributeId: 'account_type',
+      },
+      {
+        required: true,
         attributeId: 'invoice_cardholder_name',
       },
       {
-        required: false,
-        attributeId: 'invoice_items',
+        required: true,
+        attributeId: 'invoice_customer',
       },
       {
         required: false,
-        attributeId: 'invoice_send_now',
+        attributeId: 'cheque_number',
       },
-    ],
+      {
+        required: false,
+        attributeId: 'cheque_notes',
+      },
+   ],
     response: {
       type: 'application/json',
       data: {

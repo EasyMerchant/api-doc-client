@@ -1,15 +1,23 @@
 import { IService } from '~/interfaces';
 
-export const authorizePayment: IService = {
-  id: 'authorize_payent',
-  name: 'Authorize Payment',
+export const createCardCharge: IService = {
+  id: 'create_card_charge',
+  name: 'Create Card Charge',
   description: [
-    `Authorization specifically involves contacting the payment system and blocking the required amount of funds against the credit card.`,
+    `This service allows capturing one time and recurring payments through bank account directly.`,
   ],
   endpoint: {
     method: 'post',
     url: '/v1/charges',
     params: [
+      {
+        required: false,
+        attributeId: 'start_date',
+      },
+      {
+        required: false,
+        attributeId: 'invoice_num',
+      },
       {
         required: false,
         attributeId: 'charge_payment_mode',
@@ -54,17 +62,28 @@ export const authorizePayment: IService = {
         required: true,
         attributeId: 'charge_amount',
       },
-
       {
         required: true,
         attributeId: 'charge_description',
+      },
+      {
+        required: true,
+        attributeId: 'payment_type',
+      },
+      {
+        required: true,
+        attributeId: 'interval',
+      },
+      {
+        required: true,
+        attributeId: 'allowed_cycles',
       },
       {
         required: false,
         attributeId: 'metadata',
       },
       {
-        required: true,
+        required: true ,
         attributeId: 'customer_id',
       },
       {
@@ -74,15 +93,15 @@ export const authorizePayment: IService = {
       {
         required: false,
         attributeId: 'charge_is_default',
-      },
+      }
     ],
     response: {
       type: 'application/json',
       data: {
-        "status": true,
-        "message": "Authorized payment successfully. ",
-        "charge_id": "cha_6553b45d46e705114",
-        "data": "NA"
+        data: 'NA',
+        status: true,
+        message: 'Payment processed successfully. ',
+        charge_id: 'cha_6424fb2a14a475160',
       },
     },
   },

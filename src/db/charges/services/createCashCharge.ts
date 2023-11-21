@@ -1,10 +1,10 @@
 import { IService } from '~/interfaces';
 
-export const authorizePayment: IService = {
-  id: 'authorize_payent',
-  name: 'Authorize Payment',
+export const createCashCharge: IService = {
+  id: 'create_cash_charge',
+  name: 'Create Cash Charge',
   description: [
-    `Authorization specifically involves contacting the payment system and blocking the required amount of funds against the credit card.`,
+    `This service allows capturing one time and recurring payments through bank account directly.`,
   ],
   endpoint: {
     method: 'post',
@@ -15,20 +15,8 @@ export const authorizePayment: IService = {
         attributeId: 'charge_payment_mode',
       },
       {
-        required: true,
-        attributeId: 'charge_card_number',
-      },
-      {
-        required: true,
-        attributeId: 'charge_exp_month',
-      },
-      {
-        required: true,
-        attributeId: 'charge_exp_year',
-      },
-      {
-        required: true,
-        attributeId: 'charge_cvc',
+        required: false,
+        attributeId: 'charge_payment_method',
       },
       {
         required: true,
@@ -48,13 +36,8 @@ export const authorizePayment: IService = {
       },
       {
         required: true,
-        attributeId: 'username',
-      },
-      {
-        required: true,
         attributeId: 'charge_amount',
       },
-
       {
         required: true,
         attributeId: 'charge_description',
@@ -66,23 +49,15 @@ export const authorizePayment: IService = {
       {
         required: true,
         attributeId: 'customer_id',
-      },
-      {
-        required: false,
-        attributeId: 'charge_save_card',
-      },
-      {
-        required: false,
-        attributeId: 'charge_is_default',
-      },
+      }
     ],
     response: {
       type: 'application/json',
       data: {
-        "status": true,
-        "message": "Authorized payment successfully. ",
-        "charge_id": "cha_6553b45d46e705114",
-        "data": "NA"
+        data: 'NA',
+        status: true,
+        message: 'Payment processed successfully. ',
+        charge_id: 'cha_6424fb2a14a475160',
       },
     },
   },
