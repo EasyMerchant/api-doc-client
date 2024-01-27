@@ -197,5 +197,23 @@ export const attributes: Attribute[] = [
     name: 'allowed_cycles',
     data_type: 'string',
     description: `This attribute is required when the invoice is created for the subscription. The attribute value should contains only numbers.`,
+  },
+  {
+    id: 'card_id',
+    name: 'card_id',
+    data_type: 'string',
+    description: `This attribute is required when invoice is created for existing customer with saved card.`,
+  },
+  {
+    id: 'save_card',
+    name: 'save_card',
+    data_type: 'number',
+    description: `It is to save the current card that was used to capture the payment for future use. The value can be either '0' or '1'. It is used when the payment method is 'Card'. The Value '1' will Save the creating card.`,
+  },
+  {
+    id: 'is_default',
+    name: 'is_default',
+    data_type: 'number',
+    description: `It is to save the newly added account or card to set default to make payments. The value can be either '0' or '1'. The Value '1' will make the creating account or card is set to default.`,
   }
 ];

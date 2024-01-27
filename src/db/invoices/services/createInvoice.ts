@@ -114,6 +114,18 @@ export const createInvoice: IService = {
         required: false,
         attributeId: 'cheque_notes',
       },
+      {
+        required: false,
+        attributeId: 'card_id',
+      },
+      {
+        required: false,
+        attributeId: 'save_card',
+      },
+      {
+        required: false,
+        attributeId: 'is_default',
+      }
    ],
     response: {
       type: 'application/json',

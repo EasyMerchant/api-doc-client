@@ -4,7 +4,7 @@ export const listAllCharges: IService = {
   id: 'list_all_charges',
   name: 'List All Charges',
   description: [
-    `Returns a list of charges you've previously created. The charges are returned in sorted order, with the most recent charges appearing first. List of charges will be irrespective of Card, ACH, Cash, & Check and Authorize card only or Authorize and Capture Payment. It can return the charges based on the filter applied. The filter options are as follows invoice_num, mode, payment_mode, Card_number, exp_month, exp_year, cvc, cardholder_name. 
+    `Returns a list of charges you've previously created. The charges are returned in sorted order, with the most recent charges appearing first. List of charges will be irrespective of Card, ACH, Cash, & Check and Authorize card only or Authorize and Capture Payment. It can return the charges based on the filter applied. The filter can be applied for type of charges like invoice, crypto, Virtual Terminal and status of the charge (Paid, Paid Unsettled, Refund, Partial Refund, Uncaptured, Declined, Canceled, Void), Customer name, Customer email, Date Created & metadata.
     `,
   ],
   endpoint: {

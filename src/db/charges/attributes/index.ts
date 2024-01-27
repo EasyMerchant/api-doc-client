@@ -173,18 +173,18 @@ export const attributes: Attribute[] = [
     id: 'interval',
     name: 'interval',
     data_type: 'string',
-    description: `This attribute is required when the charge is created for the subscription. The attribute value can be either 'daily', 'weekly', 'monthly', 'quartely' & 'yearly'.'`,
+    description: `This attribute is required when the charge is created for the subscription. The attribute value can be either 'daily', 'weekly', 'monthly', 'quartely' & 'yearly'. If the payment method is ach then daily interval will not be displayed.'`,
   },
   {
     id: 'allowed_cycles',
     name: 'allowed_cycles',
     data_type: 'string',
-    description: `This attribute is required when the charge is created for the subscription. The attribute value should contains only numbers.`,
+    description: `This attribute is required when the charge is created for the subscription. The attribute value should contains only numbers. If it is mentioned as '0' then it will be considered as infinite cycles`,
   },
   {
     id: 'start_date',
     name: 'start_date',
     data_type: 'date',
-    description: `The start date of the invoice is required for the payment type 'recurring'. The start date can be either current date or future date. The Subscription starts renewal based on the start date.`,
+    description: `The start date of the invoice is required for the payment type 'recurring'. The start date can be either current date or future date. The Subscription starts renewal based on the start date and start date is based on the time zone set in the users > My account.`,
   }
 ];
