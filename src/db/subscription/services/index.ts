@@ -6,6 +6,8 @@ import { findSubscription } from './findSubscription';
 import { subscriptionSuspend } from './subscriptionSuspend';
 import { subscriptionResume } from './subscriptionResume';
 import { subscriptionCancel } from './subscriptionCancel';
+import { updateCard } from './updateCard';
+import { updateAccount } from './updateAccount';
 
 export const services: IService[] = [
   // list array items serial wise
@@ -14,5 +16,7 @@ export const services: IService[] = [
   subscriptionRenew,
   subscriptionSuspend,
   subscriptionResume,
-  subscriptionCancel
+  subscriptionCancel,
+  updateCard,
+  updateAccount
 ];

@@ -24,7 +24,7 @@ export const saveCard: IService = {
       },
       {
         required: true,
-        attributeId: 'exp_month',
+        attributeId: 'exp_year',
       },
       {
         required: true,
