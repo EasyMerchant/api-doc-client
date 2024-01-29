@@ -11,6 +11,7 @@ import { vendors } from './vendors';
 import { subscription } from './subscription';
 import { accounts } from './accounts';
 import { paymentintent } from './paymentIntent';
+import { hostedPaymentPage } from './hostedPaymentPage';
 
 export const data: IApiData[] = [
   introduction,
@@ -24,5 +25,6 @@ export const data: IApiData[] = [
   invoices,
   refunds,
   paymentintent,
+  hostedPaymentPage,
   vendors,
 ];
