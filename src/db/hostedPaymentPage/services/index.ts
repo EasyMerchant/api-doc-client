@@ -4,6 +4,7 @@ import { hostedPaymentPageAdd } from './hostedPaymentPageAdd';
 import { hostedPaymentPageUpdate } from './hostedPaymentPageUpdate';
 import { hostedPaymentPageDelete } from './hostedPaymentPageDelete';
 import { getHostedPaymentPage } from './getHostedPaymentPage';
+import { activateHostedPaymentPage } from './activateHostedPaymentPage';
 
 
 export const services: IService[] = [
@@ -12,5 +13,6 @@ export const services: IService[] = [
   hostedPaymentPageAdd,
   hostedPaymentPageUpdate,
   hostedPaymentPageDelete,
-  getHostedPaymentPage
+  getHostedPaymentPage,
+  activateHostedPaymentPage
 ];
