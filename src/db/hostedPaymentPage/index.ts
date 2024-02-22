@@ -3,8 +3,8 @@ import { attributes } from './attributes';
 import { services } from './services';
 
 export const hostedPaymentPage: IApiData = {
-  name: 'hostedPaymentPage',
-  controller: 'hostedPaymentPage',
+  name: 'Hosted Payment Page',
+  controller: 'Hosted Payment Page',
   defaultOpen: true,
   description: [
     `Accept a payment without building additional standalone websites or applications with Payment Links. Share the link as many times as you want on social media, in emails, or on your website.
