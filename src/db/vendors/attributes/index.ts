@@ -2,6 +2,12 @@ import { Attribute } from '~/interfaces';
 
 export const attributes: Attribute[] = [
   {
+    id: 'name',
+    name: 'name',
+    data_type: 'string',
+    description: 'The name of the new Vendor you are creating.',
+  },
+  {
     id: 'vendor_id',
     name: 'vendor_id',
     data_type: 'bigint',
@@ -18,43 +24,55 @@ export const attributes: Attribute[] = [
     id: 'vendor_firstName',
     name: 'firstName',
     data_type: 'string',
-    description: 'The given first name of the vendor',
+    description: 'The first name of the Vendor’s owner you are creating.',
   },
   {
     id: 'vendor_lastName',
     name: 'lastName',
     data_type: 'string',
-    description: 'The given last name of the vendor',
+    description: 'The last name of the Vendor’s owner you are creating.',
   },
   {
     id: 'vendor_personalIdentificationNumber',
     name: 'personalIdentificationNumber',
     data_type: 'string',
-    description: '',
+    description: 'It refers to the identification number of the vendor’s owner. It accepts only numbers',
   },
   {
     id: 'vendor_driverLicenseNumber',
     name: 'driverLicenseNumber',
     data_type: 'string',
-    description: '',
+    description: 'It refers to the driver license number of the vendor’s owner. It accepts only numbers',
   },
   {
     id: 'vendor_principal',
     name: 'vendorPrincipal',
     data_type: 'array',
-    description: '',
+    description: 'It contains the details of the Vendors owner',
+  },
+  {
+    id: 'commissionPercent',
+    name: 'commissionPercent',
+    data_type: 'string',
+    description: 'It refers to the commission percent to the vendor. It allows only numbers',
+  },
+  {
+    id: 'commissionAmount',
+    name: 'commissionAmount',
+    data_type: 'array',
+    description: 'It refers to the commission amount to the vendor. It allows only numbers',
   },
   {
     id: 'vendor_agreement',
     name: 'vendorAgreement',
     data_type: 'array',
-    description: '',
+    description: 'It contains commission details of the vendor',
   },
   {
     id: 'vendor_payoutInfo',
     name: 'payoutInfo',
     data_type: 'array',
-    description: '',
+    description: 'It contains bank details of the vendor',
   },
   {
     id: 'vendor_payoutType',
@@ -91,6 +109,66 @@ export const attributes: Attribute[] = [
     name: 'zip',
     data_type: 'string',
     description: 'Zip/Postal code of vendor bank. Maximum 10 characters.',
+  },
+  {
+    id: 'address',
+    name: 'address',
+    data_type: 'string',
+    description: 'Street address of vendor. Maximum 60 characters.',
+  },
+  {
+    id: 'state',
+    name: 'state',
+    data_type: 'string',
+    description: 'State & Province code.',
+  },
+  {
+    id: 'city',
+    name: 'city',
+    data_type: 'string',
+    description: 'City of vendor. Maximum 40 characters.',
+  },
+  {
+    id: 'zip',
+    name: 'zip',
+    data_type: 'string',
+    description: 'Zip/Postal code of vendor bank. Maximum 10 characters.',
+  },
+  {
+    id: 'amount',
+    name: 'amount',
+    data_type: 'string',
+    description: 'Amount intended to be collected by this PaymentIntent. A positive integer representing how much to charge in the smallest currency unit',
+  },
+  {
+    id: 'currency',
+    name: 'currency',
+    data_type: 'string',
+    description: 'Three-letter ISO currency code, in lowercase. Ex: usd',
+  },
+  {
+    id: 'payment_method',
+    name: 'payment_method',
+    data_type: 'string',
+    description: 'The list of payment method types (e.g. card, ach, cash, cheque) that this charge is allowed to use.',
+  },
+  {
+    id: 'description',
+    name: 'description',
+    data_type: 'string',
+    description: 'An arbitrary string which you can attach to an Charge object. It is displayed when in the web interface along side the charge.',
+  },
+  {
+    id: 'email',
+    name: 'email',
+    data_type: 'string',
+    description: 'Email address of the customer. It is required for creating invoice for the New customer.',
+  },
+  {
+    id: 'taxId',
+    name: 'taxId',
+    data_type: 'string',
+    description: 'It accepts only numbers. IT allows a maximum of 9 characters.',
   },
   {
     id: 'vendor_country',
@@ -139,6 +217,12 @@ export const attributes: Attribute[] = [
     description: 'PERSONAL, CORPORATE, INTERNATIONAL',
   },
   {
+    id: 'bankName',
+    name: 'bankName',
+    data_type: 'string',
+    description: 'It accepts alphabet characters. It refers to the name of the vendor’s bank ',
+  },
+  {
     id: 'vendor_nameOnAccount',
     name: 'nameOnAccount',
     data_type: 'string',
@@ -151,16 +235,22 @@ export const attributes: Attribute[] = [
     description: 'USD — US Dollar',
   },
   {
+    id: 'vendorUrl',
+    name: 'vendorUrl',
+    data_type: 'string',
+    description: 'It is the address of a given unique resource on the Web. ',
+  },
+  {
     id: 'vendor_ipnUrl',
     name: 'ipnUrl',
     data_type: 'string',
-    description: '',
+    description: 'It is the address of a given unique resource on the Web. ',
   },
   {
     id: 'vendor_defaultPayoutCurrency',
     name: 'defaultPayoutCurrency',
     data_type: 'string',
-    description: '',
+    description: 'Three-letter ISO currency code, in lowercase. Ex: usd',
   },
   {
     id: 'vendor_minimalPayoutAmount',
@@ -180,4 +270,34 @@ export const attributes: Attribute[] = [
     data_type: 'string',
     description: 'Vendor`s Refund Reserve',
   },
+  {
+    id: 'country',
+    name: 'country',
+    data_type: 'string',
+    description: 'It refer the country of the vendor. It is required for the new customer while creating the charge.',
+  },
+  {
+    id: 'payment_mode',
+    name: 'payment_mode',
+    data_type: 'string',
+    description: 'The mode of payment used for creating the invoice. The payment mode can be "auth_only", "auth_and_capture". "auth_only" is available only for payment method "Card".',
+  },
+  {
+    id: 'cheque_number',
+    name: 'cheque_number',
+    data_type: 'string',
+    description: 'It is unique identifier which contains numbers. It is required when the payment method is cheque.',
+  },
+  {
+    id: 'vendorId',
+    name: 'vendorId',
+    data_type: 'bigint',
+    description: 'Unique identifier of the object to refer the vendor.',
+  },
+  {
+    id: 'dob',
+    name: 'dob',
+    data_type: 'date',
+    description: 'It refers to the date of birth of Vendor owner.',
+  }
 ];

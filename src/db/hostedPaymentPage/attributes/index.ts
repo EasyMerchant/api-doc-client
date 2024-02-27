@@ -103,5 +103,11 @@ export const attributes: Attribute[] = [
     name: 'id',
     data_type: 'string',
     description: `It is an Unique Identifier object for a payment page.`,
+  },
+  {
+    id: 'unique_id',
+    name: 'unique_id',
+    data_type: 'string',
+    description: `It is an Unique Identifier object for a payment page.`,
   }
 ];

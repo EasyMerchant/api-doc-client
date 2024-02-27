@@ -1,14 +1,14 @@
 import { IService } from '~/interfaces';
 
-export const createVendor: IService = {
-  id: 'create_vendor',
-  name: 'Create Vendor',
+export const updateVendor: IService = {
+  id: 'update_vendor',
+  name: 'Update Vendor',
   description: [
-    `Create vendor api used to create vendors under merchants. For this Api you need a merchant api key and secret key under “Authentication” in the header. you need to pass all required values for KYC verification.`,
+    `Update vendor api used to update vendors details under merchants. For this Api you need a merchant api key and secret key under “Authentication” in the header. you need to pass all required values for KYC verification.`,
   ],
   endpoint: {
     method: 'post',
-    url: '/v1/vendors',
+    url: '/v1/vendors/{vendor_id}',
     params: [
       {
         required: true,
@@ -16,7 +16,7 @@ export const createVendor: IService = {
       },
       {
         required: true,
-        attributeId: 'vendor_email',
+        attributeId: 'email',
       },
       {
         required: true,
@@ -68,6 +68,30 @@ export const createVendor: IService = {
       },
       {
         required: true,
+        attributeId: 'address',
+      },
+      {
+        required: true,
+        attributeId: 'city',
+      },
+      {
+        required: true,
+        attributeId: 'state',
+      },
+      {
+        required: true,
+        attributeId: 'zip',
+      },
+      {
+        required: true,
+        attributeId: 'country',
+      },
+      {
+        required: true,
+        attributeId: 'dob',
+      },
+      {
+        required: true,
         attributeId: 'vendor_principal',
       },
       {
@@ -77,6 +101,10 @@ export const createVendor: IService = {
       {
         required: true,
         attributeId: 'vendor_driverLicenseNumber',
+      },
+      {
+        required: true,
+        attributeId: 'email',
       },
       {
         required: true,
@@ -150,11 +178,8 @@ export const createVendor: IService = {
     response: {
       type: 'application/json',
       data: {
-        "message": "Vendor created successfully.",
-        "status": 200,
-        "data": {
-          "vendor_id": "2010354"
-        }
+        "message": "Vendor updated successfully.",
+        "status": 200
       },
     },
   },
