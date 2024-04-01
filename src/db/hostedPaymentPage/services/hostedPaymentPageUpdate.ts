@@ -1,10 +1,10 @@
 import { IService } from '~/interfaces';
 
 export const hostedPaymentPageUpdate: IService = {
-  id: 'phostedPaymentPage_Update',
+  id: 'hostedPaymentPage_Update',
   name: 'Update Hosted Payment Page',
   description: [
-    `Use below api to create a payment link that you can share with your customers. Unique_Id is the hosted payment page id which redirects customers who open this link to a hosted payment page. This hosted payment page will support recurring payments or recurring donations as well.`,
+    `Use below api to update a payment link that you can share with your customers. The hosted payment page can be updated to from no expire page to One time Payment. And also page can be updated from supporting only One Time payments to both One time and recurring donations as well.`,
   ],
   endpoint: {
     method: 'post',
