@@ -48,7 +48,7 @@ export const attributes: Attribute[] = [
     name: 'customer_notify',
     data_type: 'string',
     description:
-      'A number used to identify a bank account. Bank card number, the primary account number found on credit cards and bank cards. Account Number is not required when charge is created for the existing customer.',
+      'The Value can be either "Enabled" or "Disabled". If the Value is mentioned as "enabled" mail will be triggered to customer on payment. If it is mentioned as "Disabled" then it will not trigger any mail to the customer.',
   },
   {
     id: 'status',
@@ -109,5 +109,11 @@ export const attributes: Attribute[] = [
     name: 'unique_id',
     data_type: 'string',
     description: `It is an Unique Identifier object for a payment page.`,
+  },
+  {
+    id: 'link',
+    name: 'link',
+    data_type: 'string',
+    description: `It returns the Unique URL for the Payment Page.`,
   }
 ];

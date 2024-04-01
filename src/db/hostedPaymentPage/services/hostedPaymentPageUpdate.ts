@@ -75,8 +75,9 @@ export const hostedPaymentPageUpdate: IService = {
       type: 'application/json',
       data: {
         "status": true,
-        "message": "Hosted payment page Updated successfully.!",
-        "unique_id": "815b7f86c90341f2"
+        "message": "Hosted payment page created successfully.!",
+        "link": "executive07.stage-easymerchant.io/payment/charge/918b6ee5056aa5c0",
+        "unique_id": "918b6ee5056aa5c0"
       },
     },
   },
