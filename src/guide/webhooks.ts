@@ -36,7 +36,7 @@ export const webhooks: Guide = {
             "type": "subscription.created",
             "id": "evt_34ced3bfe096a4623",
             "data": {
-                     "name": "Jim",
+                "name": "Jim",
                 "email": "Jim@test.com",
                 "amount": 15.50,
                 "customer_id": "cus_1234567890",
