@@ -4,7 +4,7 @@ export const hostedPaymentPageAdd: IService = {
   id: 'phostedPaymentPage_Add',
   name: 'Create Hosted Payment Page',
   description: [
-    `Use below api to create a payment link that you can share with your customers. Unique_Id is the hosted payment page id which redirects customers who open this link to a hosted payment page. This hosted payment page will support recurring payments or recurring donations as well.`,
+    `Use below api to create a payment link that you can share with your customers. Unique payment link which redirects customers to open the link to make a payment. This hosted payment page will support One Time payments or recurring donations as well.`,
   ],
   endpoint: {
     method: 'post',
