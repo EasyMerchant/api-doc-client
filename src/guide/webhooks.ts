@@ -11,7 +11,7 @@ export const webhooks: Guide = {
   ],
   content: [
     {
-      id: 'Subscription Creation',
+      id: 'subscription_creation',
       title: 'Subscription Creation',
       description: [
         {
