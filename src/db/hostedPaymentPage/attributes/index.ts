@@ -87,8 +87,14 @@ export const attributes: Attribute[] = [
     description: `Expiration dates appear on the front or back of a credit card in a two-digit month/year format. This parameter is required as a 4 digit year format. example: '2023'`,
   },
   {
-    id: 'onetime_payment',
-    name: 'onetime_payment',
+    id: 'return_url',
+    name: 'return_url',
+    data_type: 'string',
+    description: `It is an Optional field. Users will be redirected to the given return url after successful payment`,
+  },
+  {
+    id: 'single_use',
+    name: 'single_use',
     data_type: 'string',
     description: `It is an Optional field. The value can be either ‘1’ or ‘0’. If the value is set to ‘1’, once the payment is done against the page then the page will be expired. If the value is set to ‘0’, the customers can make payment against the payment link for unlimited times.`,
   },
@@ -115,5 +121,12 @@ export const attributes: Attribute[] = [
     name: 'link',
     data_type: 'string',
     description: `It returns the Unique URL for the Payment Page.`,
-  }
+  },
+  {
+    id: 'metadata',
+    name: 'metadata',
+    data_type: 'object',
+    description:
+      'Set of key-value pairs that you can attach to a transaction.  You can specify up to 50 keys, with key names up to 40 characters long and values up to 500 characters long.',
+  },
 ];

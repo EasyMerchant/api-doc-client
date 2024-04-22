@@ -4,18 +4,11 @@ export const findCard: IService = {
   id: 'find_card',
   name: 'Find Card',
   description: [
-    `You can always see the list of cards directly on a customer; this method lets you retrieve details about a specific card stored on the customer.`,
+    `this method lets you retrieve details about a specific card by card id.`,
   ],
   endpoint: {
     method: 'get',
-    url: '/v1/card',
-    params: [
-      {
-        required: true,
-        attributeId: 'customer_id',
-        isQueryParam: true,
-      },
-    ],
+    url: '/v1/cards/:card_id',
     response: {
       type: 'application/json',
       data: {

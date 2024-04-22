@@ -7,8 +7,8 @@ export const hostedPaymentPageUpdate: IService = {
     `Use below api to update a payment link that you can share with your customers. The hosted payment page can be updated to from no expire page to One time Payment. And also page can be updated from supporting only One Time payments to both One time and recurring donations as well.`,
   ],
   endpoint: {
-    method: 'post',
-    url: '/v1/hostedpages/update',
+    method: 'put',
+    url: '/v1/hostedpages/:page_id',
     params: [
       {
         required: true,
@@ -68,8 +68,12 @@ export const hostedPaymentPageUpdate: IService = {
       },
       {
         required: false,
-        attributeId: 'onetime_payment'
-      }
+        attributeId: 'single_use'
+      },
+      {
+        required: false,
+        attributeId: 'return_url'
+      },
     ],
     response: {
       type: 'application/json',

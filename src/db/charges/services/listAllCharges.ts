@@ -17,12 +17,10 @@ export const listAllCharges: IService = {
           "message": "Charge data is retrieved successfully. ",
           "has_more": true,
           "data": {
-            "total_count": 923,
+            "total_count": 2,
             "transactions": [
               {
-                "id": "25974",
                 "invoice_id": null,
-                "created_by": "5114",
                 "customer_id": null,
                 "name": "Jim Rising",
                 "email": "raja@easymerchant.io",
@@ -38,6 +36,7 @@ export const listAllCharges: IService = {
                 "expiry_date": null,
                 "payment_type": null,
                 "transaction_id": "cha_646cecbf0988e5114",
+                "hpp_id": "7bdb11ba61a0d05b",
                 "is_ach_transaction": "0",
                 "merchant_account_id": "6467698da98fd",
                 "declined_reason": null,
@@ -47,9 +46,7 @@ export const listAllCharges: IService = {
                 "metadata": null
               },
               {
-                "id": "25979",
                 "invoice_id": null,
-                "created_by": "5114",
                 "customer_id": null,
                 "name": "Jim Rising",
                 "email": "raja@easymerchant.io",
@@ -65,13 +62,17 @@ export const listAllCharges: IService = {
                 "expiry_date": null,
                 "payment_type": null,
                 "transaction_id": "cha_646cedb410cc15114",
+                "hpp_id": null,
                 "is_ach_transaction": "0",
                 "merchant_account_id": "6467698da98fd",
                 "declined_reason": null,
                 "account_number": null,
                 "cc_last_4": "1111",
                 "cheque_notes": null,
-                "metadata": null
+                "metadata": {
+                  "order_id": 123,
+                  "customer_id": 561
+                }
               }
             ]
           },

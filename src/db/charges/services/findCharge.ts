@@ -8,7 +8,7 @@ export const findCharge: IService = {
   ],
   endpoint: {
     method: 'get',
-    url: '/v1/charges/{transaction_id}',
+    url: '/v1/charges/:transaction_id',
     params: [
       {
         required: true,
@@ -22,9 +22,7 @@ export const findCharge: IService = {
         "status": true,
         "message": "Charge data is retrieved successfully. ",
         "data": {
-          "id": "44582",
           "invoice_id": null,
-          "created_by": "5114",
           "customer_id": "cus_64998b545b1cb5114",
           "name": "EM_QA",
           "email": "qa@easymerchant.io",
@@ -39,6 +37,7 @@ export const findCharge: IService = {
           "date_created": "2023-11-14 11:54:38",
           "expiry_date": "2023-11-15 11:54:38",
           "transaction_id": "cha_6553b45d46e705114",
+          "hpp_id": null,
           "merchant_account_id": "fortis_654ddc002dd6e",
           "cheque_notes": null,
           "metadata": {
