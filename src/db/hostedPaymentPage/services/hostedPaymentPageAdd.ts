@@ -64,7 +64,15 @@ export const hostedPaymentPageAdd: IService = {
       },
       {
         required: false,
-        attributeId: 'onetime_payment'
+        attributeId: 'single_use'
+      },
+      {
+        required: false,
+        attributeId: 'return_url'
+      },
+      {
+        required: false,
+        attributeId: 'metadata'
       }
     ],
     response: {

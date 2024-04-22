@@ -8,14 +8,7 @@ export const hostedPaymentPageDelete: IService = {
   ],
   endpoint: {
     method: 'delete',
-    url: '/v1/hostedpages/',
-    params: [
-      {
-        required: true,
-        attributeId: 'id',
-        isQueryParam: true,
-      }
-    ],
+    url: '/v1/hostedpages/:page_id',
     response: {
       type: 'application/json',
       data: {

@@ -5,7 +5,7 @@ export const updateCustomer: IService = {
   name: 'Update Customer',
   description: [`It is to update Customer.`],
   endpoint: {
-    method: 'POST',
+    method: 'PUT',
     url: '/v1/customers',
     params: [
       {

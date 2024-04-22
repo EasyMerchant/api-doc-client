@@ -8,7 +8,7 @@ export const capturePayment: IService = {
   ],
   endpoint: {
     method: 'post',
-    url: '/v1/charges/{transaction_id}/capture',
+    url: '/v1/charges/:transaction_id/capture',
     params: [
       {
         required: true,
