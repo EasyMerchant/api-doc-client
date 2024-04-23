@@ -19,6 +19,27 @@ export const getHostedPaymentPage: IService = {
           "total": 2,
           "rows": [
             {
+                "unique_id": "0579dc1e6b7f2f00",
+                "name": "Test account 6",
+                "payment_method": "Card",
+                "amount_type": "Fixed",
+                "fixed_amount": "10",
+                "recurring_cycle": "-",
+                "no_of_cycle": 0,
+                "payment_type": "One Time",
+                "onetime_payment": 0,
+                "customer_notify": 1,
+                "status": "Active",
+                "transactions": [],
+                "single_use": 0,
+                "link": "merchant.lyfepay.io/payment/charge/0579dc1e6b7f2f00",
+                "metadata": {
+                    "age": "23",
+                    "name": "Raja",
+                    "order_id": "1056"
+                }
+            },
+            {
                 "unique_id": "7bdb11ba61a0d05b",
                 "name": "Test account 7",
                 "payment_method": "Card",
@@ -61,28 +82,7 @@ export const getHostedPaymentPage: IService = {
                     ]
                 },
                 "single_use": 0,
-                "link": "test.easymerchant.test/payment/charge/7bdb11ba61a0d05b",
-                "metadata": {
-                    "age": "23",
-                    "name": "Raja",
-                    "primaryPhone": "9629105480"
-                }
-            },
-            {
-                "unique_id": "0579dc1e6b7f2f00",
-                "name": "Test account 6",
-                "payment_method": "Card",
-                "amount_type": "Fixed",
-                "fixed_amount": "10",
-                "recurring_cycle": "-",
-                "no_of_cycle": 0,
-                "payment_type": "One Time",
-                "onetime_payment": 0,
-                "customer_notify": 1,
-                "status": "Active",
-                "transactions": [],
-                "single_use": 0,
-                "link": "test.easymerchant.test/payment/charge/0579dc1e6b7f2f00",
+                "link": "merchant.lyfepay.io/payment/charge/7bdb11ba61a0d05b",
                 "metadata": null
             },
           ]

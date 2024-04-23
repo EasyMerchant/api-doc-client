@@ -18,8 +18,8 @@ export const authentication: IApiData = {
   info: {
     code_box: [
       {
-        title: 'Global API Key',
-        rows: ['X-Api-Key = "key_xxxxxxx"', 'X-Api-Secret = "secret_xxxxxxx"'],
+        title: 'Global Header',
+        rows: ['X-Api-Key = "xxxxxxx"', 'X-Api-Secret = "xxxxxxx"','Content-Type = application/json'],
       },
     ],
   },
