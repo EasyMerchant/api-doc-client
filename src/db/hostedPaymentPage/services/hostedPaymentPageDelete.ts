@@ -8,7 +8,7 @@ export const hostedPaymentPageDelete: IService = {
   ],
   endpoint: {
     method: 'delete',
-    url: '/v1/hostedpages/:page_id',
+    url: '/v1/hostedpages/:unique_id',
     response: {
       type: 'application/json',
       data: {

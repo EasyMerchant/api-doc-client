@@ -8,7 +8,7 @@ export const findHostedPaymentPage: IService = {
   ],
   endpoint: {
     method: 'get',
-    url: '/v1/hostedpages/:page_id',
+    url: '/v1/hostedpages/:unique_id',
     params: [],
     response: {
       type: 'application/json',

@@ -8,15 +8,19 @@ export const hostedPaymentPageUpdate: IService = {
   ],
   endpoint: {
     method: 'put',
-    url: '/v1/hostedpages/:page_id',
+    url: '/v1/hostedpages/:unique_id',
     params: [
       {
         required: true,
-        attributeId: 'page_id'
+        attributeId: 'page_name'
       },
       {
-        required: true,
-        attributeId: 'page_name'
+        attributeId: 'card_partner_id',
+        required: false,
+      },
+      {
+        attributeId: 'ach_partner_id',
+        required: false,
       },
       {
         required: true,
