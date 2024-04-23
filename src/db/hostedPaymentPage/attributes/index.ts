@@ -99,18 +99,6 @@ export const attributes: Attribute[] = [
     description: `It is an Optional field. The value can be either ‘1’ or ‘0’. If the value is set to ‘1’, once the payment is done against the page then the page will be expired. If the value is set to ‘0’, the customers can make payment against the payment link for unlimited times.`,
   },
   {
-    id: 'page_id',
-    name: 'page_id',
-    data_type: 'string',
-    description: `It is an Unique Identifier object for a payment page.`,
-  },
-  {
-    id: 'id',
-    name: 'id',
-    data_type: 'string',
-    description: `It is an Unique Identifier object for a payment page.`,
-  },
-  {
     id: 'unique_id',
     name: 'unique_id',
     data_type: 'string',
