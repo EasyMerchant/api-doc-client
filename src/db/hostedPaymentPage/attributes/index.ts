@@ -8,6 +8,18 @@ export const attributes: Attribute[] = [
     description: 'Allow all types of characters to add. It allows a maximum of 50 characters. Currently, it allows duplicate name also',
   },
   {
+    id: 'card_partner_id',
+    name: 'card_partner_id',
+    data_type: 'string',
+    description: 'ID of the payment partner that you want to proces the credit card payments, when not provided default credit card partner will be used.',
+  },
+  {
+    id: 'ach_partner_id',
+    name: 'ach_partner_id',
+    data_type: 'string',
+    description: 'ID of the payment partner that you want to proces the ACH payments, when not provided default ACH partner will be used.',
+  },
+  {
     id: 'amount_type',
     name: 'amount_type',
     data_type: 'string',
@@ -109,6 +121,13 @@ export const attributes: Attribute[] = [
     name: 'link',
     data_type: 'string',
     description: `It returns the Unique URL for the Payment Page.`,
+  },
+  {
+    id: 'transactions',
+    name: 'transactions',
+    data_type: 'object',
+    description:
+      'Paginated list of transactions made on this HPP page. Returns empty [] when there is no transactions',
   },
   {
     id: 'metadata',
