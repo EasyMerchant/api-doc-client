@@ -15,6 +15,10 @@ export const hostedPaymentPageAdd: IService = {
         attributeId: 'page_name'
       },
       {
+        attributeId: 'customer_id',
+        required: false,
+      },
+      {
         attributeId: 'card_partner_id',
         required: false,
       },

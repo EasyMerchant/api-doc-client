@@ -18,6 +18,7 @@ export const findHostedPaymentPage: IService = {
         "data": {
           "unique_id": "7bdb11ba61a0d05b",
           "name": "Test account 7",
+          "customer_id": "cus_5b69e252f0f955064",
           "payment_method": "Card",
           "amount_type": "Fixed",
           "fixed_amount": "10",
