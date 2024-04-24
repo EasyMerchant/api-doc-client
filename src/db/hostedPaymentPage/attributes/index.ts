@@ -8,6 +8,12 @@ export const attributes: Attribute[] = [
     description: 'Allow all types of characters to add. It allows a maximum of 50 characters. Currently, it allows duplicate name also',
   },
   {
+    id: 'customer_id',
+    name: 'customer_id',
+    data_type: 'string',
+    description: 'When customer_id is given, we will pre-populate the customer data on payment screen.',
+  },
+  {
     id: 'card_partner_id',
     name: 'card_partner_id',
     data_type: 'string',
