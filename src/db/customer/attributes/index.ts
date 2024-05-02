@@ -9,7 +9,7 @@ export const attributes: Attribute[] = [
   },
   {
     id: 'customer_id',
-    name: 'id',
+    name: 'customer_id',
     data_type: 'string',
     description: 'Unique identifier for the object.',
   },
