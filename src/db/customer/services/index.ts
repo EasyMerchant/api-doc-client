@@ -4,6 +4,7 @@ import { listAllCustomers } from './listAllCustomers';
 import { addCustomer } from './addCustomer';
 import { addCustomerWithCard } from './addCustomerWithCard';
 import { updateCustomer } from './updateCustomer';
+import { deleteCustomer } from './deleteCustomer';
 
 export const services: IService[] = [
   // list array items serial wise
@@ -11,5 +12,6 @@ export const services: IService[] = [
   addCustomerWithCard,
   updateCustomer,
   listAllCustomers,
-  findCustomer
+  findCustomer,
+  deleteCustomer,
 ];

@@ -15,6 +15,18 @@ export const hostedPaymentPageAdd: IService = {
         attributeId: 'page_name'
       },
       {
+        attributeId: 'customer_id',
+        required: false,
+      },
+      {
+        attributeId: 'card_partner_id',
+        required: false,
+      },
+      {
+        attributeId: 'ach_partner_id',
+        required: false,
+      },
+      {
         required: true,
         attributeId: 'amount_type'
       },
@@ -64,7 +76,15 @@ export const hostedPaymentPageAdd: IService = {
       },
       {
         required: false,
-        attributeId: 'onetime_payment'
+        attributeId: 'single_use'
+      },
+      {
+        required: false,
+        attributeId: 'return_url'
+      },
+      {
+        required: false,
+        attributeId: 'metadata'
       }
     ],
     response: {
@@ -72,6 +92,7 @@ export const hostedPaymentPageAdd: IService = {
       data: {
         "status": true,
         "message": "Hosted payment page created successfully.!",
+        "link": "merchant.lyfepay.io/payment/charge/815b7f86c90341f2",
         "unique_id": "815b7f86c90341f2"
       },
     },

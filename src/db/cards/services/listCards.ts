@@ -4,11 +4,11 @@ export const listCards: IService = {
   id: 'list_cards',
   name: 'List Cards',
   description: [
-    `This method authorizes payment on a credit/debit card transaction. The payment will need to be captured later to settle it.`,
+    `Returns paginated list of cards.`,
   ],
   endpoint: {
     method: 'get',
-    url: '/v1/card',
+    url: '/v1/cards',
 
     response: {
       type: 'application/json',

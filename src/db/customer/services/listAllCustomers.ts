@@ -17,18 +17,14 @@ export const listAllCustomers: IService = {
         "message": "Customer data is retrieved successfully. ",
         "customer": [
           {
-            "id": "5577",
             "user_id": "cus_654f1f4d1ad655114",
-            "client_id": "5114",
             "username": "BalajiQA830",
             "name": "BalajiQA",
             "email": "qa.balaji.s@gmail.com",
             "active": "1"
           },
           {
-            "id": "5554",
             "user_id": "cus_652ab7c755ff15114",
-            "client_id": "5114",
             "username": "jimrising123612",
             "name": "Jim",
             "email": "jimrising14@easymerchant.io",

@@ -8,7 +8,7 @@ export const saveCard: IService = {
   ],
   endpoint: {
     method: 'post',
-    url: '/v1/card',
+    url: '/v1/cards',
     params: [
       {
         required: true,

@@ -7,16 +7,24 @@ export const hostedPaymentPageUpdate: IService = {
     `Use below api to update a payment link that you can share with your customers. The hosted payment page can be updated to from no expire page to One time Payment. And also page can be updated from supporting only One Time payments to both One time and recurring donations as well.`,
   ],
   endpoint: {
-    method: 'post',
-    url: '/v1/hostedpages/update',
+    method: 'put',
+    url: '/v1/hostedpages/:unique_id',
     params: [
       {
         required: true,
-        attributeId: 'page_id'
+        attributeId: 'page_name'
       },
       {
-        required: true,
-        attributeId: 'page_name'
+        attributeId: 'customer_id',
+        required: false,
+      },
+      {
+        attributeId: 'card_partner_id',
+        required: false,
+      },
+      {
+        attributeId: 'ach_partner_id',
+        required: false,
       },
       {
         required: true,
@@ -68,15 +76,19 @@ export const hostedPaymentPageUpdate: IService = {
       },
       {
         required: false,
-        attributeId: 'onetime_payment'
-      }
+        attributeId: 'single_use'
+      },
+      {
+        required: false,
+        attributeId: 'return_url'
+      },
     ],
     response: {
       type: 'application/json',
       data: {
         "status": true,
-        "message": "Hosted payment page created successfully.!",
-        "link": "executive07.stage-easymerchant.io/payment/charge/918b6ee5056aa5c0",
+        "message": "Hosted payment page updated successfully.!",
+        "link": "merchant.lyfepay.io/payment/charge/918b6ee5056aa5c0",
         "unique_id": "918b6ee5056aa5c0"
       },
     },
