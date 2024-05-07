@@ -4,7 +4,7 @@ export const hostedCheckoutSDK: Guide = {
   id: 'hosted-checkout-sdk',
   title: 'Hosted Checkout SDK',
   description: [
-    `{app_name}'s Hosted checkout SDK is a javascript integration that allows merchants to easily embed a secure checkout solution supporting multiple payment methods into their website or application. When merchant customer's secure card data is submitted through {app_name}'s checkout, this card data is not accessible by the merchant website or application, reducing the merchant's PCI compliance and regulatory requirements`,
+      `{app_name}'s Hosted checkout SDK is a javascript integration that allows merchants to easily embed a secure checkout solution supporting multiple payment methods into their website or application. When merchant customer's secure card data is submitted through {app_name}'s checkout, this card data is not accessible by the merchant website or application, reducing the merchant's PCI compliance and regulatory requirements. `,
   ],
   defaultOpen: true,
   content: [
@@ -13,11 +13,21 @@ export const hostedCheckoutSDK: Guide = {
       title: 'Generate Client Token',
       description: [
         {
-          paragraph: `To begin using {app_name}'s Hosted Checkout SDK, first you will need to generate a client token from your backend with your amount. You have to generate client token for every payment request `,
+          paragraph: `To begin using {app_name}'s Hosted Checkout SDK, first you will need to generate a client token from your backend with your amount. You have to generate client token for every payment request.  <br /> <br /><b>Note:</b> You can use our whole bunch of sample code with PHP & Javascript <a href="https://github.com/EasyMerchant/elements-sample-php" target="__blank">Elements SDK with PHP & Javascript</a>`,
           
         },
         {
-          paragraph: `To generate your client token using api "{{api_url}}"/paymentintent`,
+          paragraph: `<b>API URL</b>`,
+          snippet: `
+          {
+            
+            https://api.easymerchant.io/api/paymentintent ,
+
+          }
+          `,
+        },
+        {
+          paragraph: `<b>Request Params</b>`,
           snippet: `
           {
             "amount" : "109.00"
@@ -27,7 +37,7 @@ export const hostedCheckoutSDK: Guide = {
          
         },
         {
-          paragraph: `API Response`,
+          paragraph: `<b>API Response</b>`,
           snippet: `
           {
             "status": true,
@@ -35,6 +45,7 @@ export const hostedCheckoutSDK: Guide = {
             "client_token": "token_663116909c7eb"
           }
           `,
+          
          
         },
       ],
@@ -63,7 +74,7 @@ export const hostedCheckoutSDK: Guide = {
                 <title>LyfePay Payment Element</title>
                 <meta name="description" content="A demo of a payment on LyfePay" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <script src="{{cdnUrl}}/js-sdk/v1/checkout-v1.0.0.min.js" ></script>
+                <script src="https://cdn.lyfepay.io/js-sdk/v1/checkout-v1.0.0.min.js" ></script>
             </head>
             <body>
             <div id="payments"></div>
