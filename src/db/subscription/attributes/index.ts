@@ -31,18 +31,18 @@ export const attributes: Attribute[] = [
     id: 'account_type',
     name: 'account_type',
     data_type: 'string',
-    description: 'Checking account, Savings account, General Ledger account etc. Account type is not required when charge is created for the existing customer with Saved account. Account Type is default set to checking. This attribute is used when the payment method is ACH.',
-  },
-  {
-    id: 'business_account',
-    name: 'business_account',
-    data_type: 'boolean',
-    description: 'This attribute values is either yes or no.',
+    description: 'checking, saving, ledger. Account type is not required when charge is created for the existing customer with Saved account. Account Type is default set to checking. This attribute is used when the payment method is ACH.',
   },
   {
     id: 'card_id',
     name: 'card_id',
     data_type: 'string',
-    description: `This attribute is required when invoice is created for existing customer with saved card.`,
+    description: `This attribute is required when a subscription is created for existing customer with saved card.`,
+  },
+  {
+    id: 'account_id',
+    name: 'account_id',
+    data_type: 'string',
+    description: `This attribute is required when a subscriptionb is created for existing customer with saved account.`,
   }
 ];
