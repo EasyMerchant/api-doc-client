@@ -16,24 +16,8 @@ export const updateAccount: IService = {
       },
       {
         required: true,
-        attributeId: 'routing_number',
+        attributeId: 'account_id'
       },
-      {
-        required: true,
-        attributeId: 'account_number',
-      },
-      {
-        required: true,
-        attributeId: 'account_type',
-      },
-      {
-        required: true,
-        attributeId: 'business_account',
-      },
-      {
-        required: true,
-        attributeId: 'customer_id',
-      }
    ],
     response: {
       type: 'application/json',
