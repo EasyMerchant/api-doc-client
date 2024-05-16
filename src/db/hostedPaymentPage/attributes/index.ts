@@ -93,6 +93,12 @@ export const attributes: Attribute[] = [
     description: `It is an Optional field. This field will be required when the payment_type is set to ‘recurring’ or ‘both’. It is an array the values can be ‘daily’, ‘monthly’, ‘weekly’, ‘quarterly’, ‘yearly’ will be displayed.`,
   },
   {
+    id: 'start_date',
+    name: 'start_date',
+    data_type: 'date',
+    description: `Date when card/account will be charged, you can use the future date (up to 30 days) to start the subscription.`,
+  },
+  {
     id: 'product_image_url',
     name: 'product_image_url',
     data_type: 'string',
