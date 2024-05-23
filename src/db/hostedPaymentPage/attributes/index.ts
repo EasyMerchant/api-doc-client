@@ -90,7 +90,7 @@ export const attributes: Attribute[] = [
     id: 'interval_type',
     name: 'interval_type',
     data_type: 'string',
-    description: `It is an Optional field. This field will be required when the payment_type is set to ‘recurring’ or ‘both’. It is an array the values can be ‘daily’, ‘monthly’, ‘weekly’, ‘quarterly’, ‘yearly’ will be displayed.`,
+    description: `It is an Optional field. This field will be required when the payment_type is set to ‘recurring’ or ‘both’. It is an array the values can be 'daily', 'weekly', 'monthly', 'quartely' , 'half yearly', 'yearly', 'every 2 years', 'every 3 years', 'every 4 years', & 'every 5 years' will be displayed.`,
   },
   {
     id: 'product_image_url',
@@ -142,4 +142,11 @@ export const attributes: Attribute[] = [
     description:
       'Set of key-value pairs that you can attach to a transaction.  You can specify up to 50 keys, with key names up to 40 characters long and values up to 500 characters long.',
   },
+  {
+    id: 'start_date',
+    name: 'start_date',
+    data_type: 'string',
+    description:
+      'The start date of the invoice is required for the payment type "recurring". The start date can be either current date or future date. The Subscription starts renewal based on the start date. If the start_date in the hosted payment page is empty, it considers start date for the subscription as current date.',
+  }
 ];
