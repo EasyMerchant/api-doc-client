@@ -24,10 +24,6 @@ export const saveAccount: IService = {
       },
       {
         required: true,
-        attributeId: 'business_account',
-      },
-      {
-        required: true,
         attributeId: 'customer_id',
       },
     ],
