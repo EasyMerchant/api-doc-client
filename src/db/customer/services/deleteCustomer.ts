@@ -2,7 +2,7 @@ import { IService } from '~/interfaces';
 
 export const deleteCustomer: IService = {
   id: 'delete_customer',
-  name: 'Delete a Customer',
+  name: 'Deletedsd a Customer',
   description: [`Destroys a customer object.`],
   endpoint: {
     method: 'delete',
