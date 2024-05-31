@@ -14,5 +14,6 @@ export const services: IService[] = [
   updateCustomer,
   listAllCustomers,
   findCustomer,
+  filterCustomerByEmail,
   deleteCustomer,
 ];
