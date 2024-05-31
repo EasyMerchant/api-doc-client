@@ -3,7 +3,7 @@ import { IService } from '~/interfaces';
 export const deleteCustomer: IService = {
   id: 'delete_customer',
   name: 'Delete a Customer',
-  description: [`Destroys a customer object.`],
+  description: [`Destroys a customer object`],
   endpoint: {
     method: 'delete',
     url: '/v1/customers/:customer_id',
