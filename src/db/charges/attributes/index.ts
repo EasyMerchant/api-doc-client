@@ -173,7 +173,7 @@ export const attributes: Attribute[] = [
     id: 'interval',
     name: 'interval',
     data_type: 'string',
-    description: `This attribute is required when the charge is created for the subscription. The attribute value can be either 'daily', 'weekly', 'monthly', 'quartely' & 'yearly'. If the payment method is ach then daily interval will not be displayed.'`,
+    description: `This attribute is required when the charge is created for the subscription. The attribute value can be either 'daily', 'weekly', 'monthly', 'quartely' , 'half yearly', 'yearly', 'every 2 years', 'every 3 years', 'every 4 years', & 'every 5 years'. If the payment method is ach then daily interval will not be displayed.'`,
   },
   {
     id: 'allowed_cycles',
