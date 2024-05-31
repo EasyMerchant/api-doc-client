@@ -3,7 +3,7 @@ import { IService } from '~/interfaces';
 export const findCustomer: IService = {
   id: 'filter_customer_by_email',
   name: 'Filter customer by email',
-  description: [`Filter customer by email. Please encode the email address in the URL query.`],
+  description: [`Filter customer by email. Please encode the email address in the URL query. We filter the customers by matching query input to exact email address or the partial value (beginsWith, endsWith, inBetween)`],
   endpoint: {
     method: 'get',
     url: '/v1/customers/?filter_by=email&value=jimrising%40lyfecycletech.com',
