@@ -103,7 +103,7 @@ export const webhooks: Guide = {
       title: 'Subscription Renewal Failed',
       description: [
         {
-          paragraph: `Subscription Renewal Failed Webhook will be triggered when subscription renewal is failed due to Card Expired, Low balance in the account etc. Sample Payload for subscription renewal failed is given below.`,
+          paragraph: `Subscription Renewal Failed Webhook will be triggered when subscription renewal is failed due to Card Expired, Insufficient balance in the account etc. Subscription attempt will occur based on the 'Subscription attempt' in Merchant settings. Sample Payload for subscription renewal failed is given below.`,
           snippet: `{
             "type": "subscription.renewal.failed",
             "id": "evt_34ced3bfe096a4623",
@@ -239,7 +239,7 @@ export const webhooks: Guide = {
       title: 'Charge Created - Auth and Capture',
       description: [
         {
-          paragraph: `Charge Created - Auth and Capture Webhook will be triggered when user created charge with Auth and Capture Payment. When the Captured attribute value is 'false' - Authorize Card Only, and 'true' - Auhorize and Capture Payment. Sample Payload for Charge Created - Authorize and Capture Payment is given below.`,
+          paragraph: `Charge Created - Auth and Capture Webhook will be triggered when user created charge with Captured attribute value is 'true' Auth and Capture Payment. Sample Payload for Charge Created - Authorize and Capture Payment is given below.`,
           snippet: `{
             "type": "charge.succeeded",
             "id": "evt_34ced3bfe096a4623",
@@ -268,7 +268,7 @@ export const webhooks: Guide = {
       title: 'Charge Created - Authorize Card Only',
       description: [
         {
-          paragraph: `Charge Created - Authorize Card Only Webhook will be triggered when user created charge with Authorize Card only. Capture or Void Payment can be done later. When the Captured attribute value is 'false' - Authorize Card Only, and 'true' - Auhorize and Capture Payment. Sample Payload for Charge Created - Authorize Card Only is given below.`,
+          paragraph: `Charge Created - Authorize Card Only Webhook will be triggered when user created charge with Captured attribute value is 'false' Authorize Card only. Capture or Void Payment can be done within 24hrs. Sample Payload for Charge Created - Authorize Card Only is given below.`,
           snippet: `{
             "type": "charge.succeeded",
             "id": "evt_34ced3bfe096a4623",
@@ -328,7 +328,7 @@ export const webhooks: Guide = {
       title: 'Charge Expired',
       description: [
         {
-          paragraph: `Charge Expired Webhook will be triggered when user creats a charge with Authorize Card Only and User forgot to Capture or Void within 24 hrs from the charge creation,then the charge will get expired. Sample Payload for Charge expired is given below.`,
+          paragraph: `Charge Expired Webhook will be triggered when user creats a charge with Authorize Card Only and User does not Capture within 24 hrs from the charge creation. Sample Payload for Charge expired is given below.`,
           snippet: `{
             "type": "charge.expired",
             "id": "evt_34ced3bfe096a4623",
@@ -356,7 +356,7 @@ export const webhooks: Guide = {
       title: 'Charge Partially refunded',
       description: [
         {
-          paragraph: `Charge Partially refunded Webhook will be triggered when user do partial refund on the capture payment. Sample Payload for Charge Partially refunded is given below.`,
+          paragraph: `Charge Partially refunded Webhook will be triggered when user do partial refund on the captured payment. Sample Payload for Charge Partially refunded is given below.`,
           snippet: `{
             "type": "charge.refunded",
             "id": "evt_34ced3bfe096a4623",
@@ -413,7 +413,7 @@ export const webhooks: Guide = {
       title: 'Charge Voided',
       description: [
         {
-          paragraph: `Charge Voided Webhook will be triggered when user creats a charge with Authorize Card Only and User click on Void will refund all the amount in the charge. Sample Payload for Charge voided is given below.`,
+          paragraph: `Charge Voided Webhook will be triggered when user voids the auth only transaction within 24hrs from the charge creation. Sample Payload for Charge voided is given below.`,
           snippet: `{
             "type": "charge.refunded",
             "id": "evt_34ced3bfe096a4623",
@@ -441,7 +441,7 @@ export const webhooks: Guide = {
       title: 'Charge Captured',
       description: [
         {
-          paragraph: `Charge Captured Webhook will be triggered when user creats a charge with Authorize Card Only and User click on Capture, the charge amount will be paid. Sample Payload for Charge captured is given below.`,
+          paragraph: `Charge Captured Webhook will be triggered when user captures previously authorized transaction within 24hrs from the charge creation. Sample Payload for Charge captured is given below.`,
           snippet: `{
             "type": "charge.captured",
             "id": "evt_34ced3bfe096a4623",
@@ -470,7 +470,7 @@ export const webhooks: Guide = {
       title: 'Charge ACH Canceled',
       description: [
         {
-          paragraph: `Charge ACH Canceled Webhook will be triggered when user creats a charge with ACH, Settlement may take up to 3 banking days in between User click on cancel, then the settlement will get cancel and no more amount will be deducted from the ACH accunt against the charge. Sample Payload for Charge ACH cancel is given below.`,
+          paragraph: `Charge ACH Canceled Webhook will be triggered when user cancel the unsettled ACH payment. Settlement may take up to 3 banking days. Sample Payload for Charge ACH cancel is given below.`,
           snippet: `{
             "type": "charge.ach.canceled",
             "id": "evt_34ced3bfe096a4623",
@@ -498,7 +498,7 @@ export const webhooks: Guide = {
       title: 'Charge ACH Declined',
       description: [
         {
-          paragraph: `Charge ACH Declined Webhook will be triggered when user creats a charge with ACH, Settlement may take up to 3 banking days. Due to Insufficient balance in the ACH account the settlement may declined. Sample Payload for Charge ACH declined is given below.`,
+          paragraph: `Charge ACH Declined Webhook will be triggered when ach settlement fails, for example "Insufficient balance in the ACH account". Sample Payload for Charge ACH declined is given below.`,
           snippet: `{
             "type": "charge.ach.updated",
             "id": "evt_34ced3bfe096a4623",

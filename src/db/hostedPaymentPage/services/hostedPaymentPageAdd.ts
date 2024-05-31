@@ -89,6 +89,10 @@ export const hostedPaymentPageAdd: IService = {
       {
         required: false,
         attributeId: 'metadata'
+      },
+      {
+        required: false,
+        attributeId: 'start_date'
       }
     ],
     response: {
