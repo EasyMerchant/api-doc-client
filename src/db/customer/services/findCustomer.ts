@@ -2,7 +2,7 @@ import { IService } from '~/interfaces';
 
 export const findCustomer: IService = {
   id: 'find_customer',
-  name: 'Find Customer',
+  name: 'Find a customer',
   description: [`Retrieves a Customer object.`],
   endpoint: {
     method: 'get',
