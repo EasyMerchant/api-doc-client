@@ -107,7 +107,7 @@ export const hostedCheckoutSDK: Guide = {
           list: {
             unOrdered: [
               'we will show the button like "Pay Now" based true or false',
-              'If you give this option to "false" , Don\'t forget to add your own button & call "elements.submit();" when onclick your button'
+              'you can set this option to false and add your own submit button which must call "elements.submit();" to submit the payment'
             ],
           },
         },
@@ -116,7 +116,7 @@ export const hostedCheckoutSDK: Guide = {
           list: {
             unOrdered: [
               'we will show the total amount value inside "Pay Now" button based true or false',
-              'Note:If you give showSubmitButton:false , we don\'t how the total value .'
+              'Note: Total will be hidden when showSubmitButton:false.'
             ],
           },
         },
