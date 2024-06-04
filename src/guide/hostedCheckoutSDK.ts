@@ -74,7 +74,7 @@ export const hostedCheckoutSDK: Guide = {
                 <title>LyfePay Payment Element</title>
                 <meta name="description" content="A demo of a payment on LyfePay" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <script src="https://cdn.lyfepay.io/js-sdk/v1/checkout-v1.0.0.min.js" ></script>
+                <script src="https://cdn.lyfepay.io/js-sdk/v1/checkout-v1.0.1.min.js" ></script>
             </head>
             <body>
             <div id="payments"></div>
@@ -87,6 +87,7 @@ export const hostedCheckoutSDK: Guide = {
               showTotal:true,
               showSubmitButton:true,
               paymentMethods:['card', 'ach','crypto','wallet'],
+
             })
             </script>
             </body>
@@ -106,7 +107,7 @@ export const hostedCheckoutSDK: Guide = {
           list: {
             unOrdered: [
               'we will show the button like "Pay Now" based true or false',
-              'If you give this option to "false" , Don\'t forget to add your own button & call "elements.submit();" when onclick your button'
+              'you can set this option to false and add your own submit button which must call "elements.submit();" to submit the payment'
             ],
           },
         },
@@ -115,7 +116,7 @@ export const hostedCheckoutSDK: Guide = {
           list: {
             unOrdered: [
               'we will show the total amount value inside "Pay Now" button based true or false',
-              'Note:If you give showSubmitButton:false , we don\'t how the total value .'
+              'Note: Total will be hidden when showSubmitButton:false.'
             ],
           },
         },
@@ -305,6 +306,9 @@ export const hostedCheckoutSDK: Guide = {
                 primaryButtonBackgroundColor: "#1757d9",
                 primaryButtonHoverColor: "#3a70df",
                 primaryButtonFontColor: "#ffffff",
+                secondaryButtonBackgroundColor: "#ffffff",
+                secondaryButtonHoverColor: "#1757d9",
+                secondaryButtonFontColor: "#1757d9",
                 borderRadious: "8"
             }
             })
@@ -448,7 +452,7 @@ export const hostedCheckoutSDK: Guide = {
           paragraph:'<b>Done</b><p>Trigger the event once payment done successfully.if you want to redirect to another page you can use the event</p>',
           list: {
             unOrdered: [
-              'Note:if you want to redirect another page , don\'t forgrt to disable showReceipt:false '
+              'Note:if you want to redirect another page , don\'t forget to disable showReceipt:false '
             ],
           },
           snippet: `
@@ -460,6 +464,7 @@ export const hostedCheckoutSDK: Guide = {
               container: 'payments'
             })
             elements.on('done', (event)=>{
+              // you can redirect to your page here
               console.log("done",event)
             });
      
