@@ -8,14 +8,7 @@ export const findSubscription: IService = {
   ],
   endpoint: {
     method: 'get',
-    url: '/v1/subscriptions',
-    params: [
-      {
-        required: true,
-        attributeId: 'subscription_id',
-        isQueryParam: true,
-      },
-    ],
+    url: '/v1/subscriptions/{subscription_id}',
     response: {
       type: 'application/json',
       data: {
