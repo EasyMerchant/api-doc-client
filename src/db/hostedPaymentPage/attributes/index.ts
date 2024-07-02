@@ -146,7 +146,7 @@ export const attributes: Attribute[] = [
     name: 'metadata',
     data_type: 'object',
     description:
-      'Set of key-value pairs that you can attach to a transaction.  You can specify up to 50 keys, with key names up to 40 characters long and values up to 500 characters long.',
+      'Set of key-value pairs that you can attach to a transaction.  You can specify up to 50 keys, with key names up to 40 characters long and values up to 500 characters long.<br><br>To update, Replace values for existing keys and add new key-value pairs in an API call.For example, you can update a metadata object with an existing key-value pair of "version": "1.2.1" to "version": "2.0.0". You can also add new metadata, such as the "author_name": "john doe" key-value pair in the example below, to the existing metadata.',
   },
   {
     id: 'start_date',
