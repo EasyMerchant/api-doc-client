@@ -8,8 +8,8 @@ export const attributes: Attribute[] = [
     description: 'Unique identifier for the invoice object. This attribute is required for the invoice created with payment mode pay later.',
   },
   {
-    id: 'invoice_customer',
-    name: 'customer',
+    id: 'invoice_customer_id',
+    name: 'customer_id',
     data_type: 'string',
     description:
       'The customer id of the customer for whom the invoice is created.',

@@ -36,7 +36,7 @@ export const paymentIntentCardUpdate: IService = {
       },
       {
         required: true,
-        attributeId: 'customer'
+        attributeId: 'customer_id'
       }
     ],
     response: {

@@ -20,7 +20,7 @@ export const paymentIntentACHCharge: IService = {
       },
       {
         required: true,
-        attributeId: 'customer'
+        attributeId: 'customer_id'
       },
       {
         required: true,
