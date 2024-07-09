@@ -32,7 +32,7 @@ export const paymentIntentACHUpdate: IService = {
       },
       {
         required: true,
-        attributeId: 'customerId'
+        attributeId: 'customer_id'
       }
     ],
     response: {
