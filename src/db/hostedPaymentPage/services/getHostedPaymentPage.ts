@@ -8,8 +8,25 @@ export const getHostedPaymentPage: IService = {
   ],
   endpoint: {
     method: 'get',
-    url: '/v1/hostedpages?hostedpage_search=event',
-    params: [],
+    url: '/v1/hostedpages?status=true&single_use=false&page_expired=true&search=accout',
+    params: [
+      {
+        required: false,
+        attributeId: 'status'
+      },
+      {
+        required: false,
+        attributeId: 'search'
+      },
+      {
+        required: false,
+        attributeId: 'page_expired'
+      },
+      {
+        required: false,
+        attributeId: 'single_use'
+      },
+    ],
     response: {
       type: 'application/json',
       data: {
