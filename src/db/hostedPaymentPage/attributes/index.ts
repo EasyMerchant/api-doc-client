@@ -72,7 +72,7 @@ export const attributes: Attribute[] = [
     id: 'status',
     name: 'status',
     data_type: 'string',
-    description: 'It is an Optional field. The value can be either ‘1’ or ‘0’. If the value is set to ‘1’, the page will be active and customers will be able to make payment using the payment link. If the value is set to ‘0’, the page will be inactive and if a customer tries to access the payment page then it will throw the page not found.',
+    description: 'It is an Optional field. The value can be either ‘1’ or ‘0’. If the value is set to ‘1’, the page will be active and customers will be able to make payment using the payment link. If the value is set to ‘0’, the page will be inactive and if a customer tries to access the payment page then it will throw the page not found.<br><br> For List filters, Its an Optional field, This attribute is set to TRUE, Only active Payment Pages will be displayed. If set to FALSE then it will display only the inactive Payment Pages.',
   },
   {
     id: 'allow_quantity',
@@ -120,7 +120,7 @@ export const attributes: Attribute[] = [
     id: 'single_use',
     name: 'single_use',
     data_type: 'string',
-    description: `It is an Optional field. The value can be either ‘1’ or ‘0’. If the value is set to ‘1’, once the payment is done against the page then the page will be expired. If the value is set to ‘0’, the customers can make payment against the payment link for unlimited times.`,
+    description: `It is an Optional field. The value can be either ‘1’ or ‘0’. If the value is set to ‘1’, once the payment is done against the page then the page will be expired. If the value is set to ‘0’, the customers can make payment against the payment link for unlimited times. <br> <br> For List page filters, If it set to TRUE, It will display only the Pages marked as single_use while creation/updation`,
   },
   {
     id: 'unique_id',
@@ -154,5 +154,19 @@ export const attributes: Attribute[] = [
     data_type: 'string',
     description:
       'The start date of the invoice is required for the payment type "recurring". The start date can be either current date or future date. The Subscription starts renewal based on the start date. If the start_date in the hosted payment page is empty, it considers start date for the subscription as current date.',
+  },
+  {
+    id: 'search',
+    name: 'search',
+    data_type: 'string',
+    description:
+      'The search keyword filters the page name.',
+  },
+  {
+    id: 'page_expired',
+    name: 'page_expired',
+    data_type: 'boolean',
+    description:
+      'It is Optional attribute. This attribute is set to TRUE, It will filters only the expired payment page.',
   }
 ];
