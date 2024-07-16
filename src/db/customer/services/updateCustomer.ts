@@ -6,12 +6,8 @@ export const updateCustomer: IService = {
   description: [`It is to update Customer.`],
   endpoint: {
     method: 'PUT',
-    url: '/v1/customers',
+    url: '/v1/customers/:customer_id',
     params: [
-      {
-        required: true,
-        attributeId: 'id'
-      },
       {
         required: true,
         attributeId: 'username'
