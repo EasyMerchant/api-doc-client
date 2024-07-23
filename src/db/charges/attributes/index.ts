@@ -191,6 +191,6 @@ export const attributes: Attribute[] = [
     id: 'order_number',
     name: 'order_number',
     data_type: 'string',
-    description: `This attribute is an optional which is a unique key that the server uses to recognize subsequent retries of the same request.`,
+    description: `order_number passed in with the transaction. as long as the order number is unique we allow duplicate payments (same amount and same payment method more than once within 2 minutes)`,
   }
 ];
