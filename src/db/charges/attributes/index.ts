@@ -191,6 +191,6 @@ export const attributes: Attribute[] = [
     id: 'order_number',
     name: 'order_number',
     data_type: 'string',
-    description: `order_number passed in with the transaction. as long as the order number is unique we allow duplicate payments (same amount and same payment method more than once within 2 minutes)`,
+    description: `order_number passed in with the transaction. As long as the order number is unique we allow duplicate payments (same amount and same payment method more than once within 2 minutes)`,
   }
 ];
