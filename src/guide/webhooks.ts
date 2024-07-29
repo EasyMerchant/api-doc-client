@@ -549,6 +549,239 @@ export const webhooks: Guide = {
         }`,
         }
       ]
-    }
+    },
+    {
+      id: 'webhook_config_create',
+      title: 'Webhook Config - Create',
+      description: [
+        {
+          paragraph: `You can config your receiving webhook url for each webhook events. you have to get the webhook events from <a href='./user-guide?id=hosted-checkout-additional-elements'>"Webhook Event Types"</a> api. Sample Payload for webhook config creation is given below.
+            <br /><b>Note:</bThe number of URLs in your webhook config should not be more than 3.`,
+         
+        },
+        {
+          paragraph: `<b>API URL</b> - <b>METHOD : POST</b>`,
+          
+          snippet: `
+          {
+            
+            https://api.easymerchant.io/api/v1/settings/webhook ,
+
+          }
+          `,
+        },
+        {
+          paragraph: `<b>Request Params</b>`,
+          snippet: `
+          {
+                   "name":"Sample Webhook",
+              "url":"https://example.io/receiver/webhook",
+              "events":["subscription.created","charge.captured"]
+          
+          }
+          `,
+        },
+        {
+          paragraph: `<b>Response:</b>`,
+          snippet: `
+            {
+              "status": true,
+              "message": "Webhook event created successfully!!",
+              "data": {
+                  "id": "webhook_f931bc68-ea85-4092-925e-0b6b12007c59"
+              }
+          }
+          `,
+          
+         
+        },
+      ]
+    },
+    {
+      id: 'webhook_config_update',
+      title: 'Webhook Config - Update',
+      description: [
+        {
+          paragraph: `To update your receiving webhook URL with event types, you need to include existing events if you want to add or delete events.`,
+         
+        },
+        {
+          paragraph: `<b>API URL</b>  - <b>METHOD : PUT</b>`,
+          snippet: `
+          {
+            
+            https://api.easymerchant.io/api/v1/settings/webhook/{webhook_id} ,
+
+          }
+          `,
+        },
+        {
+          paragraph: `<b>Request Params</b>`,
+          snippet: `
+          {
+                   "name":"Sample Webhook",
+              "url":"https://example.io/",
+              "events":["subscription.created","charge.captured"]
+          
+          }
+          `,
+        },
+        {
+          paragraph: `<b>Response:</b>`,
+          snippet: `
+        {
+          "status": true,
+          "message": "Webhook event updated successfully!!",
+          "data": {
+              "name": "GaneshTest1222222",
+              "url": "https://www.google.com",
+              "description": "Ganesh",
+              "events": [
+                  "subscription.created",
+                  "charge.captured",
+                  "charge.refunded"
+              ]
+          }
+      }
+          `,
+          
+         
+        },
+      ]
+    },
+    {
+      id: 'webhook_config_event_types',
+      title: 'Webhook Config - Event Types',
+      description: [
+        {
+          paragraph: `You can retrieve the event types for webhook configuration from this API, which can be used for creating and updating webhook configurations.`,
+         
+        },
+        {
+          paragraph: `<b>API URL</b>  - <b>METHOD : GET</b>`,
+          snippet: `
+          {
+            
+            https://api.easymerchant.io/api/v1/settings/webhook/events ,
+
+          }
+          `,
+        },
+       
+        {
+          paragraph: `<b>Response:</b>`,
+          snippet: `
+        {
+          "status": true,
+          "message": "Webhook event types retrieved successfully",
+          "event_types": [
+              "charge.ach.canceled",
+              "charge.ach.updated",
+              "charge.captured",
+              "charge.expired",
+              "charge.failed",
+              "charge.refunded",
+              "charge.succeeded",
+              "subscription.canceled",
+              "subscription.created",
+              "subscription.renewal.failed",
+              "subscription.renewal.succeeded",
+              "subscription.resumed",
+              "subscription.started",
+              "subscription.suspended"
+          ]
+        }
+          `,
+         
+        },
+      ]
+    },
+    {
+      id: 'webhook_config_list',
+      title: 'Webhook Config - List',
+      description: [
+        {
+          paragraph: `You can retrieve the  webhook config settings from this API`,
+         
+        },
+        {
+          paragraph: `<b>API URL</b>  - <b>METHOD : GET</b>`,
+          snippet: `
+          {
+            
+            https://api.easymerchant.io/api/v1/settings/webhook ,
+
+          }
+          `,
+        },
+       
+        {
+          paragraph: `<b>Response:</b>`,
+          snippet: `
+       {
+                "status": true,
+                "message": "Webhook settings retrieved successfully",
+                "webhook_settings": [
+                    {
+                        "id": "webhook_562b3934-3c3a-4dec-b2ea-346330573d8e",
+                        "name": "test123",
+                        "url": "sasaasdasd",
+                        "description": null,
+                        "date_created": "2024-07-02 09:23:55",
+                        "events": [
+                            "subscription.created",
+                            "charge.captured"
+                        ]
+                    },
+                    {
+                        "id": "webhook_f931bc68-ea85-4092-925e-0b6b12007c59",
+                        "name": "test123",
+                        "url": "https://webhook.lyfepay.io/receiver/webhook",
+                        "description": null,
+                        "date_created": "2024-07-29 11:32:33",
+                        "events": [
+                            "subscription.created",
+                            "charge.captured"
+                        ]
+                    }
+                ]
+            }
+          `,
+         
+        },
+      ]
+    },
+    {
+      id: 'webhook_config_delete',
+      title: 'Webhook Config - Delete',
+      description: [
+        {
+          paragraph: `You can delete the webhook configuration`,
+         
+        },
+        {
+          paragraph: `<b>API URL</b>  - <b>METHOD : DELETE</b>`,
+          snippet: `
+          {
+            
+            https://api.easymerchant.io/api/v1/settings/webhook/{webhook_id} ,
+
+          }
+          `,
+        },
+       
+        {
+          paragraph: `<b>Response:</b>`,
+          snippet: `
+            {
+                  "status": true,
+                  "message": "Webhook event settings deleted successfully!!"
+              }
+          `,
+         
+        },
+      ]
+    },
+   
   ]
 };
