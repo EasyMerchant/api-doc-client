@@ -129,6 +129,14 @@ export const hostedCheckoutSDK: Guide = {
             ],
           },
         },
+        {
+          paragraph:'<b> token_only: true | false</b>',
+          list: {
+            unOrdered: [
+              "If you'd like to obtain a card or ACH token, you can utilize this method; however, we do not process payments through this option. Once the card or ACH details are successfully saved, you will receive the details in the \"Done\" callback function. "
+            ],
+          },
+        },
         
 
        
