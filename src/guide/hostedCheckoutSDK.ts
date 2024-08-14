@@ -137,6 +137,32 @@ export const hostedCheckoutSDK: Guide = {
             ],
           },
         },
+        {
+          paragraph:'<b> saveCustomerCard: true | false</b>',
+          list: {
+            unOrdered: [
+              "If you prefer not to save your card details, you can set the option to false; otherwise, the default option is assumed to be \"true\""
+            ],
+          },
+        },
+
+        {
+          paragraph:'<b> saveCustomerAccount: true | false</b>',
+          list: {
+            unOrdered: [
+              "If you do not want to store your ach details, you can switch the option to false; otherwise, it is automatically set to \"true\""
+            ],
+          },
+        },
+
+        {
+          paragraph:'<b> submitButtonText:string</b>',
+          list: {
+            unOrdered: [
+              "If you wish to modify the payment button text, you have the option to change it."
+            ],
+          },
+        },
         
 
        
