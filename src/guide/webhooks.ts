@@ -537,7 +537,7 @@ export const webhooks: Guide = {
               "amount": 15.50,
               "description": "",
               "customer_id": "cus_1234567890",
-              "status":  "paid"
+              "status":  "paid",
               "payment_mode": "ach",
               "last4": "4242",
               "hpp_id": null,
