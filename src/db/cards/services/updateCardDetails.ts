@@ -4,7 +4,7 @@ export const updateCardDetails: IService = {
   id: 'update_card_details',
   name: 'Update Card Details',
   description: [
-    `When you create a new credit card, you must specify a customer or recipient on which to create it. This method saves a new card to the database.`,
+    `This method updates the credit card holder name, expiry month, expiry year and cvc to the database.`,
   ],
   endpoint: {
     method: 'put',
