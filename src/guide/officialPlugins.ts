@@ -2,7 +2,7 @@ import { Guide } from './_types';
 
 export const officialPlugins: Guide = {
   id: 'official-plugins',
-  title: 'Official Plugins',
+  title: 'lyfecycle PAYMENTS | Official Plugins',
   defaultOpen: true,
   content: [
     {

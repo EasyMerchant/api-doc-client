@@ -9,7 +9,7 @@ const PageHeader = ({
   route: string;
   root: string;
 }) => {
-  let title = pageTitle ? `${pageTitle} | ${route}` : 'Loading...';
+  let title = pageTitle ? `${pageTitle} | ${route}` : 'lyfecycle PAYMENTS | API Documentation';
 
   return (
     <Head>
