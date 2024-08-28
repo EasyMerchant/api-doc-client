@@ -24,6 +24,7 @@ const PageHeader = ({
         property="og:description"
         content="Explore our guides and examples to integrate The lyfecycle PAYMENTS." />
       <meta property="og:title" content="lyfecycle PAYMENTS | API Documentation" />
+      <link rel="apple-touch-icon" sizes="180x180" href={`${defaultRoot}/apple-touch-icon.png`} />
       <link rel='icon' href={`${defaultRoot}/favicon.ico`} />
       <link href={`${defaultRoot}/site.webmanifest`} rel='manifest' />
     </Head>
