@@ -2,7 +2,7 @@ import { Guide } from './_types';
 
 export const webhooks: Guide = {
   id: 'webhooks',
-  title: 'lyfecycle PAYMENTS | Webhooks',
+  title: 'Webhooks',
   defaultOpen: true,
   description: [
     `{app_name}'s Webhooks are one of a few ways web applications can communicate with each other.

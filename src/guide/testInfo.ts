@@ -2,7 +2,7 @@ import { Guide } from './_types';
 
 export const testInfo: Guide = {
   id: 'testInfo',
-  title: 'lyfecycle PAYMENTS | Test Info',
+  title: 'Test Info',
   defaultOpen: true,
   content: [
     {
