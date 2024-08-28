@@ -2,7 +2,7 @@ import { Guide } from './_types';
 
 export const hostedCheckoutSDK: Guide = {
   id: 'hosted-checkout-sdk',
-  title: 'Hosted Checkout SDK',
+  title: 'lyfecycle PAYMENTS | Hosted Checkout SDK',
   description: [
       `{app_name}'s Hosted checkout SDK is a javascript integration that allows merchants to easily embed a secure checkout solution supporting multiple payment methods into their website or application. When merchant customer's secure card data is submitted through {app_name}'s checkout, this card data is not accessible by the merchant website or application, reducing the merchant's PCI compliance and regulatory requirements. `,
   ],
@@ -71,7 +71,7 @@ export const hostedCheckoutSDK: Guide = {
         <html lang='en'>
             <head>
                 <meta charset="utf-8" />
-                <title>LyfePay Payment Element</title>
+                <title>lyfecycle PAYMENTS | Payment Element</title>
                 <meta name="description" content="A demo of a payment on LyfePay" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <script src="https://cdn.lyfepay.io/js-sdk/v1/checkout-v1.0.1.min.js" ></script>

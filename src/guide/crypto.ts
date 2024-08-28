@@ -2,7 +2,7 @@ import { Guide } from './_types';
 
 export const crypto: Guide = {
   id: 'crypto',
-  title: 'Crypto',
+  title: 'lyfecycle PAYMENTS | Crypto Payments',
   defaultOpen: true,
   content: [
     {
