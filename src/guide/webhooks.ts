@@ -15,9 +15,59 @@ export const webhooks: Guide = {
       title: 'Subscription Creation',
       description: [
         {
-          paragraph: `Subscription Creation Webhook will be triggered when user creates recurring from Invoices / Charges / Hosted Payment Page. Sample Payload for subscription creation is given below.`,
+          paragraph: `Subscription Creation Webhook will be triggered when user creates recurring from Invoices / Charges / Hosted Payment Page. This event is triggered even if payment is not created (eg: future subscriptions). Sample Payload for subscription creation is given below.`,
           snippet: `{
             "type": "subscription.created",
+            "id": "40ec5f5c-d501-4fba-aede-28dd86d9eb30",
+            "data": {
+              "name": "Jim",
+              "email": "jim@easymerchant.io",
+              "amount": "127.00",
+              "customer_id": null,
+              "status": "active",
+              "interval": "daily",
+              "cycles_paid": 1,
+              "total_cycles": 2,
+              "start_date": "2024-08-27 11:09:13",
+              "next_payment": "2024-08-28 11:09:14",
+              "reference_number": "sub_66cdfa2c4b0845064",
+              "metadata": {
+                "account": "358947"
+              },
+              "hpp_id": null,
+              "created_at": "2024-08-27 11:09:14",
+              "transaction": {
+                "name": "Jim",
+                "email": "jim@easymerchant.io",
+                "amount": "127.00",
+                "description": "test",
+                "customer_id": null,
+                "status": "paid",
+                "payment_mode": "card",
+                "last4": "1111",
+                "reference_number": "cha_66cdfa2a121f85064",
+                "metadata": {
+                  "account": "358947"
+                },
+                "created_at": "2024-08-27 11:09:16"
+              }
+            },
+            "attempt": 3,
+            "remaining_attempts": 0,
+            "livemode": true,
+            "created_at": "2024-08-27 11:09:16"
+          }`,
+        }
+      ]
+    },
+    {
+      id: 'subscription_started',
+      title: 'Subscription Started',
+      description: [
+        {
+          paragraph: `Subscription Started Webhook will be triggered when first payment is received for the subscription. Sample Payload for subscription started event is given below.`,
+          snippet: `{
+            "type": "subscription.started",
             "id": "40ec5f5c-d501-4fba-aede-28dd86d9eb30",
             "data": {
               "name": "Jim",
@@ -136,22 +186,19 @@ export const webhooks: Guide = {
               },
               "hpp_id": null,
               "created_at": "04-09-2024 00:01:53",
-              "transaction": {
-                "name": "Jim",
-                "email": "Jim@test.com",
-                "amount": 15.50,
-                "description": "",
-                "customer_id": "cus_1234567890",
-                "status": "failed",
-                "reason": "Insufficient Funds",
-                "payment_mode": "card",
-                "last4": "4242",
-                "reference_number": "cha_65cf098a809b75130",
-                "metadata": {
-                  "account": "358947"
-                },
-                "created_at": "04-10-2024 00:01:53",
-              }
+               "transaction": {
+                  "name": "Jim",
+                  "email": "Jim@test.com",
+                  "amount": 15.50,
+                  "description": "",
+                  "customer_id": "cus_1234567890",
+                  "status":  "failed",
+                  "reason": "Insufficient Funds",
+                  "payment_mode": "card",
+                  "last4": "4242",
+                  "reference_number": "cha_65cf098a809b75130",
+                  "created_at": "04-10-2024 00:01:53",
+                }
             },
             "attempt": 2,
             "remaining_attempts": 1,
@@ -186,33 +233,7 @@ export const webhooks: Guide = {
                 "account": "358947"
               },
               "hpp_id": null,
-              "created_at": "04-09-2024 00:01:53",
-              "transaction": []{
-  "type": "subscription.resumed",
-  "id": "51d99ab8-8022-4652-b12b-e8366608f83b",
-  "data": {
-    "name": "Jim",
-    "email": "Jim@test.com",
-    "amount": 15.50,
-    "customer_id": "cus_1234567890",
-    "status": "active",
-    "interval": "monthly",
-    "cycles_paid": 5,
-    "total_cycles": 10,
-    "start_date": "04-10-2024 00:01:53",
-    "next_payment": "05-10-2024 00:01:53",
-    "reference_number": "sub_65cf098a809b75130",
-    "metadata": {
-      "account": "358947"
-    },
-    "hpp_id": null,
-    "created_at": "04-09-2024 00:01:53",
-  },
-  "attempt": 2,
-  "remaining_attempts": 1,
-  "livemode": "true",
-  "created_at": "04-10-2024 00:01:53"
-          }
+              "created_at": "04-09-2024 00:01:53"
             },
             "attempt": 4,
             "remaining_attempts": -1,
