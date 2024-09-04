@@ -130,7 +130,7 @@ export const hostedCheckoutSDK: Guide = {
           },
         },
         {
-          paragraph:'<b> token_only: true | false</b>',
+          paragraph:'<b> tokenOnly: true | false</b>',
           list: {
             unOrdered: [
               "If you'd like to obtain a card or ACH token, you can utilize this method; however, we do not process payments through this option. Once the card or ACH details are successfully saved, you will receive the details in the \"Done\" callback function. "
@@ -138,7 +138,7 @@ export const hostedCheckoutSDK: Guide = {
           },
         },
         {
-          paragraph:'<b> saveCustomerCard: true | false</b>',
+          paragraph:'<b> saveCard: true | false</b>',
           list: {
             unOrdered: [
               "If you prefer not to save your card details, you can set the option to false; otherwise, the default option is assumed to be \"true\""
@@ -147,7 +147,7 @@ export const hostedCheckoutSDK: Guide = {
         },
 
         {
-          paragraph:'<b> saveCustomerAccount: true | false</b>',
+          paragraph:'<b> saveAccount: true | false</b>',
           list: {
             unOrdered: [
               "If you do not want to store your ach details, you can switch the option to false; otherwise, it is automatically set to \"true\""
@@ -510,6 +510,31 @@ export const hostedCheckoutSDK: Guide = {
 
            
             
+        },
+        {
+          paragraph:'<b> Done - Tokenonly - New Card / ACH </b><p> If its token only , Trigger the event once  card / account saved successfully.</p>',
+          snippet: `
+        {
+           “card_id”: "card_66d7379059bf8”,
+            “card_last_4”: "4242”,
+            “message”: "Card saved successfully. ",
+            “status”: true,
+            “token”: "424242Jygz5P4242"   
+        }
+            `,
+        },
+        {
+          paragraph:'<b> Done - Tokenonly- Saved Card/ ACH </b><p> If its token only , Trigger the event once  card / account saved successfully.</p>',
+          snippet: `
+        {
+            “card_brand_name”: "Visa”,
+            “card_id”: "card_668ba0188df2c",
+            “card_type”: "live_card",
+            “cc_last_4”: "1118",
+            “cc_valid_thru”: "04/2026",
+            “customer_id”: "cus_650e50db711a45064",
+            “cvc”: "111",
+        } `,
         },
         {
           paragraph:'Callback Object',
