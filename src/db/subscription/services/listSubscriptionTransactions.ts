@@ -8,7 +8,7 @@ export const listSubscriptionTransactions: IService = {
   ],
   endpoint: {
     method: 'get',
-    url: '/v1/subscriptions/sub_66e85437d2a1d50689/transactions',
+    url: '/v1/subscriptions/{subscription_id}/transactions',
     response: {
       type: 'application/json',
       data: {
