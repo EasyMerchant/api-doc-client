@@ -88,8 +88,8 @@ export const attributes: Attribute[] = [
     description: `The Card Verification Code, or CVC*, is an extra code printed on your debit or credit card. With most cards (Visa, MasterCard, bank cards, etc.) it is the final three digits of the number printed on the signature strip on the reverse of your card. On American Express (AMEX) cards, it is usually a four digit code on the front.`,
   },
   {
-    id: 'customer',
-    name: 'customer',
+    id: 'customer_id',
+    name: 'customer_id',
     data_type: 'string',
     description: 'This is the customer_id for the customer associated with this card data',
   },

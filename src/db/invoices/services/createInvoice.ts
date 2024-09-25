@@ -104,7 +104,7 @@ export const createInvoice: IService = {
       },
       {
         required: true,
-        attributeId: 'invoice_customer',
+        attributeId: 'invoice_customer_id',
       },
       {
         required: false,

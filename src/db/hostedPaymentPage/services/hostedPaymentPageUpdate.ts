@@ -72,6 +72,10 @@ export const hostedPaymentPageUpdate: IService = {
       },
       {
         required: false,
+        attributeId: 'metadata'
+      },
+      {
+        required: false,
         attributeId: 'start_date'
       },
       {

@@ -2,7 +2,7 @@ import { Guide } from './_types';
 
 export const crypto: Guide = {
   id: 'crypto',
-  title: 'Crypto',
+  title: 'Crypto Payments',
   defaultOpen: true,
   content: [
     {

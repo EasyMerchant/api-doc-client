@@ -9,15 +9,24 @@ const PageHeader = ({
   route: string;
   root: string;
 }) => {
-  let title = pageTitle ? `${pageTitle} | ${route}` : 'Loading...';
+  let title = pageTitle ? `${pageTitle} | ${route}` : 'lyfecycle PAYMENTS | API Documentation';
+  let defaultRoot = root ? root : '/lyfepay';
 
   return (
     <Head>
       <title>{title}</title>
-      <meta name='description' content='created with love by rawjson' />
+      <meta name='description' content='Explore our guides and examples to integrate The lyfecycle PAYMENTS.' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
-      <link rel='icon' href={`${root}/favicon.ico`} />
-      <link href={`${root}/site.webmanifest`} rel='manifest' />
+      <meta
+        property="og:image"
+        content="https://developers.lyfepay.io/_next/image?url=%2Flyfepay%2Flogo.png&w=3840&q=75" />
+      <meta
+        property="og:description"
+        content="Explore our guides and examples to integrate The lyfecycle PAYMENTS." />
+      <meta property="og:title" content="lyfecycle PAYMENTS | API Documentation" />
+      <link rel="apple-touch-icon" sizes="180x180" href={`${defaultRoot}/apple-touch-icon.png`} />
+      <link rel='icon' href={`${defaultRoot}/favicon.ico`} />
+      <link href={`${defaultRoot}/site.webmanifest`} rel='manifest' />
     </Head>
   );
 };

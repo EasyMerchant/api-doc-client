@@ -6,13 +6,13 @@ const cdnUrl = 'https://cdn.lyfepay.io';
 
 export const lyfePayPageCtx: IPageContext = {
   root: '/lyfepay',
-  pageTitle: 'Lyfecycle Payments',
+  pageTitle: 'lyfecycle PAYMENTS',
   baseUrl: productionBaseUrl,
   sandBoxApiUrl: sandBoxApiUrl,
 
   // variables
   injectables: {
-    brand_name: 'Lyfecycle PAYMENTS LLC',
+    brand_name: 'lyfecycle PAYMENTS LLC',
     app_name: 'Lyfepay',
     brand_support_email: 'help@lyfecyclepayments.com',
     brand_website_url: 'https://www.lyfecyclepayments.com',

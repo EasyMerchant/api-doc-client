@@ -1,10 +1,11 @@
 import { IService } from '~/interfaces';
-import { findCustomer } from './findCustomer';
-import { listAllCustomers } from './listAllCustomers';
 import { addCustomer } from './addCustomer';
-import { addCustomerWithCard } from './addCustomerWithCard';
+import { findCustomer } from './findCustomer';
 import { updateCustomer } from './updateCustomer';
 import { deleteCustomer } from './deleteCustomer';
+import { listAllCustomers } from './listAllCustomers';
+import { addCustomerWithCard } from './addCustomerWithCard';
+import { filterCustomerByEmail } from './filterCustomerByEmail';
 
 export const services: IService[] = [
   // list array items serial wise
@@ -13,5 +14,6 @@ export const services: IService[] = [
   updateCustomer,
   listAllCustomers,
   findCustomer,
+  filterCustomerByEmail,
   deleteCustomer,
 ];

@@ -15,42 +15,98 @@ export const webhooks: Guide = {
       title: 'Subscription Creation',
       description: [
         {
-          paragraph: `Subscription Creation Webhook will be triggered when user creates recurring from Invoices / Charges / Hosted Payment Page. Sample Payload for subscription creation is given below.`,
+          paragraph: `Subscription Creation Webhook will be triggered when user creates recurring from Invoices / Charges / Hosted Payment Page. This event is triggered even if payment is not created (eg: future subscriptions). Sample Payload for subscription creation is given below.`,
           snippet: `{
-                "type": "subscription.created",
-                "id": "evt_34ced3bfe096a4623",
-                "data": {
-                         "name": "Jim",
-                    "email": "Jim@test.com",
-                    "amount": 15.50,
-                    "customer_id": "cus_1234567890",
-                    "status":  "active",
-                    "interval": "monthly",
-                    "cycles_paid": 5,
-                    "total_cycles": 10,
-                    "created_at": "04-09-2024 00:01:53",
-                    "start_date": "04-10-2024 00:01:53",
-                    "next_payment": "05-10-2024 00:01:53",
-                    "reference_number": "sub_65cf098a809b75130",
-                    "hpp_id": "af89ae76ec9a675b",
-                    "transaction": {
-                          "name": "Jim",
-                      "email": "Jim@test.com",
-                      "amount": 15.50,
-                      "description": "",
-                      "customer_id": "cus_1234567890",
-                      "status":  "paid",
-                      "payment_mode": "card",
-                      "last4": "4242",
-                      "reference_number": "cha_65cf098a809b75130",
-                      "created_at": "04-10-2024 00:01:53",
-                    }
+            "type": "subscription.created",
+            "id": "40ec5f5c-d501-4fba-aede-28dd86d9eb30",
+            "data": {
+              "name": "Jim",
+              "email": "jim@easymerchant.io",
+              "amount": "127.00",
+              "customer_id": null,
+              "status": "active",
+              "interval": "daily",
+              "cycles_paid": 1,
+              "total_cycles": 2,
+              "start_date": "2024-08-27 11:09:13",
+              "next_payment": "2024-08-28 11:09:14",
+              "reference_number": "sub_66cdfa2c4b0845064",
+              "metadata": {
+                "account": "358947"
+              },
+              "hpp_id": null,
+              "created_at": "2024-08-27 11:09:14",
+              "transaction": {
+                "name": "Jim",
+                "email": "jim@easymerchant.io",
+                "amount": "127.00",
+                "description": "test",
+                "customer_id": null,
+                "status": "paid",
+                "payment_mode": "card",
+                "last4": "1111",
+                "reference_number": "cha_66cdfa2a121f85064",
+                "metadata": {
+                  "account": "358947"
                 },
-                "attempt": 1,
-                "remaining_attempts": 2,
-                "livemode": "true",
-                "created_at": "04-10-2024 00:01:53"
-              }`,
+                "created_at": "2024-08-27 11:09:16"
+              }
+            },
+            "attempt": 3,
+            "remaining_attempts": 0,
+            "livemode": true,
+            "created_at": "2024-08-27 11:09:16"
+          }`,
+        }
+      ]
+    },
+    {
+      id: 'subscription_started',
+      title: 'Subscription Started',
+      description: [
+        {
+          paragraph: `Subscription Started Webhook will be triggered when first payment is received for the subscription. Sample Payload for subscription started event is given below.`,
+          snippet: `{
+            "type": "subscription.started",
+            "id": "40ec5f5c-d501-4fba-aede-28dd86d9eb30",
+            "data": {
+              "name": "Jim",
+              "email": "jim@easymerchant.io",
+              "amount": "127.00",
+              "customer_id": null,
+              "status": "active",
+              "interval": "daily",
+              "cycles_paid": 1,
+              "total_cycles": 2,
+              "start_date": "2024-08-27 11:09:13",
+              "next_payment": "2024-08-28 11:09:14",
+              "reference_number": "sub_66cdfa2c4b0845064",
+              "metadata": {
+                "account": "358947"
+              },
+              "hpp_id": null,
+              "created_at": "2024-08-27 11:09:14",
+              "transaction": {
+                "name": "Jim",
+                "email": "jim@easymerchant.io",
+                "amount": "127.00",
+                "description": "test",
+                "customer_id": null,
+                "status": "paid",
+                "payment_mode": "card",
+                "last4": "1111",
+                "reference_number": "cha_66cdfa2a121f85064",
+                "metadata": {
+                  "account": "358947"
+                },
+                "created_at": "2024-08-27 11:09:16"
+              }
+            },
+            "attempt": 3,
+            "remaining_attempts": 0,
+            "livemode": true,
+            "created_at": "2024-08-27 11:09:16"
+          }`,
         }
       ]
     },
@@ -62,39 +118,45 @@ export const webhooks: Guide = {
           paragraph: `Subscription Renewal Succeeded Webhook will be triggered when subscription renewal is successfully completed. Sample Payload for subscription renewal succeed is given below.`,
           snippet: `{
             "type": "subscription.renewal.succeeded",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "51d99ab8-8022-4652-b12b-e8366608f83b",
             "data": {
+              "name": "Jim",
+              "email": "jim@easymerchant.io",
+              "amount": "127.00",
+              "customer_id": null,
+              "status": "active",
+              "interval": "daily",
+              "cycles_paid": 1,
+              "total_cycles": 2,
+              "start_date": "2024-08-27 11:09:13",
+              "next_payment": "2024-08-28 11:09:14",
+              "reference_number": "sub_66cdfa2c4b0845064",
+              "metadata": {
+                "account": "358947"
+              },
+              "hpp_id": null,
+              "created_at": "2024-08-27 11:09:14",
+              "transaction": {
                 "name": "Jim",
-                "email": "Jim@test.com",
-                "amount": 15.50,
-                "customer_id": "cus_1234567890",
-                "status":  "active",
-                "interval": "monthly",
-                "cycles_paid": 5,
-                "total_cycles": 10,
-                "created_at": "04-09-2024 00:01:53",
-                "start_date": "04-10-2024 00:01:53",
-                "next_payment": "05-10-2024 00:01:53",
-                "reference_number": "sub_65cf098a809b75130",
-                "hpp_id": null,
-                "transaction": {
-                  "name": "Jim",
-                  "email": "Jim@test.com",
-                  "amount": 15.50,
-                  "description": "",
-                  "customer_id": "cus_1234567890",
-                  "status":  "paid",
-                  "payment_mode": "card",
-                  "last4": "4242",
-                  "reference_number": "cha_65cf098a809b75130",
-                  "created_at": "04-10-2024 00:01:53",
-                }
+                "email": "jim@easymerchant.io",
+                "amount": "127.00",
+                "description": "test",
+                "customer_id": null,
+                "status": "paid",
+                "payment_mode": "card",
+                "last4": "1111",
+                "reference_number": "cha_66cdfa2a121f85064",
+                "metadata": {
+                  "account": "358947"
+                },
+                "created_at": "2024-08-27 11:09:16"
+              }
             },
-            "attempt": 1,
-            "remaining_attempts": 2,
-            "livemode": "true",
-            "created_at": "04-10-2024 00:01:53"
-            }`,
+            "attempt": 4,
+            "remaining_attempts": -1,
+            "livemode": true,
+            "created_at": "2024-08-27 11:09:16"
+          }`,
         }
       ]
     },
@@ -106,22 +168,25 @@ export const webhooks: Guide = {
           paragraph: `Subscription Renewal Failed Webhook will be triggered when subscription renewal is failed due to Card Expired, Insufficient balance in the account etc. Subscription attempt will occur based on the 'Subscription attempt' in Merchant settings. Sample Payload for subscription renewal failed is given below.`,
           snippet: `{
             "type": "subscription.renewal.failed",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "d196f4a8-8662-4a96-8da8-5e688730ee2b",
             "data": {
-                "name": "Jim",
-                "email": "Jim@test.com",
-                "amount": 15.50,
-                "customer_id": "cus_1234567890",
-                "status":  "active",
-                "interval": "monthly",
-                "cycles_paid": 5,
-                "total_cycles": 10,
-                "created_at": "04-09-2024 00:01:53",
-                "start_date": "04-10-2024 00:01:53",
-                "next_payment": "05-10-2024 00:01:53",
-                "reference_number": "sub_65cf098a809b75130",
-                "hpp_id": null,
-                "transaction": {
+              "name": "Jim",
+              "email": "Jim@test.com",
+              "amount": 15.50,
+              "customer_id": "cus_1234567890",
+              "status": "active",
+              "interval": "monthly",
+              "cycles_paid": 5,
+              "total_cycles": 10,
+              "start_date": "04-10-2024 00:01:53",
+              "next_payment": "05-10-2024 00:01:53",
+              "reference_number": "sub_65cf098a809b75130",
+              "metadata": {
+                "account": "358947"
+              },
+              "hpp_id": null,
+              "created_at": "04-09-2024 00:01:53",
+               "transaction": {
                   "name": "Jim",
                   "email": "Jim@test.com",
                   "amount": 15.50,
@@ -139,7 +204,7 @@ export const webhooks: Guide = {
             "remaining_attempts": 1,
             "livemode": "true",
             "created_at": "04-10-2024 00:01:53"
-            }`,
+          }`,
         }
       ]
     },
@@ -151,23 +216,29 @@ export const webhooks: Guide = {
           paragraph: `Subscription Suspended Webhook will be triggered when subscription renewal is failed more than 1 or 2 times based on the 'Subscription attempt' in Merchant settings. Sample Payload for subscription suspended is given below.`,
           snippet: `{
             "type": "subscription.suspended",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "51d99ab8-8022-4652-b12b-e8366608f83b",
             "data": {
-                "name": "Jim",
-                "email": "Jim@test.com",
-                "amount": 15.50,
-                "customer_id": "cus_1234567890",
-                "status":  "suspended",
-                "interval": "monthly",
-                "cycles_paid": 5,
-                "total_cycles": 10,
-                "created_at": "04-09-2024 00:01:53",
-                "start_date": "04-10-2024 00:01:53",
-                "next_payment": "05-10-2024 00:01:53",
-                "reference_number": "sub_65cf098a809b75130"
-          },
-            "livemode": "true",
-            "created_at": "04-10-2024 00:01:53"
+              "name": "Jim",
+              "email": "Jim@test.com",
+              "amount": 15.50,
+              "customer_id": "cus_1234567890",
+              "status": "suspended",
+              "interval": "monthly",
+              "cycles_paid": 5,
+              "total_cycles": 10,
+              "start_date": "04-10-2024 00:01:53",
+              "next_payment": "05-10-2024 00:01:53",
+              "reference_number": "sub_65cf098a809b75130",
+              "metadata": {
+                "account": "358947"
+              },
+              "hpp_id": null,
+              "created_at": "04-09-2024 00:01:53"
+            },
+            "attempt": 4,
+            "remaining_attempts": -1,
+            "livemode": true,
+            "created_at": "2024-08-27 11:09:16"
           }`,
         }
       ]
@@ -180,26 +251,30 @@ export const webhooks: Guide = {
           paragraph: `Subscription Resumed Webhook will be triggered when user resume the Suspended subscription and make the subscription active. Sample Payload for subscription resumed is given below.`,
           snippet: `{
             "type": "subscription.resumed",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "51d99ab8-8022-4652-b12b-e8366608f83b",
             "data": {
-                     "name": "Jim",
-                "email": "Jim@test.com",
-                "amount": 15.50,
-                "customer_id": "cus_1234567890",
-                "status":  "active",
-                "interval": "monthly",
-                "cycles_paid": 5,
-                "total_cycles": 10,
-                "created_at": "04-09-2024 00:01:53",
-                "start_date": "04-10-2024 00:01:53",
-                "next_payment": "05-10-2024 00:01:53",
-                "reference_number": "sub_65cf098a809b75130"
-          },
-                 "attempt": 2,
+              "name": "Jim",
+              "email": "Jim@test.com",
+              "amount": 15.50,
+              "customer_id": "cus_1234567890",
+              "status": "active",
+              "interval": "monthly",
+              "cycles_paid": 5,
+              "total_cycles": 10,
+              "start_date": "04-10-2024 00:01:53",
+              "next_payment": "05-10-2024 00:01:53",
+              "reference_number": "sub_65cf098a809b75130",
+              "metadata": {
+                "account": "358947"
+              },
+              "hpp_id": null,
+              "created_at": "04-09-2024 00:01:53",
+            },
+            "attempt": 2,
             "remaining_attempts": 1,
             "livemode": "true",
             "created_at": "04-10-2024 00:01:53"
-            }`,
+          }`,
         }
       ]
     },
@@ -211,26 +286,30 @@ export const webhooks: Guide = {
           paragraph: `Subscription Canceled Webhook will be triggered when user cancel the active subscription. Sample Payload for subscription canceled is given below.`,
           snippet: `{
             "type": "subscription.canceled",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "51d99ab8-8022-4652-b12b-e8366608f83b",
             "data": {
-                     "name": "Jim",
-                "email": "Jim@test.com",
-                "amount": 15.50,
-                "customer_id": "cus_1234567890",
-                "status":  "canceled",
-                "interval": "monthly",
-                "cycles_paid": 5,
-                "total_cycles": 10,
-                "created_at": "04-09-2024 00:01:53",
-                "start_date": "04-10-2024 00:01:53",
-                "next_payment": "05-10-2024 00:01:53",
-                "reference_number": "sub_65cf098a809b75130"
-          },
-                 "attempt": 2,
+              "name": "Jim",
+              "email": "Jim@test.com",
+              "amount": 15.50,
+              "customer_id": "cus_1234567890",
+              "status": "canceled",
+              "interval": "monthly",
+              "cycles_paid": 5,
+              "total_cycles": 10,
+              "start_date": "04-10-2024 00:01:53",
+              "next_payment": "05-10-2024 00:01:53",
+              "reference_number": "sub_65cf098a809b75130",
+              "metadata": {
+                "account": "358947"
+              },
+              "hpp_id": null,
+              "created_at": "04-09-2024 00:01:53",
+            },
+            "attempt": 2,
             "remaining_attempts": 1,
             "livemode": "true",
             "created_at": "04-10-2024 00:01:53"
-            }`,
+          }`,
         }
       ]
     },
@@ -242,24 +321,29 @@ export const webhooks: Guide = {
           paragraph: `Charge Created - Auth and Capture Webhook will be triggered when user created charge with Captured attribute value is 'true' Auth and Capture Payment. Sample Payload for Charge Created - Authorize and Capture Payment is given below.`,
           snippet: `{
             "type": "charge.succeeded",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "d196f4a8-8662-4a96-8da8-5e688730ee2b",
             "data": {
-              "name": "Jim",
-              "email": "Jim@test.com",
-              "amount": 15.50,
-              "description": "",
-              "customer_id": "",
+              "name": "Jim Rising",
+              "email": "raja@easymerchant.io",
+              "amount": "11.12",
+              "description": "test1",
+              "customer_id": null,
               "status": "paid",
               "payment_mode": "card",
               "captured": true,
               "last4": "4242",
-              "hpp_id": "af89ae76ec9a675b",
-              "reference_number": "cha_65cf098a809b75130",
-              "created_at": "04-10-2024 00:01:53",
-          },
-          "livemode": "true",
-          "created_at": "04-10-2024 00:01:53"
-        }`,
+              "hpp_id": null,
+              "reference_number": "cha_66cedef3c33fb5064",
+              "metadata": {
+                "account": "358947"
+              },
+              "created_at": "2024-08-28 03:25:26"
+            },
+            "attempt": 1,
+            "remaining_attempts": 2,
+            "livemode": true,
+            "created_at": "2024-08-28 03:25:26"
+          }`,
         }
       ]
     },
@@ -271,25 +355,29 @@ export const webhooks: Guide = {
           paragraph: `Charge Created - Authorize Card Only Webhook will be triggered when user created charge with Captured attribute value is 'false' Authorize Card only. Capture or Void Payment can be done within 24hrs. Sample Payload for Charge Created - Authorize Card Only is given below.`,
           snippet: `{
             "type": "charge.succeeded",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "d196f4a8-8662-4a96-8da8-5e688730ee2b",
             "data": {
-              "name": "Jim",
-              "email": "Jim@test.com",
-              "amount": 15.50,
-              "description": "",
-              "customer_id": "",
+              "name": "Jim Rising",
+              "email": "raja@easymerchant.io",
+              "amount": "11.12",
+              "description": "test1",
+              "customer_id": null,
               "status": "paid",
               "payment_mode": "card",
               "captured": false,
               "last4": "4242",
-              "hpp_id": "af89ae76ec9a675b",
-              "reference_number": "cha_65cf098a809b75130",
-              "created_at": "04-10-2024 00:01:53",
-          },
-          "livemode": "true",
-          "created_at": "04-10-2024 00:01:53",
-          "expires_on": "04-11-2024 00:01:53"
-        }`,
+              "hpp_id": null,
+              "reference_number": "cha_66cedef3c33fb5064",
+              "metadata": {
+                "account": "358947"
+              },
+              "created_at": "2024-08-28 03:25:26"
+            },
+            "attempt": 1,
+            "remaining_attempts": 2,
+            "livemode": true,
+            "created_at": "2024-08-28 03:25:26"
+          }`,
         }
       ]
     },
@@ -301,7 +389,7 @@ export const webhooks: Guide = {
           paragraph: `Charge Failed Webhook will be triggered while user creating a charge with invalid card number or with insufficient balance. Sample Payload for Charge failed is given below.`,
           snippet: `{
             "type": "charge.failed",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "d196f4a8-8662-4a96-8da8-5e688730ee2b",
             "data": {
               "name": "Jim",
               "email": "Jim@test.com",
@@ -314,11 +402,16 @@ export const webhooks: Guide = {
               "captured": true,
               "last4": "4242",
               "hpp_id": "af89ae76ec9a675b",
+              "metadata": {
+                "account": "358947"
+              },
               "reference_number": "cha_65cf098a809b75130",
               "created_at": "04-10-2024 00:01:53",
            },
-          "livemode": "true",
-          "created_at": "04-10-2024 00:01:53"
+          "attempt": 1,
+          "remaining_attempts": 2,
+          "livemode": true,
+          "created_at": "2024-08-28 03:25:26"
         }`,
         }
       ]
@@ -331,9 +424,9 @@ export const webhooks: Guide = {
           paragraph: `Charge Expired Webhook will be triggered when user creats a charge with Authorize Card Only and User does not Capture within 24 hrs from the charge creation. Sample Payload for Charge expired is given below.`,
           snippet: `{
             "type": "charge.expired",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "d196f4a8-8662-4a96-8da8-5e688730ee2b",
             "data": {
-                  "name": "Jim",
+              "name": "Jim",
               "email": "Jim@test.com",
               "amount": 15.50,
               "description": "",
@@ -343,10 +436,15 @@ export const webhooks: Guide = {
               "last4": "4242",
               "hpp_id": null,
               "reference_number": "cha_65cf098a809b75130",
+              "metadata": {
+                "account": "358947"
+              },
               "created_at": "04-10-2024 00:01:53",
           },
-          "livemode": "true",
-          "created_at": "04-10-2024 00:01:53"
+          "attempt": 1,
+          "remaining_attempts": 2,
+          "livemode": true,
+          "created_at": "2024-08-28 03:25:26"
         }`,
         }
       ]
@@ -359,7 +457,7 @@ export const webhooks: Guide = {
           paragraph: `Charge Partially refunded Webhook will be triggered when user do partial refund on the captured payment. Sample Payload for Charge Partially refunded is given below.`,
           snippet: `{
             "type": "charge.refunded",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "d196f4a8-8662-4a96-8da8-5e688730ee2b",
             "data": {
               "name": "Jim",
               "email": "Jim@test.com",
@@ -372,10 +470,15 @@ export const webhooks: Guide = {
               "last4": "4242",
               "hpp_id": null,
               "reference_number": "cha_65cf098a809b75130",
+              "metadata": {
+                "account": "358947"
+              },
               "created_at": "04-10-2024 00:01:53",
           },
-          "livemode": "true",
-          "created_at": "04-10-2024 00:01:53"
+          "attempt": 1,
+          "remaining_attempts": 2,
+          "livemode": true,
+          "created_at": "2024-08-28 03:25:26"
         }`,
         }
       ]
@@ -388,9 +491,9 @@ export const webhooks: Guide = {
           paragraph: `Charge Full refunded Webhook will be triggered when user do full amount refund on the captured payment. Sample Payload for Charge Full refunded is given below.`,
           snippet: `{
             "type": "charge.refunded",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "d196f4a8-8662-4a96-8da8-5e688730ee2b",
             "data": {
-                  "name": "Jim",
+              "name": "Jim",
               "email": "Jim@test.com",
               "amount": 15.50,
               "description": "",
@@ -400,10 +503,15 @@ export const webhooks: Guide = {
               "last4": "4242",
               "hpp_id": null,
               "reference_number": "cha_65cf098a809b75130",
+              "metadata": {
+                "account": "358947"
+              },
               "created_at": "04-10-2024 00:01:53",
           },
-          "livemode": "true",
-          "created_at": "04-10-2024 00:01:53"
+          "attempt": 1,
+          "remaining_attempts": 2,
+          "livemode": true,
+          "created_at": "2024-08-28 03:25:26"
         }`,
         }
       ]
@@ -416,9 +524,9 @@ export const webhooks: Guide = {
           paragraph: `Charge Voided Webhook will be triggered when user voids the auth only transaction within 24hrs from the charge creation. Sample Payload for Charge voided is given below.`,
           snippet: `{
             "type": "charge.refunded",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "d196f4a8-8662-4a96-8da8-5e688730ee2b",
             "data": {
-                  "name": "Jim",
+              "name": "Jim",
               "email": "Jim@test.com",
               "amount": 15.50,
               "description": "",
@@ -428,6 +536,9 @@ export const webhooks: Guide = {
               "last4": "4242",
               "hpp_id": null,
               "reference_number": "cha_65cf098a809b75130",
+              "metadata": {
+                "account": "358947"
+              },
               "created_at": "04-10-2024 00:01:53",
           },
           "livemode": "true",
@@ -444,9 +555,9 @@ export const webhooks: Guide = {
           paragraph: `Charge Captured Webhook will be triggered when user captures previously authorized transaction within 24hrs from the charge creation. Sample Payload for Charge captured is given below.`,
           snippet: `{
             "type": "charge.captured",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "d196f4a8-8662-4a96-8da8-5e688730ee2b",
             "data": {
-                  "name": "Jim",
+              "name": "Jim",
               "email": "Jim@test.com",
               "amount": 15.50,
               "description": "",
@@ -457,10 +568,15 @@ export const webhooks: Guide = {
               "last4": "4242",
               "hpp_id": null,
               "reference_number": "cha_65cf098a809b75130",
+              "metadata": {
+                "account": "358947"
+              },
               "created_at": "04-10-2024 00:01:53",
           },
-          "livemode": "true",
-          "created_at": "04-10-2024 00:01:53"
+          "attempt": 1,
+          "remaining_attempts": 2,
+          "livemode": true,
+          "created_at": "2024-08-28 03:25:26"
         }`,
         }
       ]
@@ -473,7 +589,7 @@ export const webhooks: Guide = {
           paragraph: `Charge ACH Canceled Webhook will be triggered when user cancel the unsettled ACH payment. Settlement may take up to 3 banking days. Sample Payload for Charge ACH cancel is given below.`,
           snippet: `{
             "type": "charge.ach.canceled",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "d196f4a8-8662-4a96-8da8-5e688730ee2b",
             "data": {
                   "name": "Jim",
               "email": "Jim@test.com",
@@ -485,10 +601,15 @@ export const webhooks: Guide = {
               "last4": "4242",
               "hpp_id": null,
               "reference_number": "cha_65cf098a809b75130",
+              "metadata": {
+                "account": "358947"
+              },
               "created_at": "04-10-2024 00:01:53",
           },
-          "livemode": "true",
-          "created_at": "04-10-2024 00:01:53"
+          "attempt": 1,
+          "remaining_attempts": 2,
+          "livemode": true,
+          "created_at": "2024-08-28 03:25:26"
         }`,
         }
       ]
@@ -501,24 +622,50 @@ export const webhooks: Guide = {
           paragraph: `Charge ACH Declined Webhook will be triggered when ach settlement fails, for example "Insufficient balance in the ACH account". Sample Payload for Charge ACH declined is given below.`,
           snippet: `{
             "type": "charge.ach.updated",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "d196f4a8-8662-4a96-8da8-5e688730ee2b",
             "data": {
-                  "name": "Jim",
-              "email": "Jim@test.com",
+              "name": "Jim",
+              "email": "jim@test.com",
               "amount": 15.50,
               "description": "",
               "customer_id": "cus_1234567890",
-              "status":  "declined",
-            "reason":  "Insufficient balance",
+              "status": "declined",
               "payment_mode": "ach",
+              "captured": true,
               "last4": "4242",
+              "metadata": {
+                "order_id": "123",
+                "custom_data1": "test"
+              },
               "hpp_id": null,
               "reference_number": "cha_65cf098a809b75130",
               "created_at": "04-10-2024 00:01:53",
-          },
-          "livemode": "true",
-          "created_at": "04-10-2024 00:01:53"
-        }`,
+              "subscription": {
+                "name": "Jim",
+                "email": "jim@test.com",
+                "amount": 15.50,
+                "description": "",
+                "customer_id": "cus_1234567890",
+                "status": "active",
+                "interval": "monthly",
+                "cycles_paid": 5,
+                "total_cycles": 10,
+                "start_date": "03/01/2024",
+                "next_payment": "09/01/2024",
+                "reference_number": "sub_13hgh935a918n15130",
+                "metadata": {
+                  "order_id": "123",
+                  "custom_data1": "test"
+                },
+                "hpp_id": null,
+                "created_at": "04-10-2024 00:01:53",
+              }
+            },
+            "attempt": 1,
+            "remaining_attempts": 2,
+            "livemode": "true",
+            "created_at": "04-10-2024 00:01:53"
+          }`,
         }
       ]
     },
@@ -530,25 +677,52 @@ export const webhooks: Guide = {
           paragraph: `Charge ACH Paid Webhook will be triggered when user creats a charge with ACH, Settlement is done successfully. Sample Payload for Charge ACH paid is given below.`,
           snippet: `{
             "type": "charge.ach.updated",
-            "id": "evt_34ced3bfe096a4623",
+            "id": "d196f4a8-8662-4a96-8da8-5e688730ee2b",
             "data": {
-                  "name": "Jim",
-              "email": "Jim@test.com",
+              "name": "Jim",
+              "email": "jim@test.com",
               "amount": 15.50,
               "description": "",
               "customer_id": "cus_1234567890",
-              "status":  "paid"
+              "status": "paid",
               "payment_mode": "ach",
+              "captured": true,
               "last4": "4242",
+              "metadata": {
+                "order_id": "123",
+                "custom_data1": "test"
+              },
               "hpp_id": null,
               "reference_number": "cha_65cf098a809b75130",
               "created_at": "04-10-2024 00:01:53",
-          },
-          "livemode": "true",
-          "created_at": "04-10-2024 00:01:53"
-        }`,
+              "subscription": {
+                "name": "Jim",
+                "email": "jim@test.com",
+                "amount": 15.50,
+                "description": "",
+                "customer_id": "cus_1234567890",
+                "status": "active",
+                "interval": "monthly",
+                "cycles_paid": 5,
+                "total_cycles": 10,
+                "start_date": "03/01/2024",
+                "next_payment": "09/01/2024",
+                "reference_number": "sub_13hgh935a918n15130",
+                "metadata": {
+                  "order_id": "123",
+                  "custom_data1": "test"
+                },
+                "hpp_id": null,
+                "created_at": "04-10-2024 00:01:53",
+              }
+            },
+            "attempt": 1,
+            "remaining_attempts": 2,
+            "livemode": "true",
+            "created_at": "04-10-2024 00:01:53"
+          }`,
         }
       ]
-    }
+    },
   ]
 };
