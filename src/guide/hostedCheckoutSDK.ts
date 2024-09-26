@@ -21,7 +21,7 @@ export const hostedCheckoutSDK: Guide = {
           snippet: `
           {
             
-            https://api.easymerchant.io/api/paymentintent ,
+            https://api.easymerchant.io/api/v1/paymentintent 
 
           }
           `,
