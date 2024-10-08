@@ -186,5 +186,11 @@ export const attributes: Attribute[] = [
     name: 'start_date',
     data_type: 'date',
     description: `The start date of the invoice is required for the payment type 'recurring'. The start date can be either current date or future date. The Subscription starts renewal based on the start date and start date is based on the time zone set in the users > My account.`,
+  },
+  {
+    id: 'order_number',
+    name: 'order_number',
+    data_type: 'string',
+    description: `order_number passed in with the transaction. As long as the order number is unique we allow duplicate payments (same amount and same payment method more than once within 2 minutes)`,
   }
 ];
