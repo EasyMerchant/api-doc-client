@@ -53,12 +53,6 @@ export const hostedCheckoutSDK: Guide = {
       description: [
         {
           paragraph: `The {app_name}'s JS SDK is a UI component for the web that accepts various types of payment methods, validates input, and handles errors. Use it alone or with other elements in your web app's frontend.`,
-          list: {
-            unOrdered: [
-              'Include our JS SDK library in your payment page header',
-              'Simply copy the HTML code below into your website or application. ',
-            ],
-          }
         },
         {
           paragraph: `Add the JS SDK checkout.js script on your payment page by adding it to the head of your HTML`,
