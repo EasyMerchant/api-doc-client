@@ -162,25 +162,15 @@ export const hostedCheckoutSDK: Guide = {
     },
     {
       id: 'hosted-checkout-events-handling',
-      title: 'Step 3: Events',
+      title: 'Step 3: Element Events',
       description: [
         {
-          paragraph:"<b>Listener</b><p>To add a listerner to an event use the method .on(eventName, callback)</p>",
+          paragraph:"The only way to communicate with your Element is by listening to an event. An Element might emit any of the events below.",
           snippet: `
-
-          <script type="text/javascript">
-            var elements = new lyfPayCheckout("{{client_token}}");
-
-            elements.create({
-              container: 'payments'
-            })
-            elements.on('eventName', (event)=>{
+          elements.on('eventName', (event)=>{
               console.log(event)
-             });
-     
-            </script>
-            `
-
+          });
+          `
         },
         {
           paragraph:'<h3>Events List</h3><p>Our elements emit any of the following events</p>',
@@ -189,20 +179,9 @@ export const hostedCheckoutSDK: Guide = {
         {
           paragraph:'<b>Ready</b><p>Trigger the event once fully elements are rendered</p>',
           snippet: `
-
-          <script type="text/javascript">
-            var elements = new lyfPayCheckout("{{client_token}}");
-
-            elements.create({
-              container: 'payments'
-            })
             elements.on('ready', (event)=>{
               console.log("Ready",event)
-            });
-     
-     
-            </script>
-           
+            });           
             `
            
             
@@ -225,18 +204,9 @@ export const hostedCheckoutSDK: Guide = {
           paragraph:'<b>Process</b><p>Trigger the event once payment processing..</p>',
           snippet: `
 
-          <script type="text/javascript">
-            var elements = new lyfPayCheckout("{{client_token}}");
-
-            elements.create({
-              container: 'payments'
-            })
-            elements.on('process', (event)=>{
+          elements.on('process', (event)=>{
               console.log("Process",event)
-            });
-     
-     
-            </script>
+          });
            
             `
            
@@ -260,18 +230,9 @@ export const hostedCheckoutSDK: Guide = {
           paragraph:'<b>Error</b><p>Trigger the event once get error from payment or validation error</p>',
           snippet: `
 
-          <script type="text/javascript">
-            var elements = new lyfPayCheckout("{{client_token}}");
-
-            elements.create({
-              container: 'payments'
-            })
-            elements.on('error', (event)=>{
+          elements.on('error', (event)=>{
               console.log("Error",event)
-            });
-     
-     
-            </script>
+          });
            
             `
            
@@ -282,7 +243,7 @@ export const hostedCheckoutSDK: Guide = {
           snippet: `
               {
                 "type":"error",
-                "data"{ ...error_details... }
+                "data": { ...error_details... }
               }
             `
            
@@ -298,19 +259,10 @@ export const hostedCheckoutSDK: Guide = {
           },
           snippet: `
 
-          <script type="text/javascript">
-            var elements = new lyfPayCheckout("{{client_token}}");
-
-            elements.create({
-              container: 'payments'
-            })
-            elements.on('done', (event)=>{
+          lements.on('done', (event)=>{
               // you can redirect to your page here
               console.log("done",event)
-            });
-     
-     
-            </script>
+          });
            
             `,
             
