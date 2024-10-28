@@ -10,27 +10,23 @@ export const hostedCheckoutSDK: Guide = {
   content: [
     {
       id: 'generate-client-token',
-      title: 'Generate Client Token',
+      title: 'Step 1: Generate Client Token',
       description: [
         {
-          paragraph: `To begin using {app_name}'s Hosted Checkout SDK, first you will need to generate a client token from your backend with your amount. You have to generate client token for every payment request.  <br /> <br /><b>Note:</b> You can use our whole bunch of sample code with PHP & Javascript <a href="https://github.com/EasyMerchant/elements-sample-php" target="__blank">Elements SDK with PHP & Javascript</a>`,
+          paragraph: `To begin using {app_name}'s Hosted Checkout SDK, you will need to generate a client token using payment intent endpoint from your backend. You have to generate client token for every payment or vault request.  <br /> <br /><b>Note:</b> Here is the complete code sample with PHP & Javascript <a href="https://github.com/EasyMerchant/elements-sample-php" target="__blank">Elements SDK with PHP & Javascript</a>`,
           
         },
         {
           paragraph: `<b>API URL</b>`,
           snippet: `
-          {
-            
-            https://api.easymerchant.io/api/v1/paymentintent 
-
-          }
+            POST "https://api.easymerchant.io/api/v1/paymentintent"
           `,
         },
         {
           paragraph: `<b>Request Params</b>`,
           snippet: `
           {
-            "amount" : "109.00"
+            "amount" : "109.00" // optional
           
           }
           `,
@@ -42,6 +38,7 @@ export const hostedCheckoutSDK: Guide = {
           {
             "status": true,
             "message": "Payment Intent created successfully.",
+            "payment_intent": "pi_862136128h9ad",
             "client_token": "token_663116909c7eb"
           }
           `,
@@ -52,33 +49,28 @@ export const hostedCheckoutSDK: Guide = {
     },
     {
       id: 'configure-hosted-checkout',
-      title: 'Configure Hosted Checkout',
+      title: 'Step 2: Configure Hosted Checkout',
       description: [
         {
-          paragraph: `Using {app_name}'s Hosted Checkout in an easy step process!`,
+          paragraph: `The {app_name}'s JS SDK is a UI component for the web that accepts various types of payment methods, validates input, and handles errors. Use it alone or with other elements in your web app's frontend.`,
           list: {
             unOrdered: [
-              'First, you will need to generate a client token to use your hosted checkout.(Refer this doc to generate your client token).',
+              'Include our JS SDK library in your payment page header',
               'Simply copy the HTML code below into your website or application. ',
             ],
-          },
+          }
         },
         {
-          paragraph: `First you have to render elements using by this code. you can create your own div with id in your html page & pass in to our element creation method `,
-         
+          paragraph: `Add the JS SDK checkout.js script on your payment page by adding it to the head of your HTML`,
+          snippet: `<script src="https://cdn.lyfepay.io/js-sdk/v1/checkout-v1.0.1.min.js" ></script>`
+        },
+        {
+          paragraph: `Create a placeholder element in your page where you want to mount the JS SDK UI:`,
+          snippet: `<div id="payments"></div>`
+        },
+        {
+          paragraph: `Include the following code to create an instance of JS SDK UI, replace the client_token placeholder with actual token generated from Step above.`,
           snippet: `
-          <!DOCTYPE html>
-        <html lang='en'>
-            <head>
-                <meta charset="utf-8" />
-                <title>lyfecycle PAYMENTS | Payment Element</title>
-                <meta name="description" content="A demo of a payment on LyfePay" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <script src="https://cdn.lyfepay.io/js-sdk/v1/checkout-v1.0.1.min.js" ></script>
-            </head>
-            <body>
-            <div id="payments"></div>
-           
             <script type="text/javascript">
             var elements = new lyfPayCheckout("{{client_token}}");
             elements.create({
@@ -87,12 +79,12 @@ export const hostedCheckoutSDK: Guide = {
               showTotal:true,
               showSubmitButton:true,
               paymentMethods:['card', 'ach','crypto','wallet'],
-
             })
             </script>
-            </body>
-            </html>
           `,
+        },
+        {
+          paragraph:'<h3>Options</h3>',
         },
         {
           paragraph:'<b>showReceipt: true | false</b>',
@@ -169,193 +161,8 @@ export const hostedCheckoutSDK: Guide = {
              ],
     },
     {
-      id: 'hosted-checkout-billing-elements',
-      title: 'Billing Elements',
-      description: [
-        {
-          paragraph:'This Billing elements have predefined blocks, you can control the whole billing elements will be display or not. And also you can define which one are required or optional , and prefill the values for each element',
-          snippet: `
-
-          <script type="text/javascript">
-            var elements = new lyfPayCheckout("{{client_token}}");
-            elements.create({
-              container: 'payments',
-              showReceipt:false,
-              showTotal:true,
-              showSubmitButton:true,
-              paymentMethods:['card', 'ach','crypto','wallet'],
-              fields: {
-                billing: [
-                { name: 'country', required: true, value: 'US' },
-                { name: 'state', required: true, value: 'AL' },
-                { name: 'city', required: false,value: 'Los Angels' },
-                { name: 'postal_code', required: true ,value: '91423' },
-            
-              ]
-            }
-            })
-            </script>
-          `,
-
-        },
-        {
-          paragraph:'You don\'t need to define all fields, you can set your configuration for just changes needed field(s).',
-          list: {
-            unOrdered: [
-              'Note:For Example , if you don\'t include the fields , it will still be displayed.'
-            ],
-          },
-          snippet: `
-
-          <script type="text/javascript">
-            var elements = new lyfPayCheckout("{{client_token}}");
-            elements.create({
-              container: 'payments',
-              fields: {
-                billing: [
-                { name: 'country', required: true, value: 'US' },
-                { name: 'state', required: true, value: 'AL' },
-             
-            
-              ]
-            }
-            })
-            </script>
-            `
-          
-        },
-        {
-          paragraph:'<b>Hiding Billing Elements</b>',
-          list: {
-            unOrdered: [
-              'If you want hide the billing info.  you can give the whole block by setting the billing field to false'
-            ],
-          },
-          snippet: `
-
-          <script type="text/javascript">
-            var elements = new lyfPayCheckout("{{client_token}}");
-            elements.create({
-              container: 'payments',
-              fields: {
-                billing: false
-            }
-            })
-            </script>
-            `
-          
-        },
-      ] 
-    },
-
-    {
-      id: 'hosted-checkout-additional-elements',
-      title: 'Additional Elements',
-      description: [
-        {
-          paragraph:'If you want to collect extra information from user you can use this block.But this fields are not included by default , and it will be displayed only if you add them.',
-          snippet: `
-
-          <script type="text/javascript">
-            var elements = new lyfPayCheckout("{{client_token}}");
-            elements.create({
-              container: 'payments',
-              fields: {
-                additional: [
-                  { name: 'name', required: true,value: 'Test LyfPay' },
-                  { name: 'email_address', required: true ,value: 'test@lyfpay.io'},
-                  { name: 'phone_number', required: false ,value: '' },
-                  { name: 'description', required: true ,value: 'Test Payment' }
-                   
-                  ]
-                       
-                }
-            })
-            </script>
-          `,
-
-        },
-        {
-          paragraph:'<b>Hiding Additional Info</b>',
-          list: {
-            unOrdered: [
-              'If you want hide the additional info.  you can give the whole block by setting the additional field to false'
-            ],
-          },
-          snippet: `
-
-          <script type="text/javascript">
-            var elements = new lyfPayCheckout("{{client_token}}");
-            elements.create({
-              container: 'payments',
-              fields: {
-                additional: false
-            }
-            })
-            </script>
-            `
-          
-        },
-      ] 
-    },
-
-    {
-      id: 'hosted-checkout-apperance-settings',
-      title: 'Apperance Settings',
-      description: [
-        {
-          paragraph:"<b>Change apperance from backend</b>",
-          list: {
-            unOrdered: [
-              'you can change yous js sdk theme apperance from your Merchant Portals > Settings > JS SDK Theme'
-            ],
-          },
-          image: {
-            src: '{cdnUrl}/assets/js-sdk-theme-settings.png',
-            alt: 'JS SDK Theme Settings',
-            objectFit: 'cover',
-            width: 1000,
-            height: 600,
-          },
-
-        },
-        {
-          paragraph:'<b>Change apperance from code</b>',
-          list: {
-            unOrdered: [
-              'You can pass appearance setting object to change js sdk apperance'
-            ],
-          },
-          snippet: `
-
-          <script type="text/javascript">
-            var elements = new lyfPayCheckout("{{client_token}}");
-            elements.create({
-              container: 'payments',
-              apperanceSettings:{
-                bodyBackgroundColor: "#eeeff2",
-                containerBackgroundColor: "#ffffff",
-                primaryFontColor: "#000000",
-                secondaryFontColor: "#666666",
-                primaryButtonBackgroundColor: "#1757d9",
-                primaryButtonHoverColor: "#3a70df",
-                primaryButtonFontColor: "#ffffff",
-                secondaryButtonBackgroundColor: "#ffffff",
-                secondaryButtonHoverColor: "#1757d9",
-                secondaryButtonFontColor: "#1757d9",
-                borderRadious: "8"
-            }
-            })
-            </script>
-            `
-          
-        },
-      ] 
-    },
-
-    {
       id: 'hosted-checkout-events-handling',
-      title: 'Events',
+      title: 'Step 3: Events',
       description: [
         {
           paragraph:"<b>Listener</b><p>To add a listerner to an event use the method .on(eventName, callback)</p>",
@@ -556,6 +363,193 @@ export const hostedCheckoutSDK: Guide = {
         },
       ] 
     },
+    {
+      id: 'hosted-checkout-customisation',
+      title: 'Customize JS SDK UI',
+    },
+    {
+      id: 'hosted-checkout-billing-elements',
+      title: 'Billing Elements',
+      description: [
+        {
+          paragraph:'This Billing elements have predefined blocks, you can control the whole billing elements will be display or not. And also you can define which one are required or optional , and prefill the values for each element',
+          snippet: `
 
+          <script type="text/javascript">
+            var elements = new lyfPayCheckout("{{client_token}}");
+            elements.create({
+              container: 'payments',
+              showReceipt:false,
+              showTotal:true,
+              showSubmitButton:true,
+              paymentMethods:['card', 'ach','crypto','wallet'],
+              fields: {
+                billing: [
+                { name: 'country', required: true, value: 'US' },
+                { name: 'state', required: true, value: 'AL' },
+                { name: 'city', required: false,value: 'Los Angels' },
+                { name: 'postal_code', required: true ,value: '91423' },
+            
+              ]
+            }
+            })
+            </script>
+          `,
+
+        },
+        {
+          paragraph:'You don\'t need to define all fields, you can set your configuration for just changes needed field(s).',
+          list: {
+            unOrdered: [
+              'Note:For Example , if you don\'t include the fields , it will still be displayed.'
+            ],
+          },
+          snippet: `
+
+          <script type="text/javascript">
+            var elements = new lyfPayCheckout("{{client_token}}");
+            elements.create({
+              container: 'payments',
+              fields: {
+                billing: [
+                { name: 'country', required: true, value: 'US' },
+                { name: 'state', required: true, value: 'AL' },
+             
+            
+              ]
+            }
+            })
+            </script>
+            `
+          
+        },
+        {
+          paragraph:'<b>Hiding Billing Elements</b>',
+          list: {
+            unOrdered: [
+              'If you want hide the billing info.  you can give the whole block by setting the billing field to false'
+            ],
+          },
+          snippet: `
+
+          <script type="text/javascript">
+            var elements = new lyfPayCheckout("{{client_token}}");
+            elements.create({
+              container: 'payments',
+              fields: {
+                billing: false
+            }
+            })
+            </script>
+            `
+          
+        },
+      ] 
+    },
+
+    {
+      id: 'hosted-checkout-additional-elements',
+      title: 'Additional Elements',
+      description: [
+        {
+          paragraph:'If you want to collect extra information from user you can use this block.But this fields are not included by default , and it will be displayed only if you add them.',
+          snippet: `
+
+          <script type="text/javascript">
+            var elements = new lyfPayCheckout("{{client_token}}");
+            elements.create({
+              container: 'payments',
+              fields: {
+                additional: [
+                  { name: 'name', required: true,value: 'Test LyfPay' },
+                  { name: 'email_address', required: true ,value: 'test@lyfpay.io'},
+                  { name: 'phone_number', required: false ,value: '' },
+                  { name: 'description', required: true ,value: 'Test Payment' }
+                   
+                  ]
+                       
+                }
+            })
+            </script>
+          `,
+
+        },
+        {
+          paragraph:'<b>Hiding Additional Info</b>',
+          list: {
+            unOrdered: [
+              'If you want hide the additional info.  you can give the whole block by setting the additional field to false'
+            ],
+          },
+          snippet: `
+
+          <script type="text/javascript">
+            var elements = new lyfPayCheckout("{{client_token}}");
+            elements.create({
+              container: 'payments',
+              fields: {
+                additional: false
+            }
+            })
+            </script>
+            `
+          
+        },
+      ] 
+    },
+
+    {
+      id: 'hosted-checkout-apperance-settings',
+      title: 'Apperance Settings',
+      description: [
+        {
+          paragraph:"<b>Change apperance from backend</b>",
+          list: {
+            unOrdered: [
+              'you can change yous js sdk theme apperance from your Merchant Portals > Settings > JS SDK Theme'
+            ],
+          },
+          image: {
+            src: '{cdnUrl}/assets/js-sdk-theme-settings.png',
+            alt: 'JS SDK Theme Settings',
+            objectFit: 'cover',
+            width: 1000,
+            height: 600,
+          },
+
+        },
+        {
+          paragraph:'<b>Change apperance from code</b>',
+          list: {
+            unOrdered: [
+              'You can pass appearance setting object to change js sdk apperance'
+            ],
+          },
+          snippet: `
+
+          <script type="text/javascript">
+            var elements = new lyfPayCheckout("{{client_token}}");
+            elements.create({
+              container: 'payments',
+              apperanceSettings:{
+                bodyBackgroundColor: "#eeeff2",
+                containerBackgroundColor: "#ffffff",
+                primaryFontColor: "#000000",
+                secondaryFontColor: "#666666",
+                primaryButtonBackgroundColor: "#1757d9",
+                primaryButtonHoverColor: "#3a70df",
+                primaryButtonFontColor: "#ffffff",
+                secondaryButtonBackgroundColor: "#ffffff",
+                secondaryButtonHoverColor: "#1757d9",
+                secondaryButtonFontColor: "#1757d9",
+                borderRadious: "8"
+            }
+            })
+            </script>
+            `
+          
+        },
+      ] 
+    },
   ],
 };
