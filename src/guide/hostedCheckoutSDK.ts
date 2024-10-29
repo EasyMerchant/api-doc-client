@@ -19,7 +19,7 @@ export const hostedCheckoutSDK: Guide = {
         {
           paragraph: `<b>API URL</b>`,
           snippet: `
-            POST https://api.easymerchant.io/api/v1/paymentintent
+            POST "https://api.easymerchant.io/api/v1/paymentintent"
           `,
         },
         {
