@@ -56,7 +56,7 @@ export const hostedCheckoutSDK: Guide = {
         },
         {
           paragraph: `Add the JS SDK checkout.js script on your payment page by adding it to the head of your HTML`,
-          snippet: `<script src="https://cdn.lyfepay.io/js-sdk/v1/checkout-v1.0.74.min.js?v=9" ></script>`
+          snippet: `<script src="https://cdn.lyfepay.io/js-sdk/v1/checkout-v1.0.75.min.js?v=9" ></script>`
         },
         {
           paragraph: `Create a placeholder element in your page where you want to mount the JS SDK UI:`,
