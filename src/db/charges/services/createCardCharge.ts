@@ -93,6 +93,10 @@ export const createCardCharge: IService = {
       {
         required: false,
         attributeId: 'charge_is_default',
+      },
+      {
+        required: false,
+        attributeId: 'order_number',
       }
     ],
     response: {
