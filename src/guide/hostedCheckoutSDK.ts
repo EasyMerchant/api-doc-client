@@ -63,7 +63,7 @@ export const hostedCheckoutSDK: Guide = {
           snippet: `<div id="payments"></div>`
         },
         {
-          paragraph: `Include the following code to create an instance of JS SDK UI, replace the <b>{{client_token}}</b> placeholder with actual token generated from Step above.`,
+          paragraph: `Include the following code to create an instance of JS SDK UI, replace the <b>"client_token"</b> placeholder with actual token generated from Step above.`,
           snippet: `
             <script type="text/javascript">
             var elements = new lyfPayCheckout("{{client_token}}");
