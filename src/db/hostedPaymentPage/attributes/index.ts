@@ -66,19 +66,19 @@ export const attributes: Attribute[] = [
     name: 'customer_notify',
     data_type: 'string',
     description:
-      'It is an Optional field. The value can be either ‘true’ or ’false’ or true or false or 1 or 0. If the value is set to ‘true’ or true or 1, customer notification will be sent once the payment is done.  If the value is set to ‘false’ or false or 0, customer notification will not be sent',
+      'It is an Optional field. The value can be either true or false. If the value is set to true, customer notification will be sent once the payment is done.  If the value is set to false, customer notification will not be sent',
   },
   {
     id: 'status',
     name: 'status',
     data_type: 'string',
-    description: 'It is an Optional field. The value can be either ‘true’ or ’false’ or true or false or 1 or 0. If the value is set to ‘true’ or true or 1, the page will be active and customers will be able to make payment using the payment link. If the value is set to ‘false’ or false or 0, the page will be inactive and if a customer tries to access the payment page then it will throw the page not found.<br><br> For List filters, Its an Optional field, This attribute is set to TRUE, Only active Payment Pages will be displayed. If set to FALSE then it will display only the inactive Payment Pages.',
+    description: 'It is an Optional field. The value can be either true or false. If the value is set to true, the page will be active and customers will be able to make payment using the payment link. If the value is set to false, the page will be inactive and if a customer tries to access the payment page then it will throw the page not found.<br><br> For List filters, Its an Optional field, This attribute is set to TRUE, Only active Payment Pages will be displayed. If set to FALSE then it will display only the inactive Payment Pages.',
   },
   {
     id: 'allow_quantity',
     name: 'allow_quantity',
     data_type: 'string',
-    description: 'It is an Optional field. The value can be either ‘true’ or ’false’ or true or false or 1 or 0. If the value is set to ‘true’ or true or 1, a new field will be added in the payment page. If the value is set to ‘false’ or false or 0, It will not ask for any new field label.',
+    description: 'It is an Optional field. The value can be either true or false. If the value is set to true, a new field will be added in the payment page. If the value is set to false, It will not ask for any new field label.',
   },
   {
     id: 'quantity_label',
@@ -120,7 +120,7 @@ export const attributes: Attribute[] = [
     id: 'single_use',
     name: 'single_use',
     data_type: 'string',
-    description: `It is an Optional field. The value can be either ‘true’ or ’false’ or true or false or 1 or 0. If the value is set to ‘true’ or true or 1, once the payment is done against the page then the page will be expired. If the value is set to ’false’ or false or 0, the customers can make payment against the payment link for unlimited times. <br> <br> For List page filters, If it set to TRUE, It will display only the Pages marked as single_use while creation/updation`,
+    description: `It is an Optional field. The value can be either true or false. If the value is set to true, once the payment is done against the page then the page will be expired. If the value is set to false, the customers can make payment against the payment link for unlimited times. <br> <br> For List page filters, If it set to TRUE, It will display only the Pages marked as single_use while creation/updation`,
   },
   {
     id: 'unique_id',
