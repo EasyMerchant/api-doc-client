@@ -96,7 +96,7 @@ export const hostedPaymentPageUpdate: IService = {
       data: {
         "status": true,
         "message": "Hosted payment page updated successfully.!",
-        "link": "merchant.lyfepay.io/payment/charge/918b6ee5056aa5c0",
+        "link": "https://merchant.lyfepay.io/payment/charge/918b6ee5056aa5c0",
         "unique_id": "918b6ee5056aa5c0"
       },
     },
