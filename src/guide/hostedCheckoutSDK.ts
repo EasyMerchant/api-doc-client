@@ -8,6 +8,7 @@ export const hostedCheckoutSDK: Guide = {
   ],
   defaultOpen: true,
   content: [
+    
     {
       id: 'generate-client-token',
       title: 'Step 1: Generate Client Token',
@@ -494,8 +495,27 @@ export const hostedCheckoutSDK: Guide = {
             </script>
             `
           
-        },
+        }
+        
       ] 
+    },
+    {
+      id: 'sdk-demo-link',
+      title: 'JS SDK Demo Link',
+      description: [
+        {
+          paragraph: 
+
+          `We invite you to experience the full capabilities of JS SDK through our interactive demo. Whether you're exploring new solutions or evaluating if we're the right fit for your needs, this demo will give you hands-on access to the key features and functionality of our platform.,
+
+          <b>How to Get Started:</b>
+          list: {
+          unOrdered: [
+              'Click the Demo Link: https://jssdk-demo.lyfepay.io',
+              'Access Our Features: Explore tools, dashboards, and functionalities designed to help you streamline your processes and improve efficiency.',
+              'Experience It Firsthand: Navigate the software at your own pace and see how it can address your unique needs.'
+            ],`,          
+        }]
     },
   ],
 };
