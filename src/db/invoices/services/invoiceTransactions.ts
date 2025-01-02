@@ -37,7 +37,6 @@ export const invoiceTransactions: IService = {
               payment_type : "Check",
               transaction_id : "cha_66fbe140ae7c25064",
               hpp_id : null,
-              is_ach_transaction : "0",
               declined_reason : null,
               account_number : "6789",
               cc_last_4 : null,
