@@ -5,14 +5,16 @@ import { officialPlugins } from './officialPlugins';
 import { crypto } from './crypto';
 import { kyc } from './kyc';
 import { testInfo } from './testInfo';
+import { mobileSDK } from './mobileSDK';
 
 export const guide: Guide[] = [
   hostedCheckoutSDK, // first item in navigation
+  mobileSDK,
   webhooks,
   officialPlugins,
   crypto,
   kyc,
-  testInfo,
+  testInfo 
 ];
 
 // SDKs
