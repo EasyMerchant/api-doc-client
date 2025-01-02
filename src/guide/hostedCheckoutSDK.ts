@@ -504,16 +504,19 @@ export const hostedCheckoutSDK: Guide = {
       title: 'JS SDK Demo Link',
       description: [
         {
-          paragraph:'<b> Explore Our application with a Free Demo </p>',                 
+          paragraph:'<b> Explore our application with a demo </p>',                 
         },
         {
           paragraph:'<p> We invite you to experience the full capabilities of JS SDK through our interactive demo. Whether you are exploring new solutions or evaluating if we are the right fit for your needs, this demo will give you hands-on access to the key features and functionality of our platform.</p>',         
+        },
+        {
+          paragraph: `<a href="https://jssdk-demo.lyfepay.io" target="__blank">Demo Link</a>`,
         },  
         {
           paragraph:'<b>How to Get Started:</b>',
           list: {
             unOrdered: [
-              'Click the Demo Link: https://jssdk-demo.lyfepay.io`',
+              'Click the Demo Link above',
               'Access Our Features: Explore tools, dashboards, and functionalities designed to help you streamline your processes and improve efficiency.',
               'Experience It Firsthand: Navigate the software at your own pace and see how it can address your unique needs.'
             ],

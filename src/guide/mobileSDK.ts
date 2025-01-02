@@ -23,7 +23,7 @@ export const mobileSDK: Guide = {
         },
         {
           paragraph: `or using command`,
-          snippet: 'npm i easymerchantsdk-react-native',
+          snippet: `npm install "easymerchantsdk-react-native"`
         }
       ],
     },
