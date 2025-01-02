@@ -445,14 +445,14 @@ export const hostedCheckoutSDK: Guide = {
     },
 
     {
-      id: 'hosted-checkout-apperance-settings',
-      title: 'Apperance Settings',
+      id: 'hosted-checkout-appearance-settings',
+      title: 'Appearance Settings',
       description: [
         {
-          paragraph:"<b>Change apperance from backend</b>",
+          paragraph:"<b>Change appearance from backend</b>",
           list: {
             unOrdered: [
-              'you can change yous js sdk theme apperance from your Merchant Portals > Settings > JS SDK Theme'
+              'you can change JS SDK theme from your Merchant Portal under Settings > JS SDK Theme'
             ],
           },
           image: {
@@ -465,10 +465,10 @@ export const hostedCheckoutSDK: Guide = {
 
         },
         {
-          paragraph:'<b>Change apperance from code</b>',
+          paragraph:'<b>Change appearance from code</b>',
           list: {
             unOrdered: [
-              'You can pass appearance setting object to change js sdk apperance'
+              'You can pass appearance setting object to change JS SDK appearance'
             ],
           },
           snippet: `
@@ -477,7 +477,7 @@ export const hostedCheckoutSDK: Guide = {
             var elements = new lyfPayCheckout("{{client_token}}");
             elements.create({
               container: 'payments',
-              apperanceSettings:{
+              appearanceSettings:{
                 bodyBackgroundColor: "#eeeff2",
                 containerBackgroundColor: "#ffffff",
                 primaryFontColor: "#000000",
