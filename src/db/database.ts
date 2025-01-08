@@ -14,6 +14,7 @@ import { paymentintent } from './paymentIntent';
 import { hostedPaymentPage } from './hostedPaymentPage';
 import { paymentPartners } from './paymentPartners';
 import { webhookConfig } from './webhookConfig';
+import { payouts } from './payouts';
 
 export const data: IApiData[] = [
   introduction,
@@ -30,5 +31,6 @@ export const data: IApiData[] = [
   hostedPaymentPage,
   paymentPartners,
   vendors,
-  webhookConfig
+  webhookConfig,
+  payouts
 ];
