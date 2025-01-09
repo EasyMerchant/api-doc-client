@@ -12,16 +12,12 @@ export const payoutCancel: IService = {
     params: [
       {
         required: true,
-        attributeId: 'charge_id',
+        attributeId: 'payout_id',
       },
       {
         required: true,
         attributeId: 'cancel_reason',
-      },
-      {
-        required: false,
-        attributeId: 'mode',
-      },
+      }
     ],
     response: {
       type: 'application/json',

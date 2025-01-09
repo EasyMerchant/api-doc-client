@@ -3,7 +3,7 @@ import { attributes } from './attributes';
 import { services } from './services';
 
 export const payouts: IApiData = {
-  name: 'payouts',
+  name: 'Payouts',
   controller: 'payouts',
   defaultOpen: true,
   description: [

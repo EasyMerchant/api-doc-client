@@ -144,16 +144,16 @@ export const attributes: Attribute[] = [
     description: 'Unique identifier to refer the charge using the transaction_id.',
   },
   {
+    id: 'payout_id',
+    name: 'payout_id',
+    data_type: 'string',
+    description: 'Unique identifier to refer the charge using the transaction_id.',
+  },
+  {
     id: 'cancel_reason',
     name: 'cancel_reason',
     data_type: 'string',
     description: 'Reason for cancelling the payout',
-  },
-  {
-    id: 'mode',
-    name: 'mode',
-    data_type: 'boolean',
-    description: 'It is boolean value either `0` or `1`',
   },
   {
     id: 'customer_id',
