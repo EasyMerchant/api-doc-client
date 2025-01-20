@@ -108,9 +108,8 @@ export const payoutACH: IService = {
       type: 'application/json',
       data: {
         "status": true,
-        "message": "Payment processed successfully. ",
-        "payout_id": "9a41b24c-0906-4bc7-aad3-959dad7d5a4a",
-        "data": "NA"
+        "message": "Payout processed successfully. ",
+        "payout_id": "9a41b24c-0906-4bc7-aad3-959dad7d5a4a"
       },
     },
   },

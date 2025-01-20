@@ -23,9 +23,8 @@ export const payoutCancel: IService = {
       type: 'application/json',
       data: {
         "status": true,
-        "message": "ACH Payment cancelled successfully. ",
-        "charge_id": "4bf9f184-013d-44b0-80c4-6dfca4c3a856",
-        "data": "NA"
+        "message": "Payout canceled successfully. ",
+        "payout_id": "4bf9f184-013d-44b0-80c4-6dfca4c3a856",
       },
     },
   },
