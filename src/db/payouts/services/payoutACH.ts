@@ -4,8 +4,7 @@ export const payoutACH: IService = {
   id: 'payout_ACH',
   name: 'Payout ACH',
   description: [
-    `SendACH endpoint that is able to send funds to a DDA using routing number and account number. Credentials are in comments. If you look at the TLS documentation from iStream, it indicates that you only need to change the creditOrDebit key / value pair to 'C' in order to credit a named DDA with funds from the merchant's account. 
-`,
+    `Creates a PPD ACH credit with the supplied account information.`,
   ],
   endpoint: {
     method: 'post',
