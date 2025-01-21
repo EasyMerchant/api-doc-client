@@ -79,11 +79,11 @@ export const payoutACH: IService = {
         attributeId: 'entry_class_code',
       },
       {
-        required: true,
+        required: false,
         attributeId: 'customer_id',
       },
       {
-        required: true,
+        required: false,
         attributeId: 'account_id',
       },
     ],
