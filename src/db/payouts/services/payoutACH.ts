@@ -15,7 +15,7 @@ export const payoutACH: IService = {
         attributeId: 'name',
       },
       {
-        required: false,
+        required: true,
         attributeId: 'email',
       },
       {
@@ -52,15 +52,7 @@ export const payoutACH: IService = {
       },
       {
         required: false,
-        attributeId: 'payment_mode',
-      },
-      {
-        required: false,
         attributeId: 'start_date',
-      },
-      {
-        required: false,
-        attributeId: 'payment_method',
       },
       {
         required: false,
@@ -79,20 +71,12 @@ export const payoutACH: IService = {
         attributeId: 'account_type',
       },
       {
-        required: true,
-        attributeId: 'business_account',
-      },
-      {
-        required: true,
+        required: false,
         attributeId: 'account_validation',
       },
       {
         required: true,
         attributeId: 'entry_class_code',
-      },
-      {
-        required: true,
-        attributeId: 'payment_type',
       },
       {
         required: true,
