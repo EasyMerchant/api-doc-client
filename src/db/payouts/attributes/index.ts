@@ -75,22 +75,10 @@ export const attributes: Attribute[] = [
     description: `The mode of payment used for creating the payouts. The payment mode can be 'auth_only', 'auth_and_capture'`,
   },
   {
-    id: 'start_date',
-    name: 'start_date',
-    data_type: 'date',
-    description: `The start date of the Payouts is required for the payment type 'recurring'. The start date can be either current date or future date. The Subscription starts renewal based on the start date.`,
-  },
-  {
     id: 'payment_method',
     name: 'payment_method',
     data_type: 'string',
     description: `The method of payment used for creating the charge. Use either 'ach' or 'card' to make charge.`,
-  },
-  {
-    id: 'levelIndicator',
-    name: 'levelIndicator',
-    data_type: 'boolean',
-    description: `The method of level indicator will be boolean value. Use either '0' or '1' to make Payout.`,
   },
   {
     id: 'routing_number',
