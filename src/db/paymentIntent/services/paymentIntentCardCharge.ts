@@ -33,10 +33,6 @@ export const paymentIntentCardCharge: IService = {
       {
         required: true,
         attributeId: 'description'
-      },
-      {
-        required: true,
-        attributeId: 'levelIndicator'
       }
     ],
     response: {

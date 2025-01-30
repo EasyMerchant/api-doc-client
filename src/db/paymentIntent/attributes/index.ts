@@ -104,11 +104,5 @@ export const attributes: Attribute[] = [
     name: 'description',
     data_type: 'string',
     description: 'An arbitrary string which you can attach to an Invoice object. It is displayed when in the web interface alongside the invoice.',
-  },
-  {
-    id: 'levelIndicator',
-    name: 'levelIndicator',
-    data_type: 'integer',
-    description: 'It is an optional attribute. It is boolean value accepts either `1` or `0`',
   }
 ];
