@@ -52,10 +52,6 @@ export const payoutACH: IService = {
       },
       {
         required: false,
-        attributeId: 'start_date',
-      },
-      {
-        required: false,
         attributeId: 'levelIndicator',
       },
       {
