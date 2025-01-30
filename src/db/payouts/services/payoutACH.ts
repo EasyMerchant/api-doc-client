@@ -51,10 +51,6 @@ export const payoutACH: IService = {
         attributeId: 'currency',
       },
       {
-        required: false,
-        attributeId: 'levelIndicator',
-      },
-      {
         required: true,
         attributeId: 'routing_number',
       },

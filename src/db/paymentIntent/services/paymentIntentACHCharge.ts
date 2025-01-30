@@ -29,10 +29,6 @@ export const paymentIntentACHCharge: IService = {
       {
         required: true,
         attributeId: 'description'
-      },
-      {
-        required: false,
-        attributeId: 'levelIndicator'
       }
     ],
     response: {

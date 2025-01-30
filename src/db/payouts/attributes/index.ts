@@ -81,12 +81,6 @@ export const attributes: Attribute[] = [
     description: `The method of payment used for creating the charge. Use either 'ach' or 'card' to make charge.`,
   },
   {
-    id: 'levelIndicator',
-    name: 'levelIndicator',
-    data_type: 'boolean',
-    description: `The method of level indicator will be boolean value. Use either '0' or '1' to make Payout.`,
-  },
-  {
     id: 'routing_number',
     name: 'routing_number',
     data_type: 'string',
