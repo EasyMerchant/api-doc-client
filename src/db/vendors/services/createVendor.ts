@@ -23,7 +23,7 @@ export const createVendor: IService = {
         attributeId: 'email',
       },
       {
-        required: true,
+        required: false,
         attributeId: 'phone',
       },
       {
@@ -46,14 +46,6 @@ export const createVendor: IService = {
         required: true,
         attributeId: 'zip',
       },
-      {
-        required: true,
-        attributeId: 'tax_id',
-      },
-      // {
-      //   required: false,
-      //   attributeId: 'vendorUrl',
-      // },
       {
         required: false,
         attributeId: 'ipn_url',
