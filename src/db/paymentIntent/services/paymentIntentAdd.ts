@@ -2,9 +2,9 @@ import { IService } from '~/interfaces';
 
 export const paymentIntentAdd: IService = {
   id: 'paymentIntent_Add',
-  name: 'Payment Intent Add',
+  name: 'Payment Intent Create',
   description: [
-    `Payment Intent should be created first to generate ‘payment_intent’ as a response to create a charge. Amount and Payment type is required field to generate (payment_intent). Payment_type can be either ‘card’ or ‘ach’. Based on the payment type added in the payment intent, the charge should be created in the same type.`,
+    `A PaymentIntent guides you through the process of collecting a payment from your customer. We recommend that you create exactly one PaymentIntent for each order or customer session in your system.`,
   ],
   endpoint: {
     method: 'post',
@@ -21,6 +21,10 @@ export const paymentIntentAdd: IService = {
       {
         required: true,
         attributeId: 'payment_type'
+      },
+      {
+        required: false,
+        attributeId: 'vendorInfo'
       }
     ],
     response: {
