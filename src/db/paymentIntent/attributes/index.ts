@@ -14,6 +14,12 @@ export const attributes: Attribute[] = [
     description: 'Three-letter ISO currency code, in lowercase. Ex: usd',
   },
   {
+    id: 'vendorInfo',
+    name: 'vendorInfo',
+    data_type: 'array',
+    description: 'Vendor commission information.',
+  },
+  {
     id: 'payment_type',
     name: 'payment_type',
     data_type: 'string',
