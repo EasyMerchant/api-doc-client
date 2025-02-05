@@ -12,119 +12,67 @@ export const createVendor: IService = {
     params: [
       {
         required: true,
-        attributeId: 'name',
+        attributeId: 'first_name',
       },
       {
         required: true,
-        attributeId: 'vendor_email',
+        attributeId: 'last_name',
       },
       {
         required: true,
-        attributeId: 'vendor_phone',
+        attributeId: 'email',
       },
       {
         required: true,
-        attributeId: 'vendor_address',
+        attributeId: 'phone',
       },
       {
         required: true,
-        attributeId: 'vendor_city',
+        attributeId: 'address',
       },
       {
         required: true,
-        attributeId: 'vendor_country',
+        attributeId: 'city',
       },
       {
         required: true,
-        attributeId: 'vendor_state',
+        attributeId: 'country',
       },
       {
         required: true,
-        attributeId: 'vendor_zip',
+        attributeId: 'state',
       },
       {
         required: true,
-        attributeId: 'taxId',
+        attributeId: 'zip',
+      },
+      {
+        required: true,
+        attributeId: 'tax_id',
+      },
+      // {
+      //   required: false,
+      //   attributeId: 'vendorUrl',
+      // },
+      {
+        required: false,
+        attributeId: 'ipn_url',
       },
       {
         required: false,
-        attributeId: 'vendorUrl',
+        attributeId: 'default_payout_currency',
       },
       {
         required: false,
-        attributeId: 'vendor_ipnUrl',
-      },
-      {
-        required: false,
-        attributeId: 'vendor_defaultPayoutCurrency',
+        attributeId: 'minimum_withdraw_limit',
       },
       {
         required: true,
-        attributeId: 'vendor_firstName',
+        attributeId: 'personal_identification_number',
       },
       {
         required: true,
-        attributeId: 'vendor_lastName',
-      },
-      {
-        required: true,
-        attributeId: 'vendor_principal',
-      },
-      {
-        required: true,
-        attributeId: 'vendor_personalIdentificationNumber',
-      },
-      {
-        required: true,
-        attributeId: 'vendor_driverLicenseNumber',
-      },
-      {
-        required: true,
-        attributeId: 'commissionPercent',
-      },
-      {
-        required: true,
-        attributeId: 'commissionAmount',
-      },
-      {
-        required: true,
-        attributeId: 'vendor_payoutType',
-      },
-      {
-        required: true,
-        attributeId: 'vendor_baseCurrency',
-      },
-      {
-        required: true,
-        attributeId: 'vendor_nameOnAccount',
-      },
-      {
-        required: true,
-        attributeId: 'vendor_bankAccountType',
-      },
-      {
-        required: true,
-        attributeId: 'vendor_bankAccountClass',
-      },
-      {
-        required: true,
-        attributeId: 'bankName',
-      },
-      {
-        required: true,
-        attributeId: 'vendor_bankId',
-      },
-      {
-        required: true,
-        attributeId: 'vendor_bankAccountId',
-      },
-      {
-        required: true,
-        attributeId: 'vendor_iban',
-      },
-      {
-        required: true,
-        attributeId: 'vendor_swiftBic',
+        attributeId: 'driver_license_number',
       },
       {
         required: false,
@@ -132,19 +80,11 @@ export const createVendor: IService = {
       },
       {
         required: false,
-        attributeId: 'vendor_payoutInfo',
+        attributeId: 'payout_info',
       },
       {
         required: false,
-        attributeId: 'vendor_minimalPayoutAmount',
-      },
-      {
-        required: false,
-        attributeId: 'vendor_paymentReference',
-      },
-      {
-        required: false,
-        attributeId: 'vendor_refundReserve',
+        attributeId: 'business',
       },
     ],
     response: {
