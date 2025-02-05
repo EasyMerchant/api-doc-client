@@ -10,6 +10,5 @@ export const services: IService[] = [
   createVendor,
   updateVendor,
   listAllVendors,
-  findVendor,
-  chargeVendor,
+  findVendor
 ];

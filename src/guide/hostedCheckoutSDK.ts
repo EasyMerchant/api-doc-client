@@ -27,8 +27,11 @@ export const hostedCheckoutSDK: Guide = {
           paragraph: `<b>Request Params</b>`,
           snippet: `
           {
-            "amount" : "109.00" // optional
-          
+            "amount" : "109.00", // optional
+            "vendorInfo": [{ // optional
+                "vendorId": "vendor_ee73e202-6686-4e00-985e-132b857e1287",
+                "commissionPercent": "10", // or "commissionAmount": "10"
+              }]
           }
           `,
          
