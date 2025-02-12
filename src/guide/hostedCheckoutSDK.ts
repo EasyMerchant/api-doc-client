@@ -60,7 +60,7 @@ export const hostedCheckoutSDK: Guide = {
         },
         {
           paragraph: `Add the JS SDK checkout.js script on your payment page by adding it to the head of your HTML`,
-          snippet: `<script src="https://cdn.lyfepay.io/js-sdk/v1/checkout-v1.0.76.min.js?v=9" ></script>`
+          snippet: `<script src="https://cdn.lyfepay.io/js-sdk/v1/checkout-v1.0.86.min.js?v=9" ></script>`
         },
         {
           paragraph: `Create a placeholder element in your page where you want to mount the JS SDK UI:`,
@@ -89,6 +89,14 @@ export const hostedCheckoutSDK: Guide = {
           list: {
             unOrdered: [
               'we will show the receipt after payment successfull based true or false',
+            ],
+          },
+        },
+        {
+          paragraph:'<b>authenticatedACH: true | false</b>',
+          list: {
+            unOrdered: [
+              'This will function exclusively for ACH, serving to authenticate & linked your bank account with payment processor',
             ],
           },
         },
