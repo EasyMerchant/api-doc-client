@@ -101,6 +101,14 @@ export const hostedCheckoutSDK: Guide = {
           },
         },
         {
+          paragraph:'<b>showDonate: true | false</b>',
+          list: {
+            unOrdered: [
+              'We will display the donation/roundup section based on a true or false condition'
+            ],
+          },
+        },
+        {
           paragraph:'<b>showSubmitButton: true | false</b>',
           list: {
             unOrdered: [
