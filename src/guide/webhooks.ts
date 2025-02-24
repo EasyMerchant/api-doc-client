@@ -153,7 +153,7 @@ export const webhooks: Guide = {
               }
             },
             "attempt": 4,
-            "remaining_attempts": -1,
+            "remaining_attempts": 1,
             "livemode": true,
             "created_at": "2024-08-27 11:09:16"
           }`,
@@ -236,7 +236,7 @@ export const webhooks: Guide = {
               "created_at": "04-09-2024 00:01:53"
             },
             "attempt": 4,
-            "remaining_attempts": -1,
+            "remaining_attempts": 1,
             "livemode": true,
             "created_at": "2024-08-27 11:09:16"
           }`,
