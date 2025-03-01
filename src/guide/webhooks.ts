@@ -22,7 +22,7 @@ export const webhooks: Guide = {
             "data": {
               "name": "Jim",
               "email": "jim@easymerchant.io",
-              "amount": "127.00",
+              "amount": 127.00,
               "customer_id": null,
               "status": "active",
               "interval": "daily",
@@ -39,7 +39,7 @@ export const webhooks: Guide = {
               "transaction": {
                 "name": "Jim",
                 "email": "jim@easymerchant.io",
-                "amount": "127.00",
+                "amount": 127.00,
                 "description": "test",
                 "customer_id": null,
                 "status": "paid",
@@ -72,7 +72,7 @@ export const webhooks: Guide = {
             "data": {
               "name": "Jim",
               "email": "jim@easymerchant.io",
-              "amount": "127.00",
+              "amount": 127.00,
               "customer_id": null,
               "status": "active",
               "interval": "daily",
@@ -89,7 +89,7 @@ export const webhooks: Guide = {
               "transaction": {
                 "name": "Jim",
                 "email": "jim@easymerchant.io",
-                "amount": "127.00",
+                "amount": 127.00,
                 "description": "test",
                 "customer_id": null,
                 "status": "paid",
@@ -122,7 +122,7 @@ export const webhooks: Guide = {
             "data": {
               "name": "Jim",
               "email": "jim@easymerchant.io",
-              "amount": "127.00",
+              "amount": 127.00,
               "customer_id": null,
               "status": "active",
               "interval": "daily",
@@ -139,7 +139,7 @@ export const webhooks: Guide = {
               "transaction": {
                 "name": "Jim",
                 "email": "jim@easymerchant.io",
-                "amount": "127.00",
+                "amount": 127.00,
                 "description": "test",
                 "customer_id": null,
                 "status": "paid",
@@ -325,7 +325,7 @@ export const webhooks: Guide = {
             "data": {
               "name": "Jim Rising",
               "email": "raja@easymerchant.io",
-              "amount": "11.12",
+              "amount": 11.12,
               "description": "test1",
               "customer_id": null,
               "status": "paid",
@@ -359,7 +359,7 @@ export const webhooks: Guide = {
             "data": {
               "name": "Jim Rising",
               "email": "raja@easymerchant.io",
-              "amount": "11.12",
+              "amount": 11.12,
               "description": "test1",
               "customer_id": null,
               "status": "paid",
