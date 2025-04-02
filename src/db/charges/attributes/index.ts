@@ -192,5 +192,17 @@ export const attributes: Attribute[] = [
     name: 'order_number',
     data_type: 'string',
     description: `order_number passed in with the transaction. As long as the order number is unique we allow duplicate payments (same amount and same payment method more than once within 2 minutes)`,
+  },
+  {
+    id: 'charge_fees',
+    name: 'fees',
+    data_type: 'array',
+    description: `fees represent the component items .Here you can pass fee id or name with amount or prcent.`,
+  },
+  {
+    id: 'charge_discounts',
+    name: 'discounts',
+    data_type: 'array',
+    description: `discounts represent the component items .Here you can pass discount id or coupon_code.`,
   }
 ];

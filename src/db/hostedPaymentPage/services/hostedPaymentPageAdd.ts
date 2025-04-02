@@ -93,7 +93,16 @@ export const hostedPaymentPageAdd: IService = {
       {
         required: false,
         attributeId: 'start_date'
+      },
+      {
+        required: false,
+        attributeId: 'hpp_fees'
+      },
+      {
+        required: false,
+        attributeId: 'hpp_discounts'
       }
+
     ],
     response: {
       type: 'application/json',

@@ -10,11 +10,13 @@ import { refunds } from './refunds';
 import { vendors } from './vendors';
 import { subscription } from './subscription';
 import { accounts } from './accounts';
+import { fees } from './fees';
 import { paymentintent } from './paymentIntent';
 import { hostedPaymentPage } from './hostedPaymentPage';
 import { paymentPartners } from './paymentPartners';
 import { webhookConfig } from './webhookConfig';
 import { payouts } from './payouts';
+import { discounts } from './discounts';
 
 export const data: IApiData[] = [
   introduction,
@@ -32,5 +34,7 @@ export const data: IApiData[] = [
   paymentPartners,
   vendors,
   webhookConfig,
-  payouts
+  payouts,
+  fees,
+  discounts
 ];
