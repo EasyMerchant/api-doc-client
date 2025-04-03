@@ -4,8 +4,7 @@ export const updateFee: IService = {
   id: 'update_fee',
   name: 'Update Fee',
   description: [
-    `It is to update Fee.Here fee id is required`,
-    `You can update fee with amount or percent.`,
+    `To update the fee, please provide the fee Id. You can adjust the fee either by specifying an amount or a percentage.`,
 
   ],  
   endpoint: {

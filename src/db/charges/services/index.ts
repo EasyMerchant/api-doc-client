@@ -8,8 +8,7 @@ import { createBitcoinCharge } from './createBitcoinCharge';
 import { createCardCharge } from './createCardCharge';
 import { createCashCharge } from './createCashCharge';
 import { createCheckCharge } from './createCheckCharge';
-import { chargeWithFee } from './chargeWithFee';
-import { chargeWithDiscount } from './chargeWithDiscount';
+
 
 export const services: IService[] = [
   // list array items serial wise
@@ -21,7 +20,6 @@ export const services: IService[] = [
   capturePayment,
   createBitcoinCharge,
   findCharge,
-  listAllCharges,
-  chargeWithFee,
-  chargeWithDiscount
+  listAllCharges
+
 ];

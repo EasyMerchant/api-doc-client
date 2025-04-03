@@ -93,6 +93,14 @@ export const createAchCharge: IService = {
       {
         required: false,
         attributeId: 'order_number',
+      },
+      {
+        required: false ,
+        attributeId: 'charge_fees',
+      },
+      {
+        required: false ,
+        attributeId: 'charge_discounts',
       }
     ],
     response: {

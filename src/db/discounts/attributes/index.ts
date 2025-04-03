@@ -17,13 +17,13 @@ export const attributes: Attribute[] = [
     id: 'amount',
     name: 'amount',
     data_type: 'number',
-    description: 'The amount of the fee. It\'s required field.If you give percent, It does not require',
+    description: 'The amount is a conditional required field. If you provide an percent, this field is not required',
   },
   {
     id: 'percent',
     name: 'percent',
     data_type: 'number',
     description:
-      'The percentage of the fee. It\'s required field. If you give amount, It does not require',
+      'The fee percentage is a conditional required field. If you provide an amount, this field is not required',
   }
 ];

@@ -4,8 +4,7 @@ export const updateDiscount: IService = {
   id: 'update_discount',
   name: 'Update discount',
   description: [
-    `It is to update discount.Here discount id is required`,
-    `You can update discount with amount or percent.`,
+    `To update the discount, please provide the discount ID. You can adjust the discount either by specifying an amount or a percentage.`,
 
   ],  
   endpoint: {

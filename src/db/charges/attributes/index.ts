@@ -197,12 +197,12 @@ export const attributes: Attribute[] = [
     id: 'charge_fees',
     name: 'fees',
     data_type: 'array',
-    description: `fees represent the component items .Here you can pass fee id or name with amount or prcent.`,
+    description: `Fees represent the various component items. You can input either the fee id or name along with the associated amount or percentage.`,
   },
   {
     id: 'charge_discounts',
     name: 'discounts',
     data_type: 'array',
-    description: `discounts represent the component items .Here you can pass discount id or coupon_code.`,
+    description: `Discounts represent the various component items. You can provide either the discount id or coupon_code here.`,
   }
 ];

@@ -7,7 +7,7 @@ export const fees: IApiData = {
   controller: 'fees',
   defaultOpen: true,
   description: [
-    `You can store fee with name or percent.`,
+    `You can save fee by specifying either a name along with an amount or a percentage.`,
   ],
   attributes,
   services,
