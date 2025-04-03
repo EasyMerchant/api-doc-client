@@ -4,8 +4,7 @@ export const createFee: IService = {
   id: 'create_fee',
   name: 'Create Fee',
   description: [
-    `When you create a new feo you must sepecify the name & amount or percent.Here name should be unique. This method saves a new fee to the database.`,
-    `If you give both amount and percent, amount will be used. If you give neither, an error will be returned.`,
+    `When creating a new fee, you need to specify both a unique name and either an amount or a percentage. Keep in mind that if you provide both the amount and the percentage, the amount will take precedence. If neither is provided, an error will occur.`,
   ],
   endpoint: {
     method: 'post',
