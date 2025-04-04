@@ -168,5 +168,17 @@ export const attributes: Attribute[] = [
     data_type: 'boolean',
     description:
       'It is Optional attribute. This attribute is set to TRUE, It will filters only the expired payment page.',
+  },
+  {
+    id: 'hpp_fees',
+    name: 'fees',
+    data_type: 'array',
+    description: `fees represent the component items .Here you can pass fee id or name with amount or prcent.`,
+  },
+  {
+    id: 'hpp_discounts',
+    name: 'discounts',
+    data_type: 'array',
+    description: `discounts represent the component items .Here you can pass discount id or coupon_code.`,
   }
 ];
