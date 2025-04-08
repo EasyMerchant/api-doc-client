@@ -273,7 +273,7 @@ export const hostedCheckoutSDK: Guide = {
           },
           snippet: `
 
-          lements.on('done', (event)=>{
+          elements.on('done', (event)=>{
               // you can redirect to your page here
               console.log("done",event)
           });
@@ -288,25 +288,32 @@ export const hostedCheckoutSDK: Guide = {
           paragraph:'<b> Done - Tokenonly - New Card / ACH </b><p> If its token only , Trigger the event once  card / account saved successfully.</p>',
           snippet: `
         {
+           "type":"done",
+           "data": {
            “card_id”: "card_66d7379059bf8”,
             “card_last_4”: "4242”,
             “message”: "Card saved successfully. ",
             “status”: true,
-            “token”: "424242Jygz5P4242"   
+            }
         }
+        
             `,
         },
         {
           paragraph:'<b> Done - Tokenonly- Saved Card/ ACH </b><p> If its token only , Trigger the event once  card / account saved successfully.</p>',
           snippet: `
         {
+           "type":"done",
+           "data": {
             “card_brand_name”: "Visa”,
             “card_id”: "card_668ba0188df2c",
-            “card_type”: "live_card",
+            “card_last_4”: "4242”,
             “cc_last_4”: "1118",
             “cc_valid_thru”: "04/2026",
             “customer_id”: "cus_650e50db711a45064",
             “cvc”: "111",
+            "status":"active"
+        }
         } `,
         },
         {
