@@ -317,7 +317,7 @@ export const hostedCheckoutSDK: Guide = {
           paragraph:'<b> Done - Tokenonly - New Account </b><p>  If it\'s the token_only option, this event is triggered when the ach account is saved successfully.</p>',
           snippet: `
         {
-           "type":"success",
+           "type":"done",
            "data": {
               account_id: "acc_67f62af26f503",
               message: "Account saved successfully. ",
@@ -334,7 +334,6 @@ export const hostedCheckoutSDK: Guide = {
            "data": {
             “card_brand_name”: "Visa”,
             “card_id”: "card_668ba0188df2c",
-            “card_last_4”: "4242”,
             “cc_last_4”: "1118",
             “cc_valid_thru”: "04/2026",
             “customer_id”: "cus_650e50db711a45064",
