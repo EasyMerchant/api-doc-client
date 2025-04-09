@@ -60,7 +60,7 @@ export const hostedCheckoutSDK: Guide = {
         },
         {
           paragraph: `Add the JS SDK checkout.js script on your payment page by adding it to the head of your HTML`,
-          snippet: `<script src="https://cdn.lyfepay.io/js-sdk/v1/checkout-v1.0.89.min.js?v=89" ></script>`
+          snippet: `<script src="https://cdn.lyfepay.io/js-sdk/v1/checkout-v1.0.90.min.js?v=9" ></script>`
         },
         {
           paragraph: `Create a placeholder element in your page where you want to mount the JS SDK UI:`,
@@ -273,41 +273,13 @@ export const hostedCheckoutSDK: Guide = {
           },
           snippet: `
 
-          lements.on('done', (event)=>{
+          elements.on('done', (event)=>{
               // you can redirect to your page here
               console.log("done",event)
           });
            
             `,
             
-
-           
-            
-        },
-        {
-          paragraph:'<b> Done - Tokenonly - New Card / ACH </b><p> If its token only , Trigger the event once  card / account saved successfully.</p>',
-          snippet: `
-        {
-           “card_id”: "card_66d7379059bf8”,
-            “card_last_4”: "4242”,
-            “message”: "Card saved successfully. ",
-            “status”: true,
-            “token”: "424242Jygz5P4242"   
-        }
-            `,
-        },
-        {
-          paragraph:'<b> Done - Tokenonly- Saved Card/ ACH </b><p> If its token only , Trigger the event once  card / account saved successfully.</p>',
-          snippet: `
-        {
-            “card_brand_name”: "Visa”,
-            “card_id”: "card_668ba0188df2c",
-            “card_type”: "live_card",
-            “cc_last_4”: "1118",
-            “cc_valid_thru”: "04/2026",
-            “customer_id”: "cus_650e50db711a45064",
-            “cvc”: "111",
-        } `,
         },
         {
           paragraph:'Callback Object',
@@ -327,6 +299,66 @@ export const hostedCheckoutSDK: Guide = {
            
             
         },
+        {
+          paragraph:'<b> Done - Tokenonly - New Card  </b><p> If it\'s the token_only option, this event is triggered when the card is saved successfully.</p>',
+          snippet: `
+        {
+           "type":"done",
+           "data": {
+           “card_id”: "card_66d7379059bf8”,
+            “card_last_4”: "4242”,
+            “message”: "Card saved successfully. ",
+            “status”: true,
+            }
+        }
+            `,
+        },
+        {
+          paragraph:'<b> Done - Tokenonly - New Account </b><p>  If it\'s the token_only option, this event is triggered when the ach account is saved successfully.</p>',
+          snippet: `
+        {
+           "type":"done",
+           "data": {
+              account_id: "acc_67f62af26f503",
+              message: "Account saved successfully. ",
+              “status”: true,
+            }
+        }
+            `,
+        },
+        {
+          paragraph:'<b> Done - Tokenonly - Saved Card </b><p> If the token_only option is used with saved card , it returns only the selected card details.</p>',
+          snippet: `
+        {
+           "type":"done",
+           "data": {
+            “card_brand_name”: "Visa”,
+            “card_id”: "card_668ba0188df2c",
+            “cc_last_4”: "1118",
+            “cc_valid_thru”: "04/2026",
+            “customer_id”: "cus_650e50db711a45064",
+            “cvc”: "111",
+            "status":"active"
+        }
+        } `,
+         
+        },
+        {
+          paragraph:'<b> Done - Tokenonly- Saved Account </b><p>If the token_only option is used with saved account , it returns only the selected ach account details.</p>',
+          snippet: `
+        {
+           "type":"done",
+           "data": {
+           account_id: "acc_67f62af26f503",
+          account_number_last_4: "1119"
+          account_type: "saving"
+          customer_id: "cus_67a1187a585505064"
+          date_created: "2025-04-09 03:08:18"
+        }
+        } `,
+         
+        },
+       
       ] 
     },
     {
