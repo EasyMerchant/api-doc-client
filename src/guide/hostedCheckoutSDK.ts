@@ -280,41 +280,6 @@ export const hostedCheckoutSDK: Guide = {
            
             `,
             
-
-           
-            
-        },
-        {
-          paragraph:'<b> Done - Tokenonly - New Card / ACH </b><p> If its token only , Trigger the event once  card / account saved successfully.</p>',
-          snippet: `
-        {
-           "type":"done",
-           "data": {
-           “card_id”: "card_66d7379059bf8”,
-            “card_last_4”: "4242”,
-            “message”: "Card saved successfully. ",
-            “status”: true,
-            }
-        }
-        
-            `,
-        },
-        {
-          paragraph:'<b> Done - Tokenonly- Saved Card/ ACH </b><p> If its token only , Trigger the event once  card / account saved successfully.</p>',
-          snippet: `
-        {
-           "type":"done",
-           "data": {
-            “card_brand_name”: "Visa”,
-            “card_id”: "card_668ba0188df2c",
-            “card_last_4”: "4242”,
-            “cc_last_4”: "1118",
-            “cc_valid_thru”: "04/2026",
-            “customer_id”: "cus_650e50db711a45064",
-            “cvc”: "111",
-            "status":"active"
-        }
-        } `,
         },
         {
           paragraph:'Callback Object',
@@ -334,6 +299,67 @@ export const hostedCheckoutSDK: Guide = {
            
             
         },
+        {
+          paragraph:'<b> Done - Tokenonly - New Card  </b><p> If it\'s the token_only option, this event is triggered when the card is saved successfully.</p>',
+          snippet: `
+        {
+           "type":"done",
+           "data": {
+           “card_id”: "card_66d7379059bf8”,
+            “card_last_4”: "4242”,
+            “message”: "Card saved successfully. ",
+            “status”: true,
+            }
+        }
+            `,
+        },
+        {
+          paragraph:'<b> Done - Tokenonly - New Account </b><p>  If it\'s the token_only option, this event is triggered when the ach account is saved successfully.</p>',
+          snippet: `
+        {
+           "type":"success",
+           "data": {
+              account_id: "acc_67f62af26f503",
+              message: "Account saved successfully. ",
+              “status”: true,
+            }
+        }
+            `,
+        },
+        {
+          paragraph:'<b> Done - Tokenonly - Saved Card </b><p> If the token_only option is used with saved card , it returns only the selected card details.</p>',
+          snippet: `
+        {
+           "type":"done",
+           "data": {
+            “card_brand_name”: "Visa”,
+            “card_id”: "card_668ba0188df2c",
+            “card_last_4”: "4242”,
+            “cc_last_4”: "1118",
+            “cc_valid_thru”: "04/2026",
+            “customer_id”: "cus_650e50db711a45064",
+            “cvc”: "111",
+            "status":"active"
+        }
+        } `,
+         
+        },
+        {
+          paragraph:'<b> Done - Tokenonly- Saved Account </b><p>If the token_only option is used with saved account , it returns only the selected ach account details.</p>',
+          snippet: `
+        {
+           "type":"done",
+           "data": {
+           account_id: "acc_67f62af26f503",
+          account_number_last_4: "1119"
+          account_type: "saving"
+          customer_id: "cus_67a1187a585505064"
+          date_created: "2025-04-09 03:08:18"
+        }
+        } `,
+         
+        },
+       
       ] 
     },
     {
