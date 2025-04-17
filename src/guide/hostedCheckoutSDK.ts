@@ -37,6 +37,20 @@ export const hostedCheckoutSDK: Guide = {
          
         },
         {
+          paragraph: `<b>Request Params with recurring</b>`,
+          snippet: `
+          {
+            "amount" : "109.00", // optional
+            "is_recurring": true,// optional
+            "intervals": ["weekly","monthly","yearly"],// optional - allowed list - daily,weekly,monthly,quarterly,yearly,half_yearly,every_two_years,every_three_years,every_four_years,every_five_years
+            "allowed_cycles": "2",// optional
+            "recurring_start_date_type":"custom" || "fixed",// optional
+            "recurring_start_date":"04/25/2025",// optional // optional - If recurring_start_date_type is "fixed", you can pass the recurring_start_date here
+          }
+          `,
+         
+        },
+        {
           paragraph: `<b>API Response</b>`,
           snippet: `
           {
