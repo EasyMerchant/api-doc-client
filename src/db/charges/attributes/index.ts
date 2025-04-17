@@ -200,9 +200,71 @@ export const attributes: Attribute[] = [
     description: `Fees represent the various component items. You can input either the fee id or name along with the associated amount or percentage.`,
   },
   {
+    id: 'fees[][id]',
+    name: 'fees[][id]',
+    data_type: 'string',
+    description: `The unique identifier for the fee.you can pass fee id or name along with the associated amount or percentage.`,
+  },
+  {
+    id: 'fees[][name]',
+    name: 'fees[][name]',
+    data_type: 'string',
+    description: `The name of the fee.This field along with fee amount or percentage.`,
+  },
+  {
+    id: 'fees[][amount]',
+    name: 'fees[][amount]',
+    data_type: 'string',
+    description: `The fee amount is a conditional required field. If you provide a percentage, this field is not required.`,
+  },
+  {
+    id: 'fees[][percent]',
+    name: 'fees[][percent]',
+    data_type: 'string',
+    description: `The fee percentage is a conditional required field. If you provide an amount, this field is not required. It should be in decimal format. For example, 10% = 0.1.`,
+  },
+
+  {
     id: 'charge_discounts',
     name: 'discounts',
     data_type: 'array',
     description: `Discounts represent the various component items. You can provide either the discount id or coupon_code here.`,
+  },
+  {
+    id: 'discounts[][id]',
+    name: 'discounts[][id]',
+    data_type: 'string',
+    description: `The unique identifier for the discount.The discount id is conditional required field. If you provide a coupon_code, this field is not required.`,
+  },
+  {
+    id: 'discounts[][coupon_code]',
+    name: 'discounts[][coupon_code]',
+    data_type: 'string',
+    description: `coupon code for the discount.The coupon_code is conditional required field. If you provide a discount id, this field is not required.`,
+  },
+  {
+    id: 'vendorInfo',
+    name: 'vendorInfo',
+    data_type: 'array',
+    description: `vendorInfo represent the various component item. You can provide the vendor id along with commisionAmount or commissionPercent here.`,
+  },
+  {
+    id: 'vendorInfo[][vendorId]',
+    name: 'vendorInfo[][vendorId]',
+    data_type: 'string',
+    description: `The unique identifier for the vendor.`,
+  },
+  {
+    id: 'vendorInfo[][commissionPercent]',
+    name: 'vendorInfo[][commissionPercent]',
+    data_type: 'string',
+    description: `The percentage of vendor's commission.The commission percentage is a conditional required field. If you provide a commission amount, this field is not required.`,
+  },
+  {
+    id: 'vendorInfo[][commissionAmount]',
+    name: 'vendorInfo[][commissionAmount]',
+    data_type: 'string',
+    description: `The commission amount is a conditional required field. If you provide a commission percent, this field is not required. `,
   }
+
 ];
