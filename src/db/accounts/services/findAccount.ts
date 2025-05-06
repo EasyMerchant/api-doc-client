@@ -33,7 +33,7 @@ export const findAccount: IService = {
             "created_by": "5114",
             "account_id": "acc_64bbb70c3dbc4",
             "account_type": "checking",
-            "last_4": "1116",
+            "account_number_last_4": "1116",
             "is_default": "0",
             "last_updated_by": null,
             "date_created": "2023-07-22 06:01:32"
