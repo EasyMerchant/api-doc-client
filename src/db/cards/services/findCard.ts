@@ -17,7 +17,7 @@ export const findCard: IService = {
         "Card": {
           "customer_id": "cus_6545295127abe5114",
           "card_id": "card_654f142e6be56",
-          "cc_last_4": "1112",
+          "last_4": "1112",
           "cc_valid_thru": "07/2029",
           "is_default": "1",
           "card_type": "live_card",
