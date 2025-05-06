@@ -41,7 +41,7 @@ export const listAllCharges: IService = {
                 "merchant_account_id": "6467698da98fd",
                 "declined_reason": null,
                 "account_number": null,
-                "cc_last_4": "1111",
+                "last_4": "1111",
                 "cheque_notes": null,
                 "metadata": null
               },
@@ -67,7 +67,7 @@ export const listAllCharges: IService = {
                 "merchant_account_id": "6467698da98fd",
                 "declined_reason": null,
                 "account_number": null,
-                "cc_last_4": "1111",
+                "last_4": "1111",
                 "cheque_notes": null,
                 "metadata": {
                   "order_id": 123,

@@ -41,7 +41,7 @@ export const saveCard: IService = {
         status: true,
         card_id: 'card_6317a39ec2414',
         message: 'Card saved successfully. ',
-        card_last_4: '1111',
+        last_4: '1111',
       },
     },
   },

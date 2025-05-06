@@ -19,7 +19,7 @@ export const listCards: IService = {
           {
               "customer_id": "cus_64998b545b1cb5114",
               "card_id": "card_654ddd5a8f25d",
-              "cc_last_4": "1112",
+              "last_4": "1112",
               "cc_valid_thru": "07/2029",
               "is_default": "1",
               "card_type": "live_card",
@@ -28,7 +28,7 @@ export const listCards: IService = {
           {
               "customer_id": "cus_6543546eabcfa5114",
               "card_id": "card_654f11b94fb25",
-              "cc_last_4": "1112",
+              "last_4": "1112",
               "cc_valid_thru": "07/2029",
               "is_default": "1",
               "card_type": "live_card",

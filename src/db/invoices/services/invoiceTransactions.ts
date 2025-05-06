@@ -39,7 +39,7 @@ export const invoiceTransactions: IService = {
               hpp_id : null,
               declined_reason : null,
               account_number : "6789",
-              cc_last_4 : null,
+              last_4 : null,
               cheque_notes : "partial payment check"
             },
           ],

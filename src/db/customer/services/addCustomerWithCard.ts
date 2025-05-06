@@ -75,7 +75,7 @@ export const addCustomerWithCard: IService = {
         "status": true,
         "message": "Customer created successfully and Card saved successfully. ",
         "card_id": "card_65ba415bef6c9",
-        "card_last_4": "4242",
+        "last_4": "4242",
         "customer_id": "cus_65ba415ad0a835064"
       },
     },
