@@ -50,7 +50,7 @@ export const findHostedPaymentPage: IService = {
                       "payment_type": "Card",
                       "is_ach_transaction": "0",
                       "payment_partner": "mer_clt_1",
-                      "account_number": null,
+                      "account_number_last_4": null,
                       "last_4": "4242",
                       "cheque_notes": null,
                       "date_created": "2024-04-22 16:29:34"
