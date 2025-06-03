@@ -100,8 +100,55 @@ export const createAchCharge: IService = {
       },
       {
         required: false ,
+        attributeId: 'fees[][id]',
+      },
+      {
+        required: false ,
+        attributeId: 'fees[][name]',
+      },
+      {
+        required: false ,
+        attributeId: 'fees[][amount]',
+      },
+      {
+        required: false ,
+        attributeId: 'fees[][percent]',
+      },
+
+      {
+        required: false ,
         attributeId: 'charge_discounts',
+      },
+      {
+        required: false ,
+        attributeId: 'discounts[][id]',
+      },
+      {
+        required: false ,
+        attributeId: 'discounts[][coupon_code]',
+      },
+      {
+        required: false ,
+        attributeId: 'discounts[][name]',
+      },
+      {
+        required: false ,
+        attributeId: 'vendorInfo',
+      },
+      {
+        required: false ,
+        attributeId: 'vendorInfo[][vendorId]',
+      },
+      {
+        required: false ,
+        attributeId: 'vendorInfo[][commissionPercent]',
+      },
+
+      {
+        required: false ,
+        attributeId: 'vendorInfo[][commissionAmount]',
       }
+
     ],
     response: {
       type: 'application/json',
