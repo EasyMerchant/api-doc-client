@@ -327,6 +327,14 @@ export const webhooks: Guide = {
               "email": "raja@easymerchant.io",
               "amount": 11.12,
               "description": "test1",
+              "billing": {
+                "address_1": "happy street",
+                "city": "Brentwood",
+                "state": "TN",
+                "postal_code": 37251,
+                "country": "US",
+                "phone": ""
+              },
               "customer_id": null,
               "status": "paid",
               "payment_mode": "card",
@@ -361,6 +369,14 @@ export const webhooks: Guide = {
               "email": "raja@easymerchant.io",
               "amount": 11.12,
               "description": "test1",
+              "billing": {
+                "address_1": "happy street",
+                "city": "Brentwood",
+                "state": "TN",
+                "postal_code": 37251,
+                "country": "US",
+                "phone": ""
+              },
               "customer_id": null,
               "status": "paid",
               "payment_mode": "card",
