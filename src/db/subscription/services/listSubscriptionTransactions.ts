@@ -37,8 +37,8 @@ export const listSubscriptionTransactions: IService = {
             "is_ach_transaction": "0",
             "merchant_account_id": "sb_66e80fd00cb94",
             "declined_reason": null,
-            "account_number": "",
-            "cc_last_4": "0055",
+            "account_number_last_4": "",
+            "last_4": "0055",
             "cheque_notes": null
           },
           {
@@ -63,8 +63,8 @@ export const listSubscriptionTransactions: IService = {
             "is_ach_transaction": "0",
             "merchant_account_id": "sb_66e80fd00cb94",
             "declined_reason": null,
-            "account_number": "",
-            "cc_last_4": "0055",
+            "account_number_last_4": "",
+            "last_4": "0055",
             "cheque_notes": null
           },
           {
@@ -89,8 +89,8 @@ export const listSubscriptionTransactions: IService = {
             "is_ach_transaction": "0",
             "merchant_account_id": "sb_66e80fd00cb94",
             "declined_reason": null,
-            "account_number": "",
-            "cc_last_4": "0055",
+            "account_number_last_4": "",
+            "last_4": "0055",
             "cheque_notes": null
           },
           {
@@ -115,8 +115,8 @@ export const listSubscriptionTransactions: IService = {
             "is_ach_transaction": "0",
             "merchant_account_id": "sb_66e80fd00cb94",
             "declined_reason": null,
-            "account_number": "",
-            "cc_last_4": "0055",
+            "account_number_last_4": "",
+            "last_4": "0055",
             "cheque_notes": null
           }
         ]

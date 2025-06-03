@@ -348,7 +348,7 @@ export const hostedCheckoutSDK: Guide = {
            "data": {
             “card_brand_name”: "Visa”,
             “card_id”: "card_668ba0188df2c",
-            “cc_last_4”: "1118",
+            “last_4”: "1118",
             “cc_valid_thru”: "04/2026",
             “customer_id”: "cus_650e50db711a45064",
             “cvc”: "111",
