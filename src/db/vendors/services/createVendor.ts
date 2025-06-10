@@ -188,15 +188,15 @@ export const createVendor: IService = {
         attributeId: 'payout_info[][country]',
       },
       {
-        required: true,
+        required: false,
         attributeId: 'payout_info[][minimal_payout_amount]',
       },
       {
-        required: true,
+        required: false,
         attributeId: 'payout_info[][payment_reference]',
       },
       {
-        required: true,
+        required: false,
         attributeId: 'payout_info[][refund_reserve]',
       },
          

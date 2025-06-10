@@ -314,7 +314,7 @@ export const attributes: Attribute[] = [
     id: 'payout_info[][refund_reserve]',
     name: 'payout_info[][refund_reserve]',
     data_type: 'string',
-    description: 'Reference text that appears on your vendor`s bank statement',
+    description: 'The amount that is reserved for refunds. It is used to cover potential refunds or chargebacks from the vendor\'s transactions.',
   },
  
  
