@@ -243,6 +243,12 @@ export const attributes: Attribute[] = [
     description: `coupon code for the discount.The coupon_code is conditional required field. If you provide a discount id, this field is not required.`,
   },
   {
+    id: 'discounts[][name]',
+    name: 'discounts[][name]',
+    data_type: 'string',
+    description: `coupon name for the discount.The name is conditional required field. If you provide a discount id, this field is not required.`,
+  },
+  {
     id: 'vendorInfo',
     name: 'vendorInfo',
     data_type: 'array',
@@ -265,6 +271,12 @@ export const attributes: Attribute[] = [
     name: 'vendorInfo[][commissionAmount]',
     data_type: 'string',
     description: `The commission amount is a conditional required field. If you provide a commission percent, this field is not required. `,
+  },
+  {
+    id: 'secure_token',
+    name: 'secure_token',
+    data_type: 'string',
+    description: `It is unique identifier which contains alphanumeric value. This will be used to validate and pass 3D secure authentication to the payment processor.`,
   }
 
 ];
