@@ -151,6 +151,10 @@ export const createCardCharge: IService = {
       {
         required: false ,
         attributeId: 'vendorInfo[][commissionAmount]',
+      },
+      {
+        required: false ,
+        attributeId: 'secure_token',
       }
 
     ],

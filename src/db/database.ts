@@ -17,6 +17,7 @@ import { paymentPartners } from './paymentPartners';
 import { webhookConfig } from './webhookConfig';
 import { payouts } from './payouts';
 import { discounts } from './discounts';
+import { secureAuthentication } from './secureAuthentication';
 
 export const data: IApiData[] = [
   introduction,
@@ -36,5 +37,6 @@ export const data: IApiData[] = [
   webhookConfig,
   payouts,
   fees,
-  discounts
+  discounts,
+  secureAuthentication
 ];
