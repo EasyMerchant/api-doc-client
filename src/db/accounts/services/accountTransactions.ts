@@ -9,6 +9,28 @@ export const accountTransactions: IService = {
   endpoint: {
     method: 'get',
     url: '/v1/ach/account/:account_id/transactions',
+    params: [
+      {
+        required: false,
+        attributeId: 'start_date',
+        isQueryParam: true,
+      },
+      {
+        required: false,
+        attributeId: 'end_date',
+        isQueryParam: true,
+      },
+      {
+        required: false,
+        attributeId: 'page',
+        isQueryParam: true,
+      },
+      {
+        required: false,
+        attributeId: 'per_page',
+        isQueryParam: true,
+      }
+    ],
     response: {
       type: 'application/json',
       data: {
@@ -18,11 +40,10 @@ export const accountTransactions: IService = {
               "transactions": [
                   {
                       "transaction_id": "txn_Bk4GA2sLsCF46JZxGCCTMP",
-                      "account_id": "acc_JcgTUqFx8ygboDu6CNJsWA",
                       "amount": "212.99",
                       "type": "debit",
                       "currency": "USD",
-                      "date": "2025-06-01",
+                      "date": "06/01/2025",
                       "datetime": null,
                       "description": "Amazon",
                       "raw_description": "Amazon",
@@ -46,11 +67,10 @@ export const accountTransactions: IService = {
                   },
                   {
                       "transaction_id": "txn_N698MJ4roLC6qBuRD3RmoH",
-                      "account_id": "acc_JcgTUqFx8ygboDu6CNJsWA",
                       "amount": "106.25",
                       "type": "debit",
                       "currency": "USD",
-                      "date": "2025-05-29",
+                      "date": "05/29/2025",
                       "datetime": null,
                       "description": "Amazon",
                       "raw_description": "Amazon",
