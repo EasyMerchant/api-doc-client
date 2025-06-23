@@ -33,4 +33,28 @@ export const attributes: Attribute[] = [
     data_type: 'string',
     description: 'checking, saving, ledger. Account type is not required when charge is created for the existing customer with Saved account. Account Type is default set to checking. This attribute is used when the payment method is ACH.',
   },
+  {
+    id: 'start_date',
+    name: 'start_date',
+    data_type: 'date',
+    description: 'Start date for the transaction history in MM/DD/YYYY format',
+  },
+  {
+    id: 'end_date',
+    name: 'end_date',
+    data_type: 'date',
+    description: 'End date for the transaction history in MM/DD/YYYY format',
+  },
+  {
+    id: 'page',
+    name: 'page',
+    data_type: 'number',
+    description: 'Page number for pagination (default is 1)',
+  },
+  {
+    id: 'per_page',
+    name: 'per_page',
+    data_type: 'number',
+    description: 'Number of records per page (default is 10, maximum is 100)',
+  },
 ];
