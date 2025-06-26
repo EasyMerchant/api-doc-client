@@ -15,8 +15,8 @@ export const transactionStatus: IService = {
           status: true,
           message: "3DS transaction status retrieved successfully. ",
           data: {
-            name: "Manoj",
-            email: "lys@localtest.com",
+            name: "Jim Rising",
+            email: "jimrising@lyfepay.com",
             ref_token: "db32abe1-9245-4abc-8bcc-b636af1339ec",
             charge_id: "cha_5064683805cb33655",
             subscription_id: null,

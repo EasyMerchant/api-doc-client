@@ -7,8 +7,7 @@ export const secureAuthentication: IApiData = {
   controller: '3D Secure',
   defaultOpen: true,
   description: [
-    `Accept a payment without building additional standalone websites or applications with Payment Links. Share the link as many times as you want on social media, in emails, or on your website.
-    Base_URL --> https://stage-api.stage-easymerchant.io/api/v1`,
+    `3D Secure (3DS) is an authentication protocol that adds an additional security layer to card transactions.`,
   ],
   attributes,
   services,

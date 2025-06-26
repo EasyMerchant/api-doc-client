@@ -59,8 +59,8 @@ export const accountTransactions: IService = {
                           },
                           "merchant": {
                               "id": "4142b869-8686-4dae-a7c7-149af8246fa8",
-                              "name": "Amazon",
-                              "logo": "https://assets.thisisbud.com/datasci-images/merchant_logos/9aef26a1-0477-40ff-99e0-b1f7294acefd/v3/amazon.jpeg",
+                              "name": "lyfePAY",
+                              "logo": "https://admin.lyfepay.io/assets/images/easymerchant.png",
                               "confidence": 100
                           }
                       }
@@ -86,8 +86,8 @@ export const accountTransactions: IService = {
                           },
                           "merchant": {
                               "id": "4142b869-8686-4dae-a7c7-149af8246fa8",
-                              "name": "Amazon",
-                              "logo": "https://assets.thisisbud.com/datasci-images/merchant_logos/9aef26a1-0477-40ff-99e0-b1f7294acefd/v3/amazon.jpeg",
+                              "name": "lyfePAY",
+                              "logo": "https://admin.lyfepay.io/assets/images/easymerchant.png",
                               "confidence": 100
                           }
                       }

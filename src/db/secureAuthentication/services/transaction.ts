@@ -82,8 +82,8 @@ export const transaction: IService = {
         message: "Secure Transaction initialized successfully. ",
         secure_token: "db32abe1-9245-4abc-8bcc-b636af1339ec",
         transactionId: "250204105702941228",
-        redirect_url: "https://pay.sandbox.datatrans.com/v1/start/250204105702941228",
-        location_url: "https://pay.sandbox.datatrans.com/v1/start/250204105702941228"
+        redirect_url: "https://admin.lyfepay.io/authentication/start/250204105702941228",
+        location_url: "https://admin.lyfepay.io/authentication/start/250204105702941228"
       },
     },
   },
