@@ -4,7 +4,7 @@ export const paymentIntentACHUpdate: IService = {
   id: 'paymentIntent_ACHUpdate',
   name: 'Payment Intent ACH Update',
   description: [
-    `Depending on which payment_type ‘ach’ is used in the paymentintent add, the same payment-type needs to be updated, you might need to confirm the PaymentIntent again. For example, updating the payment_method always requires you to confirm the PaymentIntent again. If you use different payment types used in the particular payment intent it will throw an error message as “Invalid Payment Intent for ACH.!”`,
+    `Payment Intent updates allow you to modify ACH details after the initial creation but before completion. This is essential for handling dynamic accountNumber, routingNumber and other real-time changes during the payment flow.`,
   ],
   endpoint: {
     method: 'post',
