@@ -185,7 +185,7 @@ export const attributes: Attribute[] = [
     id: 'start_date',
     name: 'start_date',
     data_type: 'date',
-    description: `The start date of the invoice is required for the payment type 'recurring'. The start date can be either current date or future date. The Subscription starts renewal based on the start date and start date is based on the time zone set in the users > My account.`,
+    description: `(optional) The start date of the recurring payment in MM/DD/YYYY format. The start date can be either current date or future date. The Subscription starts renewal based on the start date and start date is based on the time zone set in the users > My account.`,
   },
   {
     id: 'order_number',
